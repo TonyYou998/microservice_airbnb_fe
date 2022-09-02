@@ -4,9 +4,9 @@ import HomePage from './HomePage';
 
 function LayoutHome(props){
     
-    return <div>
+    return <>
         {props.children}
-    </div>
+    </>
 }
 export default function HomeTemplate({Component,...props}) {
   

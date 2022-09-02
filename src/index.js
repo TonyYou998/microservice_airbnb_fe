@@ -10,6 +10,7 @@ import "popper.js/dist/umd/popper.min.js";
 import "font-awesome/css/font-awesome.min.css";
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import "./styled/main.scss";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
