@@ -22,4 +22,3 @@ format của 1 obj route:
     tuyệt đối ko push lên master.
     khi thực hiện code task mới vui lòng checkout về lại master và dùng git pull một lần nữa
     sau đó mới thực hiện git checkout -b
-    
