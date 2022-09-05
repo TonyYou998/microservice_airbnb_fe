@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function ResignPage() {
   return (
-    <div>ResignPage</div>
+    <div>Login page</div>
   )
 }
