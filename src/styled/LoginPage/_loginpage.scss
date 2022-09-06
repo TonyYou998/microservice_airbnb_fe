@@ -60,6 +60,17 @@
     border-radius: 15px;
     font-size: medium;
   }
+
+  input[type=password] {
+    border-color: rgb(0, 0, 0, .1);
+    width: 25vw;
+    padding: 20px 30px;
+    margin-top: 0.67em;
+    margin-bottom: 0.27em;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: medium;
+  }
   
   .button {
     border: none;
