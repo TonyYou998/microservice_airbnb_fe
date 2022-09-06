@@ -56,18 +56,7 @@
   align-items: center;
   padding: 16px;
   }
-  
-  .form-wrapper {
-    width: 100rem;
-    height: 70rem;
-    background-color: #eee;
-    border-radius: 3rem;
-    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
-
-  }
-  
+    
   .banner{
     position: absolute;
     top: 25%;
@@ -84,8 +73,11 @@
   }
   
   .banner h1{
-    font-size: 4rem;
-    margin-bottom: 3rem;
+    // position: absolute;
+    left: 100px;
+    top: 150px;
+    font-size: 6rem;
+    margin-bottom: 2rem;
   }
   
   .banner p{
@@ -134,7 +126,7 @@
   }
   
   .signup-form{
-    width: 60rem;
+    width: 140rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -153,39 +145,43 @@
   }
   
   .signup-form h1{
-    font-size: 4rem;
+    font-size: 5rem;
     color: #FFC54D;
+    position: relative;
   }
   
   .social-media{
     display: flex;
+  margin-left: 6rem;
   }
   
   .social-media i {
-  width: 4rem;
-  height: 4rem;
-  border: .1rem solid #777;
+  width: 6rem;
+  height: 6rem;
+  border: 0.1rem solid #777;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #555;
+  margin-right: 6.8rem;
   }
   
   .signup-form p{
-    font-size: 1.89rem;
+    font-size: 1.5rem;
     color: #555;
-    margin-bottom: 2rem;
+    margin-top: 3.6rem;
   }
   
 .signup-form label{
-  font-size: 1.6rem;
+  font-size: 1.3rem;
+  margin-top: 2rem;
 }
 
   .input-group {
     position: relative;
+    margin-top: 2rem;
   }
   
   .input-group input{
