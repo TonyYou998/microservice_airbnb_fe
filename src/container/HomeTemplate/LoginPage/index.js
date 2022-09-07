@@ -39,6 +39,7 @@ export default function LoginPage() {
   const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
 
   const handleFormSubmit=(e)=>{
+    //prevent default form submit
     e.preventDefault();
     console.log(email);
 
@@ -56,7 +57,7 @@ export default function LoginPage() {
 
     //check if password is empty
     if(password!=''){
-      setPasswordError('');
+      setPasswordError('Password');
     }
     else{
       setPasswordError('Password Required');
