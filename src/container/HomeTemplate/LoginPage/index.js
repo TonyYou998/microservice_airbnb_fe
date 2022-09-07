@@ -46,10 +46,12 @@ export default function LoginPage() {
     //check if email is empty
     if(email!=''){
       if(regEx.test(email)){
-        setEmailError('Valid Email');
+        setSuccessMsg('Valid Email');
+        setEmailError('');
       }
       else
         setEmailError('Invalid Email');
+        // setSuccessMsg('');
     }
     else{
       setEmailError('Email Required');
@@ -75,7 +77,8 @@ export default function LoginPage() {
           <>
             <InputEmail
             onChange={handleEmailChange} value={email} sendEmailToParent={sendEmailDataToParent}/>
-            {emailError&&<div className='error-msg'>{emailError}</div>}
+            {/* show mesage to notify user to know if the email is right or not */}
+            {emailError&&<div className='error-msg'>{emailError}</div> || successMsg&&<div className='success-msg'>{successMsg}</div>}
             
             <InputPassword
             onChange={handlePasswordChange} value={password} sendPasswordToParent={sendPasswordDataToParent}/>
@@ -85,7 +88,7 @@ export default function LoginPage() {
 
           <>
           <ButtonSignIn/>
-
+          
           </>
 
            <h>Don't have an account?</h><h className ="signup-text"> Sign Up</h>
