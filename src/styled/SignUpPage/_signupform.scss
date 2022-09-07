@@ -11,24 +11,29 @@
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  position: relative;
 }
 
 .sub-main{
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 800px;
-  min-width: 300px;
-  max-height: 700px;
-  min-height: 450px;
-  width: 200vw;
-  height: 80%;
+  max-width: 1000px ;
+  min-width: 325px;
+  max-height: 1000px;
+  min-height: 635px;
+  width: 75%;
+  height: 60%;
   margin: 100px auto;
   background-color: rgb(246, 251, 249);
   border-radius: 40px;
 }
 
-h1 {
+.sub-main h1 {
+  // max-width: 4rem;
+  // min-width: 2rem;
+  max-height: 3rem;
+  // min-height: 1rem;
   margin-top: 0.1em;
   margin-bottom: 0.1em;
   margin-left: 0;
@@ -37,12 +42,13 @@ h1 {
   font-family: 'open sans', sans-serif;
   padding: 1rem 0;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
+  position: top;
 }
 
-h3 {
+.sub-main h3 {
   display: block;
-  margin-top: 0.7em;
+  margin-top: 0.1rem;
   margin-bottom: 0.7em;
   margin-left: 0;
   margin-right: 0;
@@ -52,7 +58,7 @@ h3 {
 
 input[type=text] {
   border-color: rgb(0, 0, 0, .1);
-  width: 40vw;
+  width: 80%;
   padding: 10px 30px;
   // margin-top: 0.67em;
   // margin-bottom: 0.27em;
@@ -62,7 +68,7 @@ input[type=text] {
 }
 input {
   border-color: rgb(0, 0, 0, .1);
-  width: 40vw;
+  width: 80%;
   padding: 10px 30px;
   margin: auto;
   // margin-top: 0.67em;
@@ -80,7 +86,7 @@ input {
   padding: 14px 72px;
   margin-top: 0.47em;
   margin-bottom: 0.47em;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -88,4 +94,12 @@ input {
 .signup-text{
   font-weight: bold;
   color:#F94C66;
+}
+
+@media screen and (min-width:320px){
+  .main::beforem .main::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
 }

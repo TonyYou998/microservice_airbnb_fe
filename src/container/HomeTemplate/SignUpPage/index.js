@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <div className='main'>
       <div className='sub-main'>
-        <div>
+        <div className='form'>
           <h1>Create an account</h1>
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
