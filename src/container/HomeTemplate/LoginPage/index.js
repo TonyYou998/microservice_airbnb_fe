@@ -67,7 +67,7 @@ export default function LoginPage() {
       : "Weak";
 
     setPassword(passwordValue);
-    setPasswordMsg(strength);
+    setPasswordError(strength);
   }
 
   
