@@ -20,7 +20,7 @@
     max-width: 550px;
     min-width: 300px;
     max-height: 500px;
-    min-height: 450px;
+    min-height: 460px;
     width: 30%;
     height: 75%;
     margin: 100px auto;
@@ -70,6 +70,11 @@
     box-sizing: border-box;
     border-radius: 15px;
     font-size: medium;
+  }
+
+  .error-msg{
+    font-size: medium;
+    color: red;
   }
   
   .button {
