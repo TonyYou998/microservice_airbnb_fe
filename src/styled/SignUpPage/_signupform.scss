@@ -1,4 +1,4 @@
-.main{
+.signup-main{
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -14,22 +14,22 @@
   position: relative;
 }
 
-.sub-main{
+.signup-sub-main{
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 1000px ;
   min-width: 325px;
   max-height: 1000px;
-  min-height: 635px;
-  width: 75%;
-  height: 60%;
+  min-height: 535px;
+  width: 65%;
+  height: 40%;
   margin: 100px auto;
   background-color: rgb(246, 251, 249);
   border-radius: 40px;
 }
 
-.sub-main h1 {
+.signup-sub-main h1 {
   // max-width: 4rem;
   // min-width: 2rem;
   max-height: 3rem;
@@ -46,7 +46,7 @@
   position: top;
 }
 
-.sub-main h3 {
+.signup-sub-main h3 {
   display: block;
   margin-top: 0.1rem;
   margin-bottom: 0.7em;
@@ -96,10 +96,10 @@ input {
   color:#F94C66;
 }
 
-@media screen and (min-width:320px){
-  .main::beforem .main::after{
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
+// @media screen and (min-width:320px){
+//   .main::beforem .main::after{
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+// }
