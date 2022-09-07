@@ -2,12 +2,12 @@ import React, {useState} from "react";
 
 export default function InputEmail(props){
     //boc tach phan tu
-    console.log(props);
-    const{sendEmailToParent}=props;
-    console.log(sendEmailToParent);
 
-    const{valueEmail}=props;
-    console.log(valueEmail);
+    const{sendEmailToParent}=props;
+
+
+    const{valueData}=props;
+    
 
     const handleOnChange=(e)=>{
         sendEmailToParent(e.target.value);
@@ -15,7 +15,7 @@ export default function InputEmail(props){
 
     return(
         <div className='input-email'>
-            <input type ="text" placeholder="Email Address" className="name" value={valueEmail}
+            <input type ="text" placeholder="Email Address" className="name" value={valueData}
             onChange={handleOnChange}></input>
         </div>
     )

@@ -78,23 +78,31 @@ export default function LoginPage() {
   const handleFormSubmit=(e)=>{
     //prevent default form submit
     e.preventDefault();
+    let isPassword=false;
+    let isEmail=false;
+    // check if email is empty
+    setEmailError("");
 
-    //check if email is empty
-    if(email!=''){
-      console.log(email);
-      if(regEx.test(email)){
-        setEmailError('Valid Email');
-        // setEmailError('');
+    if(email!='' ){
+     
+      if(!regEx.test(email)){
+        
+        setEmailError('Email invalid');
+        
       }
-      else {
-        console.log(email);
-        setEmailError('Invalid Email');
-        // setSuccessMsg('');
-      }
+      else
+        isEmail=true;
+   
+    
     }
     else{
       setEmailError('Email Required');
     }
+
+    // if(email && regEx.test(email)){
+    
+    //   setEmailError('Valid Email');
+    // }
 
     //check if password is empty
     if(password!=''){
@@ -103,14 +111,12 @@ export default function LoginPage() {
     else{
       setPasswordError('Password Required');
     }
-
+   
+    setEmail("");
+    setPassword("");
     
   }
 
-  const ClearData=(e)=>{
-    setEmail('');
-    setPassword('');
-  }
 
   return (
     <div className = 'main'>
