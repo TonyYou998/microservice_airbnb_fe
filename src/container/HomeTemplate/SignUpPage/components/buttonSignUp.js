@@ -3,7 +3,7 @@ import React from 'react'
 export default function ButtonSignUp() {
     return (
         <div>
-            <button type="button">Finish</button>
+            <button className="button">SignUp</button>
         </div>
     )
 }
