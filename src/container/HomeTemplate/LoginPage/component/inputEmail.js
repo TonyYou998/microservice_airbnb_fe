@@ -6,13 +6,16 @@ export default function InputEmail(props){
     const{sendEmailToParent}=props;
     console.log(sendEmailToParent);
 
+    const{valueEmail}=props;
+    console.log(valueEmail);
+
     const handleOnChange=(e)=>{
         sendEmailToParent(e.target.value);
     }
 
     return(
         <div className='input-email'>
-            <input type ="text" placeholder="Email Address" className="name"
+            <input type ="text" placeholder="Email Address" className="name" value={valueEmail}
             onChange={handleOnChange}></input>
         </div>
     )
