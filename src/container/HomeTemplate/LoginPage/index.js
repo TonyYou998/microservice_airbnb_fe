@@ -110,7 +110,7 @@ export default function LoginPage() {
       // if (strength == "Strong"){
       //   isPassword=true;
       // }
-      setPasswordError('Password must have at least 8 characters, an uppercase character, a lowercase character, a number and a special character.')
+      
     }
     else{
       setPasswordError('Password Required');
