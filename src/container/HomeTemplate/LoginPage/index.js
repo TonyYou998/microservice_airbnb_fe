@@ -7,81 +7,40 @@ import { data } from 'jquery';
 
 
 export default function LoginPage() {
-  //use 2 states to store email and password values
-  //use another 2 states to store their errors
+
   const [email, setEmail]=useState('');
   const [emailError, setEmailError]=useState('');
   const [password, setPassword]=useState('');
   const [passwordError, setPasswordError]=useState('');
   const [successMsg, setSuccessMsg]=useState('');
 
-  //handle email change
   const handleEmailChange=(e)=>{
     successMsg('');
     setEmailError('');
     setEmail(e.target.value);
   }
 
-  //handle password change
   const handlePasswordChange=(e)=>{
     successMsg('');
     setPasswordError('');
     setPassword(e.target.value);
-}
+  }
 
-  //const to send email data to parent
   const sendEmailDataToParent=(data)=>{
     setEmail(data);
   }
 
-  //const to send password to parent
   const sendPasswordDataToParent=(data)=>{
     setPassword(data);
   }
 
-  // //const to check password
-  // const handlePassword = (passwordValue)=>{
-    
-  // }  
-
-  //const to check if email is valid or not
-  const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
-
-  const handleFormSubmit=(e)=>{
-
-    //check the strength of the password
-    // const strengthChecks = {
-    //   length: 0,
-    //   hasUpperCase: false,
-    //   hasLowerCase: false,
-    //   hasDigit: false,
-    //   hasSpecialChar: false,
-    // };
-
-    // //check the strength, uppercase a lowerkey etc
-    // strengthChecks.length = password.length >= 8 ? true : false;
-    // strengthChecks.hasUpperCase = /[A-Z]/.test(password);
-    // strengthChecks.hasLowerCase = /[a-z]/.test(password);
-    // strengthChecks.hasDigit = /[0-9]/.test(password);
-    // strengthChecks.hasSpecialChar = /[^A-Za-z0-9]+/.test(password);
-
-    // let verifiedList = Object.values(strengthChecks).filter((value)=>value);
-
-    // let strength = 
-    //   verifiedList.length == 5
-    //   ? "Strong"
-    //   : verifiedList.length >= 2
-    //   ? "Medium"
-    //   : "Weak";
-
-    // setPassword(password);
-
-    //prevent default form submit
-    e.preventDefault();
-    let isPassword=false;
+  
+  
+  const handleEmailSubmit=(e)=>{
     let isEmail=false;
-    // check if email is empty
     setEmailError("");
+    
+    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
 
     if(email!='' ){
      
@@ -92,52 +51,48 @@ export default function LoginPage() {
       }
       else
         isEmail=true;
-   
 
     }
     else{
       setEmailError('Email Required');
     }
 
-    // if(email && regEx.test(email)){
-    
-    //   setEmailError('Valid Email');
-    // }
-
-    // check if password is empty
-    if(password!=''){
-      // setPasswordError(strength);
-      // if (strength == "Strong"){
-      //   isPassword=true;
-      // }
-      
-    }
-    else{
-      setPasswordError('Password Required');
-    }
-
-    //check if email right and password is trong or not, then reset if they're false
-    // if (isEmail == false && isPassword == false){
-    //   setEmail("");
-    //   setPassword("");
-    // }
     setEmail('');
+  }
+
+  const handlePasswordSubmit=(e)=>{
+    let isPassword=false;
+    setPasswordError("");
+
+    if(password==''){
+
+      setPasswordError('Password Required');
+
+    }
+
     setPassword('');
   }
 
+  const handleFormSubmit=(e)=>{
+    e.preventDefault();
+    handleEmailSubmit();
+    handlePasswordSubmit();
+  }
 
   return (
+
     <div className = 'main'>
       <form className = 'sub-main' autoComplete='off'
       onSubmit={handleFormSubmit}>
         <div>
-        <h1>Login An Account</h1>
+          
+          <h1>Login An Account</h1>
           <h3>Sign in an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
+
           <>
             <InputEmail
             onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent}/>
-            {/* show mesage to notify user to know if the email is right or not */}
             {emailError&&<div className='error-msg'>{emailError}</div>}
             
             <InputPassword
