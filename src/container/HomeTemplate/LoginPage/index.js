@@ -140,7 +140,7 @@ export default function LoginPage() {
             
             <InputPassword
             onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent}/>
-            {passwordError&&<div className='error-msg'>{passwordError}</div>}
+            {passwordError&&<div className='error-msg'> Your password is {passwordError}</div>}
            
           </>
 
