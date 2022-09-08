@@ -6,7 +6,7 @@ import InputEmail from './components/inputEmail';
 import InputName from './components/inputName';
 import InputPassword from './components/inputPassword';
 import InputPhone from './components/inputPhone';
-
+import {NavLink} from "react-router-dom";
 export default function HomePage() {
   return (
     <div className='signup-main'>
@@ -26,7 +26,8 @@ export default function HomePage() {
           <>
             <ButtonSignUp/>
           </>
-          <p>Already have an account? <a href="#" style={{ color: '#F94C66' }}> Sign In </a>.</p>
+          
+          <p>Already have an account? <NavLink className="signup-text" to="/login" style={{ color: '#F94C66' }}> Sign In </NavLink></p>
           <br></br>
 
         </div>

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import InputEmail from './component/inputEmail'
 import InputPassword from './component/inputPassword'
 import ButtonSignIn from './component/buttonSignIn';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -112,7 +113,7 @@ export default function LoginPage() {
           
           </>
 
-           <h>Don't have an account?</h><h className ="signup-text"> Sign Up</h>
+           <h>Don't have an account?</h><NavLink to="/signup" className ="signup-text"> Sign Up</NavLink>
            <br></br>
 
           </div>
