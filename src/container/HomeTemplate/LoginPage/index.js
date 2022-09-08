@@ -14,7 +14,6 @@ export default function LoginPage() {
   const [password, setPassword]=useState('');
   const [passwordError, setPasswordError]=useState('');
   const [successMsg, setSuccessMsg]=useState('');
-  const [passwordMsg, setPasswordMsg]=useState('');
 
   //handle email change
   const handleEmailChange=(e)=>{
@@ -40,8 +39,17 @@ export default function LoginPage() {
     setPassword(data);
   }
 
-  //const to check password
-  const handlePassword = (passwordValue)=>{
+  // //const to check password
+  // const handlePassword = (passwordValue)=>{
+    
+  // }  
+
+  //const to check if email is valid or not
+  const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+
+  const handleFormSubmit=(e)=>{
+
+    //check the strength of the password
     const strengthChecks = {
       length: 0,
       hasUpperCase: false,
@@ -50,12 +58,12 @@ export default function LoginPage() {
       hasSpecialChar: false,
     };
 
-    //check the strongness of the password
-    strengthChecks.length = passwordValue.length >= 8 ? true : false;
-    strengthChecks.hasUpperCase = /[A-Z]/.test(passwordValue);
-    strengthChecks.hasLowerCase = /[a-z]/.test(passwordValue);
-    strengthChecks.hasDigit = /[0-9]/.test(passwordValue);
-    strengthChecks.hasSpecialChar = /[^A-Za-z0-9]+/.test(passwordValue);
+    //check the strength, uppercase a lowerkey etc
+    strengthChecks.length = password.length >= 8 ? true : false;
+    strengthChecks.hasUpperCase = /[A-Z]/.test(password);
+    strengthChecks.hasLowerCase = /[a-z]/.test(password);
+    strengthChecks.hasDigit = /[0-9]/.test(password);
+    strengthChecks.hasSpecialChar = /[^A-Za-z0-9]+/.test(password);
 
     let verifiedList = Object.values(strengthChecks).filter((value)=>value);
 
@@ -66,16 +74,8 @@ export default function LoginPage() {
       ? "Medium"
       : "Weak";
 
-    setPassword(passwordValue);
-    setPasswordError(strength);
-  }
+    setPassword(password);
 
-  
-
-  //const to check if email is valid or not
-  const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
-
-  const handleFormSubmit=(e)=>{
     //prevent default form submit
     e.preventDefault();
     let isPassword=false;
@@ -93,7 +93,7 @@ export default function LoginPage() {
       else
         isEmail=true;
    
-    
+
     }
     else{
       setEmailError('Email Required');
@@ -104,16 +104,22 @@ export default function LoginPage() {
     //   setEmailError('Valid Email');
     // }
 
-    //check if password is empty
+    // check if password is empty
     if(password!=''){
-      setPasswordError('Password');
+      setPasswordError(strength);
+      if (strength == "Strong"){
+        isPassword=true;
+      }
     }
     else{
       setPasswordError('Password Required');
     }
-   
-    setEmail("");
-    setPassword("");
+
+    //check if email right and password is trong or not, then reset if they're false
+    if (isEmail == false && isPassword == false){
+      setEmail("");
+      setPassword("");
+    }
     
   }
 
@@ -135,7 +141,7 @@ export default function LoginPage() {
             <InputPassword
             onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent}/>
             {passwordError&&<div className='error-msg'>{passwordError}</div>}
-            
+           
           </>
 
           <>
