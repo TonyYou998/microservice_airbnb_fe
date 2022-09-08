@@ -1,0 +1,105 @@
+.signup-main{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  // background-color: rgb(83, 191, 157);
+  background-image: url("../LoginPage/loginbackground.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.signup-sub-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px ;
+  min-width: 325px;
+  max-height: 1000px;
+  min-height: 535px;
+  width: 45%;
+  height: 35%;
+  margin: 100px auto;
+  background-color: rgb(246, 251, 249);
+  border-radius: 40px;
+}
+
+.signup-sub-main h1 {
+  // max-width: 4rem;
+  // min-width: 2rem;
+  max-height: 3rem;
+  // min-height: 1rem;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+  font-family: 'open sans', sans-serif;
+  padding: 1rem 0;
+  font-weight: bold;
+  font-size: 2rem;
+  position: top;
+}
+
+.signup-sub-main h3 {
+  display: block;
+  margin-top: 0.1rem;
+  margin-bottom: 0.7em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+input[type=text] {
+  border-color: rgb(0, 0, 0, .1);
+  width: 80%;
+  padding: 10px 30px;
+  // margin-top: 0.67em;
+  // margin-bottom: 0.27em;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-size: small;
+}
+input {
+  border-color: rgb(0, 0, 0, .1);
+  width: 80%;
+  padding: 10px 30px;
+  margin: auto;
+  // margin-top: 0.67em;
+  margin-bottom: 0.27em;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-size: small;
+}
+
+.button {
+  border: none;
+  border-radius: 16px;
+  background-color: #F94C66;
+  color: white;
+  padding: 14px 72px;
+  margin-top: 0.47em;
+  margin-bottom: 0.47em;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-text{
+  font-weight: bold;
+  color:#F94C66;
+}
+
+// @media screen and (min-width:320px){
+//   .main::beforem .main::after{
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+// }
