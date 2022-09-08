@@ -15,14 +15,14 @@ export default function LoginPage() {
   const [successMsg, setSuccessMsg]=useState('');
 
   const handleEmailChange=(e)=>{
-    successMsg('');
-    setEmailError('');
+  
+   
     setEmail(e.target.value);
   }
 
   const handlePasswordChange=(e)=>{
-    successMsg('');
-    setPasswordError('');
+   
+   
     setPassword(e.target.value);
   }
 
@@ -58,6 +58,7 @@ export default function LoginPage() {
     }
 
     setEmail('');
+    return isEmail;
   }
 
   const handlePasswordSubmit=(e)=>{
@@ -69,14 +70,19 @@ export default function LoginPage() {
       setPasswordError('Password Required');
 
     }
-
+    isPassword=true;
     setPassword('');
+    return isPassword;
   }
 
   const handleFormSubmit=(e)=>{
     e.preventDefault();
-    handleEmailSubmit();
-    handlePasswordSubmit();
+    const emailValid= handleEmailSubmit();
+    const passwordValid= handlePasswordSubmit();
+    if(emailValid && passwordValid){
+      console.log("call api here");
+    }
+   
   }
 
   return (
