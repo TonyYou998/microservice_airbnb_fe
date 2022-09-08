@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import InputEmail from './component/inputEmail'
 import InputPassword from './component/inputPassword'
-import Carousel from './component/buttonSignIn'
 import ButtonSignIn from './component/buttonSignIn';
-import { data } from 'jquery';
+
 
 
 export default function LoginPage() {
@@ -12,7 +11,7 @@ export default function LoginPage() {
   const [emailError, setEmailError]=useState('');
   const [password, setPassword]=useState('');
   const [passwordError, setPasswordError]=useState('');
-  const [successMsg, setSuccessMsg]=useState('');
+
 
   const handleEmailChange=(e)=>{
   
@@ -42,7 +41,7 @@ export default function LoginPage() {
     
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
 
-    if(email!='' ){
+    if(email!=='' ){
      
       if(!regEx.test(email)){
         
@@ -65,7 +64,7 @@ export default function LoginPage() {
     let isPassword=false;
     setPasswordError("");
 
-    if(password==''){
+    if(password===''){
 
       setPasswordError('Password Required');
 
