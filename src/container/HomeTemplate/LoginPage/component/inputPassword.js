@@ -10,7 +10,7 @@ export default function InputPassword(props){
     }
     return(
         <div className='input-password'>
-            <input type ="password" placeholder="Password" value={valueData} className="password input"
+            <input type ="password" placeholder="Password" value={valueData} className="password-input"
             onChange={handleOnChange}></input>
         </div>
     )

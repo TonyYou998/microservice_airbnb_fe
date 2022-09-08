@@ -15,7 +15,7 @@ export default function InputEmail(props){
 
     return(
         <div className='input-email'>
-            <input type ="text" placeholder="Email Address" className="name" value={valueData}
+            <input type ="text" placeholder="Email Address" className="email-input" value={valueData}
             onChange={handleOnChange}></input>
         </div>
     )
