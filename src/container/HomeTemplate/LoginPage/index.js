@@ -50,31 +50,31 @@ export default function LoginPage() {
   const handleFormSubmit=(e)=>{
 
     //check the strength of the password
-    const strengthChecks = {
-      length: 0,
-      hasUpperCase: false,
-      hasLowerCase: false,
-      hasDigit: false,
-      hasSpecialChar: false,
-    };
+    // const strengthChecks = {
+    //   length: 0,
+    //   hasUpperCase: false,
+    //   hasLowerCase: false,
+    //   hasDigit: false,
+    //   hasSpecialChar: false,
+    // };
 
-    //check the strength, uppercase a lowerkey etc
-    strengthChecks.length = password.length >= 8 ? true : false;
-    strengthChecks.hasUpperCase = /[A-Z]/.test(password);
-    strengthChecks.hasLowerCase = /[a-z]/.test(password);
-    strengthChecks.hasDigit = /[0-9]/.test(password);
-    strengthChecks.hasSpecialChar = /[^A-Za-z0-9]+/.test(password);
+    // //check the strength, uppercase a lowerkey etc
+    // strengthChecks.length = password.length >= 8 ? true : false;
+    // strengthChecks.hasUpperCase = /[A-Z]/.test(password);
+    // strengthChecks.hasLowerCase = /[a-z]/.test(password);
+    // strengthChecks.hasDigit = /[0-9]/.test(password);
+    // strengthChecks.hasSpecialChar = /[^A-Za-z0-9]+/.test(password);
 
-    let verifiedList = Object.values(strengthChecks).filter((value)=>value);
+    // let verifiedList = Object.values(strengthChecks).filter((value)=>value);
 
-    let strength = 
-      verifiedList.length == 5
-      ? "Strong"
-      : verifiedList.length >= 2
-      ? "Medium"
-      : "Weak";
+    // let strength = 
+    //   verifiedList.length == 5
+    //   ? "Strong"
+    //   : verifiedList.length >= 2
+    //   ? "Medium"
+    //   : "Weak";
 
-    setPassword(password);
+    // setPassword(password);
 
     //prevent default form submit
     e.preventDefault();
@@ -106,21 +106,23 @@ export default function LoginPage() {
 
     // check if password is empty
     if(password!=''){
-      setPasswordError(strength);
-      if (strength == "Strong"){
-        isPassword=true;
-      }
+      // setPasswordError(strength);
+      // if (strength == "Strong"){
+      //   isPassword=true;
+      // }
+      setPasswordError('Password must have at least 8 characters, an uppercase character, a lowercase character, a number and a special character.')
     }
     else{
       setPasswordError('Password Required');
     }
 
     //check if email right and password is trong or not, then reset if they're false
-    if (isEmail == false && isPassword == false){
-      setEmail("");
-      setPassword("");
-    }
-    
+    // if (isEmail == false && isPassword == false){
+    //   setEmail("");
+    //   setPassword("");
+    // }
+    setEmail('');
+    setPassword('');
   }
 
 
@@ -140,7 +142,7 @@ export default function LoginPage() {
             
             <InputPassword
             onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent}/>
-            {passwordError&&<div className='error-msg'> Your password is {passwordError}</div>}
+            {passwordError&&<div className='error-msg'>{passwordError}</div>}
            
           </>
 
