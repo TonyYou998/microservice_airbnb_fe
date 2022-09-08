@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 export default function InputEmail(props){
     //boc tach phan tu
@@ -15,7 +15,7 @@ export default function InputEmail(props){
 
     return(
         <div className='input-email'>
-            <input type ="text" placeholder="Email Address" className="name" value={valueData}
+            <input type ="text" placeholder="Email Address" className="email-input" value={valueData}
             onChange={handleOnChange}></input>
         </div>
     )

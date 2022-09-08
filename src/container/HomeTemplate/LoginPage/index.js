@@ -87,8 +87,8 @@ export default function LoginPage() {
 
   return (
 
-    <div className = 'main'>
-      <form className = 'sub-main' autoComplete='off'
+    <div className = 'login-main'>
+      <form className = 'login-sub-main' autoComplete='off'
       onSubmit={handleFormSubmit}>
         <div>
           
