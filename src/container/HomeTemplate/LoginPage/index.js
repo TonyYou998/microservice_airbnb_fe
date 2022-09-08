@@ -4,6 +4,7 @@ import InputPassword from './component/inputPassword'
 import Carousel from './component/buttonSignIn'
 import ButtonSignIn from './component/buttonSignIn';
 import { data } from 'jquery';
+import axios from 'axios';
 
 
 export default function LoginPage() {
@@ -80,7 +81,19 @@ export default function LoginPage() {
     const emailValid= handleEmailSubmit();
     const passwordValid= handlePasswordSubmit();
     if(emailValid && passwordValid){
-      console.log("call api here");
+      console.log({email, password});
+      axios.post('https://reqres.in/api/login',{
+        email: email,
+        password: password,
+      })
+      .then(result=>{
+        console.log(result.data)
+        alert('Login Successfully!')
+      })
+      .catch(error=>{
+        console.log(error)
+        alert('Some error has occured')
+      })
     }
    
   }
