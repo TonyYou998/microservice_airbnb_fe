@@ -15,14 +15,14 @@ export default function HomePage() {
           <h1>Create an account</h1>
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
-          <>
+          <div className='signup-inputs'>
             <InputName/>
             <InputEmail/>
             <InputPhone/>
             <InputAddress/>
             <InputPassword/>
             <InputConfirmPass/>
-          </>
+          </div>
           <>
             <ButtonSignUp/>
           </>

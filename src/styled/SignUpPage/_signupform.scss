@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100vw;
   // background-color: rgb(83, 191, 157);
-  background-image: url("../LoginPage/loginbackground.png");
+  background-image: url("../SignUpPage/signupbackground.png");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -78,7 +78,7 @@ input {
   font-size: small;
 }
 
-.button {
+.signup-button {
   border: none;
   border-radius: 16px;
   background-color: #F94C66;

@@ -3,7 +3,7 @@ import React from 'react'
 export default function ButtonSignUp() {
     return (
         <div>
-            <button className="button">SignUp</button>
+            <button className="signup-button">SignUp</button>
         </div>
     )
 }
