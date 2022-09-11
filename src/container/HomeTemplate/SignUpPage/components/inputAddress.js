@@ -1,8 +1,15 @@
 import React from 'react'
 
-export default function InputAddress() {
+export default function InputAddress(props) {
+    const{sendAddressToParent}=props;
+
+    const{valueData}=props;
+
+    const handleOnChange=(e)=>{
+        sendAddressToParent(e.target.value);
+    }
     return (
         <div className="input-address">
-            <input className='signup-input' type="address" placeholder="Address" required />
+            <input type="address" placeholder="Address" value={valueData} required onChange={handleOnChange} />
         </div>)
 }

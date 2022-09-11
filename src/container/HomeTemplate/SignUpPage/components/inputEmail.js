@@ -1,8 +1,21 @@
 import React from 'react'
 
-export default function InputEmail() {
-    return (
-        <div className="input-email">
-            <input className='signup-input' type="email" placeholder="Email" required />
-        </div>)
+export default function InputSingupEmail(props) {
+
+    const{sendEmailToParent}=props;
+
+
+    const{valueData}=props;
+    
+
+    const handleOnChange=(e)=>{
+        sendEmailToParent(e.target.value);
+    }
+
+    return(
+        <div className='input-email'>
+            <input type ="text" placeholder="Email Address" className="input-email" value={valueData}
+            onChange={handleOnChange}></input>
+        </div>
+    )
 }

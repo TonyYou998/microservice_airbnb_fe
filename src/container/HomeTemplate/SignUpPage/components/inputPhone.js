@@ -1,8 +1,12 @@
 import React from 'react'
 
-export default function InputPhone() {
+export default function InputPhone(props) {
+    const{sendPhoneToParent,valueData}=props;
+    const handleOnChange=(e)=>{
+        sendPhoneToParent(e.target.value);
+    }
     return (
         <div className="input-phone">
-            <input className='signup-input' type="phone" placeholder="Phone" required />
+            <input type="phone" placeholder="Phone" value={valueData} required onChange={handleOnChange}/>
         </div>)
 }

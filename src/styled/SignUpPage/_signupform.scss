@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100vw;
   // background-color: rgb(83, 191, 157);
-  background-image: url("../SignUpPage/signupbackground.png");
+  background-image: url("../LoginPage/loginbackground.png");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -15,6 +15,31 @@
 }
 
 .signup-sub-main{
+  h1 {
+    // max-width: 4rem;
+    // min-width: 2rem;
+    max-height: 3rem;
+    // min-height: 1rem;
+    margin-top: 0.1em;
+    margin-bottom: 0.7em;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    font-family: 'open sans', sans-serif;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 2.5rem;
+    position: top;
+  }
+  h3 {
+    display: block;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    font-size: 1rem;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,33 +52,6 @@
   margin: 100px auto;
   background-color: rgb(246, 251, 249);
   border-radius: 40px;
-}
-
-.signup-sub-main h1 {
-  // max-width: 4rem;
-  // min-width: 2rem;
-  max-height: 3rem;
-  // min-height: 1rem;
-  margin-top: 0.1em;
-  margin-bottom: 0.1em;
-  margin-left: 0;
-  margin-right: 0;
-  text-align: center;
-  font-family: 'open sans', sans-serif;
-  padding: 1rem 0;
-  font-weight: bold;
-  font-size: 2rem;
-  position: top;
-}
-
-.signup-sub-main h3 {
-  display: block;
-  margin-top: 0.1rem;
-  margin-bottom: 0.7em;
-  margin-left: 0;
-  margin-right: 0;
-  font-weight: normal;
-  font-size: 1rem;
 }
 
 input[type=text] {
@@ -78,6 +76,8 @@ input {
   font-size: small;
 }
 
+
+
 .signup-button {
   border: none;
   border-radius: 16px;
@@ -85,7 +85,7 @@ input {
   color: white;
   padding: 14px 72px;
   margin-top: 0.47em;
-  margin-bottom: 0.47em;
+  margin-bottom: 0.5em;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
