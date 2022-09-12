@@ -103,8 +103,8 @@ export default function LoginPage() {
       .then(result=>{
         console.log(result.data);
         //save token to cookie
-        let jwtToken = "jwtToken=" + result.data;
-        document.cookie = jwtToken;
+        let bearer = "bearer=" + result.data;
+        document.cookie = bearer;
         //notify when receive to token
         if (result.data == 'username or password are invalid'){
           setUsernameError('Username or Password is wrong');
