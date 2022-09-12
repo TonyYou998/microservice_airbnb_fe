@@ -88,23 +88,35 @@ export default function LoginPage() {
 
   const handleFormSubmit = async(e)=>{
     e.preventDefault();
+    setSuccessMsg("");
+
     const usernameValid= handleUsernameSubmit();
     const passwordValid= handlePasswordSubmit();
+
     if(usernameValid && passwordValid){
       console.log({username, password});
+
       mainApi.post(LOGIN_USER_API_URL,{
         username: username,
         password: password,       
       })
       .then(result=>{
         console.log(result.data);
-        alert('Login Successfully!');
+        //save token to cookie
         let jwtToken = "jwtToken=" + result.data;
         document.cookie = jwtToken;
+        //notify when receive to token
+        if (result.data == 'username or password are invalid'){
+          setUsernameError('Username or Password is wrong');
+          setPasswordError('Username or Password is wrong');
+        }
+        else{
+          setSuccessMsg('Login sucessfully');
+        }
       })
       .catch(error=>{
         console.log(error.response.data);
-        alert('Some error has occured');
+        setPasswordError('Some Errors has occured')
       })
     }
    
@@ -129,6 +141,8 @@ export default function LoginPage() {
             <InputPassword
             onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent}/>
             {passwordError&&<div className='error-msg'>{passwordError}</div>}
+
+            <div className='success-msg'>{successMsg}</div>
            
           </>
 
