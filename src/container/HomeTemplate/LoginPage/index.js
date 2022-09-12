@@ -99,7 +99,8 @@ export default function LoginPage() {
       .then(result=>{
         console.log(result.data);
         alert('Login Successfully!');
-        localStorage.setItem('jwtToken', result.data); //save token
+        let jwtToken = "jwtToken=" + result.data;
+        document.cookie = jwtToken;
       })
       .catch(error=>{
         console.log(error.response.data);
