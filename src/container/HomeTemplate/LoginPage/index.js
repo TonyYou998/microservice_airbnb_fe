@@ -6,10 +6,11 @@ import ButtonSignIn from './component/buttonSignIn';
 import { data } from 'jquery';
 import axios from 'axios';
 import { mainApi } from '../../../api';
+import {Redirect,useHistory} from "react-router-dom";
 
 
 export default function LoginPage() {
-
+const history=useHistory();
   const [username, setUsername]=useState('');
   const [usernameError, setUsernameError]=useState('');
   const [password, setPassword]=useState('');
@@ -111,7 +112,8 @@ export default function LoginPage() {
           setPasswordError('Username or Password is wrong');
         }
         else{
-          setSuccessMsg('Login sucessfully');
+         
+          history.push("/");
         }
       })
       .catch(error=>{
