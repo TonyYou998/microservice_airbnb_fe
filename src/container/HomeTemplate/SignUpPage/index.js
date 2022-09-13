@@ -170,7 +170,7 @@ export default function SignUpPage() {
   const handlePhoneSubmit = (e) => {
     let isPhone = false;
     setPhoneError("");
-    var regex = /[(0|+84)?]+[0-9]{9}$/i;
+    var regex = /^([+]?(84)|(0))+[0-9]{9}$/g;
     if (!regex.test(phone)) {
       //   if (phone.trim())
       setPhoneError('Please insert your phone number again!');
@@ -180,7 +180,7 @@ export default function SignUpPage() {
       // } 
     }
     else { isPhone = true; }
-    setPhone('');
+    setPhone('');y
     return isPhone;
   }
 
