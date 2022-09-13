@@ -180,7 +180,7 @@ export default function SignUpPage() {
       // } 
     }
     else { isPhone = true; }
-    setPhone('');y
+    setPhone('');
     return isPhone;
   }
 
