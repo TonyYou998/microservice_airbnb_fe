@@ -14,7 +14,7 @@ export default function InputSingupEmail(props) {
 
     return(
         <div className='input-email'>
-            <input type ="text" placeholder="Email Address" className="input-email" value={valueData}
+            <input type ="email" placeholder="Email Address" className="input-email" value={valueData}
             onChange={handleOnChange}></input>
         </div>
     )

@@ -10,6 +10,6 @@ export default function InputAddress(props) {
     }
     return (
         <div className="input-address">
-            <input type="address" placeholder="Address" value={valueData} required onChange={handleOnChange} />
+            <input type="text" placeholder="Address" value={valueData} required onChange={handleOnChange} />
         </div>)
 }

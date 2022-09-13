@@ -140,9 +140,8 @@ export default function SignUpPage() {
     const handleConfirmPasswordSubmit = (e) => {
       let isConfirmPassword = false;
       setConfirmPasswordError("");
-      if (_confirmPassword === '') {
-        setConfirmPasswordError ('Password confirmation is required');
-      } else if (_confirmPassword !== password) {
+      if (_confirmPassword !== password) {
+        setPasswordError ('Password does not match confirmation password');
         setConfirmPasswordError ('Password does not match confirmation password');
       } else {
         isConfirmPassword = true;
