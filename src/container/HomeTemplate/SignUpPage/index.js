@@ -7,6 +7,7 @@ import InputFirstName from './components/inputFirstName';
 import InputLastName from './components/inputLastName';
 import InputSignUpPassword from './components/inputPassword';
 import InputPhone from './components/inputPhone';
+import InputUsername from './components/inputUsername';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { mainApi } from '../../../api';
@@ -15,14 +16,15 @@ import { data } from 'jquery';
 
 export default function SignUpPage() {
 
-  // const[user,setUser] = useState('');
+  const [username, setUsername] = useState('');
+  const [usernameEror, setUsernameError] = useState('');
 
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
   const [firstname, setFirstName] = useState('');
   const [firstnameError, setFirstNameError] = useState('');
-  
+
   const [lastname, setLastName] = useState('');
   const [lastnameError, setLastNameError] = useState('');
 
@@ -38,9 +40,17 @@ export default function SignUpPage() {
   const [_confirmPassword, setConfirmPassword] = useState('');
   const [_confirmPasswordError, setConfirmPasswordError] = useState('');
 
-//  const [success, setSuccess]= useState(false);
+  //  const [success, setSuccess]= useState(false);
 
-  //email handle
+  //username const
+  const handleUsernameChange = (e) => {
+
+    setUsername(e.target.value);
+  }
+  const sendUsernameDataToParent = (data) => {
+    setUsername(data);
+  }
+  //email const
   const handleEmailChange = (e) => {
 
     setEmail(e.target.value);
@@ -48,7 +58,7 @@ export default function SignUpPage() {
   const sendEmailDataToParent = (data) => {
     setEmail(data);
   }
-  //password handle
+  //password const
   const handlePasswordChange = (e) => {
 
     setPassword(e.target.value);
@@ -56,7 +66,7 @@ export default function SignUpPage() {
   const sendPasswordDataToParent = (data) => {
     setPassword(data);
   }
-  //confirm address handle
+  //confirm password const
   const handleConfirmPasswordChange = (e) => {
 
     setConfirmPassword(e.target.value);
@@ -64,7 +74,7 @@ export default function SignUpPage() {
   const sendConfirmPasswordDataToParent = (data) => {
     setConfirmPassword(data);
   }
-  //firstname handle
+  //firstname const
   const handleFirstNameChange = (e) => {
 
     setFirstName(e.target.value);
@@ -72,7 +82,7 @@ export default function SignUpPage() {
   const sendFirstNameDataToParent = (data) => {
     setFirstName(data);
   }
-  //lastname handle
+  //lastname const
   const handleLastNameChange = (e) => {
 
     setLastName(e.target.value);
@@ -80,7 +90,7 @@ export default function SignUpPage() {
   const sendLastNameDataToParent = (data) => {
     setLastName(data);
   }
-  //phone handle
+  //phone const
   const handlePhoneChange = (e) => {
 
     setPhone(e.target.value);
@@ -88,13 +98,22 @@ export default function SignUpPage() {
   const sendPhoneDataToParent = (data) => {
     setPhone(data);
   }
-  //address handle
+  //address const
   const handleAddressChange = (e) => {
 
     setAddress(e.target.value);
   }
   const sendAddressDataToParent = (data) => {
     setAddress(data);
+  }
+
+  const handleUsernameSubmit = (e) => {
+    let isUsername = false
+    setUsernameError("");
+    isUsername = true;
+    console.log(username);
+    setUsername('');
+    return isUsername;
   }
 
   const handleFirstNameSubmit = (e) => {
@@ -105,7 +124,7 @@ export default function SignUpPage() {
     setFirstName('');
     return isFirstName;
   }
-const handleLastNameSubmit = (e) => {
+  const handleLastNameSubmit = (e) => {
     let isLastName = false;
     setLastNameError("");
     isLastName = true;
@@ -201,6 +220,7 @@ const handleLastNameSubmit = (e) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    const usernameValid = handleUsernameSubmit();
     const firstnameValid = handleFirstNameSubmit();
     const lastnameValid = handleLastNameSubmit();
     const emailValid = handleEmailSubmit();
@@ -208,14 +228,13 @@ const handleLastNameSubmit = (e) => {
     const addressValid = handleAddressSubmit();
     const phoneValid = handlePhoneSubmit();
     const confirmPasswordValid = handleConfirmPasswordSubmit();
-    if (emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
-      console.log("Sign Up Success!");
-          mainApi.post(SIGNUP_USER_API_URL,
-            {firstname, lastname, address, phone, email, password}
-        ).then((result) => {console.log(result.data);} ).catch((error) => {console.log(error);} );   
+    if (usernameValid && emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
+      alert("Đã đăng ký thành công!")
+      mainApi.post(SIGNUP_USER_API_URL,
+        { username, firstname, lastname, address, phone, email, password }
+      ).then((result) => { console.log(result.data); }).catch((error) => { console.log(error); });
+    }
   }
-}
-
   return (
     <div className='signup-main'>
       <form className='signup-sub-main' autoComplete='off'
@@ -225,11 +244,12 @@ const handleLastNameSubmit = (e) => {
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
           <>
-            <InputFirstName onChange={handleFirstNameChange} valueData={firstname } sendFirstNameToParent={sendFirstNameDataToParent} />
+            <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
             {firstnameError && <div className='error-msg'>{firstnameError}</div>}
-            <InputLastName onChange={handleLastNameChange} valueData={lastname}sendLastNameToParent={sendLastNameDataToParent}/>
+            <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
             {lastnameError && <div className='error-msg'>{lastnameError}</div>}
-            <InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
+            <InputUsername onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent} />
+            {usernameEror && <div className='error-msg'>{usernameEror}</div>}<InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
             {emailError && <div className='error-msg'>{emailError}</div>}
             <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
             {phoneError && <div className='error-msg'>{phoneError}</div>}

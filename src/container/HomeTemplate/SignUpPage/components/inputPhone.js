@@ -7,6 +7,6 @@ export default function InputPhone(props) {
     }
     return (
         <div className="input-phone">
-            <input type='tel' placeholder="Phone Number" value={valueData} required onChange={handleOnChange}/>
+            <input className='phone' type='tel' placeholder="Phone Number" value={valueData} required onChange={handleOnChange}/>
         </div>)
 }
