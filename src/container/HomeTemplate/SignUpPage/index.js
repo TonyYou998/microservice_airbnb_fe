@@ -3,19 +3,28 @@ import ButtonSignUp from './components/buttonSignUp';
 import InputAddress from './components/inputAddress';
 import InputConfirmPass from './components/inputConfirmPass';
 import InputSingupEmail from './components/inputEmail';
-import InputName from './components/inputName';
+import InputFirstName from './components/inputFirstName';
+import InputLastName from './components/inputLastName';
 import InputSignUpPassword from './components/inputPassword';
 import InputPhone from './components/inputPhone';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+import { mainApi } from '../../../api';
+import { data } from 'jquery';
 
 
 export default function SignUpPage() {
 
+  // const[user,setUser] = useState('');
+
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  const [name, setName] = useState('');
-  const [nameError, setNameError] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [firstnameError, setFirstNameError] = useState('');
+  
+  const [lastname, setLastName] = useState('');
+  const [lastnameError, setLastNameError] = useState('');
 
   const [address, setAddress] = useState('');
   const [addressError, setAddressError] = useState('');
@@ -28,6 +37,8 @@ export default function SignUpPage() {
 
   const [_confirmPassword, setConfirmPassword] = useState('');
   const [_confirmPasswordError, setConfirmPasswordError] = useState('');
+
+//  const [success, setSuccess]= useState(false);
 
   //email handle
   const handleEmailChange = (e) => {
@@ -53,13 +64,21 @@ export default function SignUpPage() {
   const sendConfirmPasswordDataToParent = (data) => {
     setConfirmPassword(data);
   }
-  //name handle
-  const handleNameChange = (e) => {
+  //firstname handle
+  const handleFirstNameChange = (e) => {
 
-    setName(e.target.value);
+    setFirstName(e.target.value);
   }
-  const sendNameDataToParent = (data) => {
-    setName(data);
+  const sendFirstNameDataToParent = (data) => {
+    setFirstName(data);
+  }
+  //lastname handle
+  const handleLastNameChange = (e) => {
+
+    setLastName(e.target.value);
+  }
+  const sendLastNameDataToParent = (data) => {
+    setLastName(data);
   }
   //phone handle
   const handlePhoneChange = (e) => {
@@ -77,15 +96,23 @@ export default function SignUpPage() {
   const sendAddressDataToParent = (data) => {
     setAddress(data);
   }
-  const handleNameSubmit = (e) => {
-    let isName = false;
-    setNameError("");
-    isName = true;
-    console.log(name);
-    setName('');
-    return isName;
-  }
 
+  const handleFirstNameSubmit = (e) => {
+    let isFirstName = false;
+    setFirstNameError("");
+    isFirstName = true;
+    console.log(firstname);
+    setFirstName('');
+    return isFirstName;
+  }
+const handleLastNameSubmit = (e) => {
+    let isLastName = false;
+    setLastNameError("");
+    isLastName = true;
+    console.log(lastname);
+    setLastName('');
+    return isLastName;
+  }
   const handleEmailSubmit = (e) => {
     let isEmail = false;
     setEmailError("");
@@ -154,14 +181,6 @@ export default function SignUpPage() {
   const handleAddressSubmit = (e) => {
     let isAddress = false;
     setAddressError("");
-    if (address !== '') {
-      //   if (address.trim())
-      //     setAddressError('Address is invalid');
-      // }
-      // else {
-      //   setAddressError('Address Required');
-      // } 
-    }
     isAddress = true;
     setAddress('');
     return isAddress;
@@ -172,31 +191,31 @@ export default function SignUpPage() {
     setPhoneError("");
     var regex = /[(0|+84)?]+[0-9]{9}$/i;
     if (!regex.test(phone)) {
-      //   if (phone.trim())
       setPhoneError('Please insert your phone number again!');
-      // }
-      // else {
-      //   setPhoneError('Phone Required');
-      // } 
     }
     else { isPhone = true; }
     setPhone('');
     return isPhone;
   }
+  const SIGNUP_USER_API_URL = '/user/create';
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const nameValid = handleNameSubmit();
+    const firstnameValid = handleFirstNameSubmit();
+    const lastnameValid = handleLastNameSubmit();
     const emailValid = handleEmailSubmit();
     const passwordValid = handlePasswordSubmit();
     const addressValid = handleAddressSubmit();
     const phoneValid = handlePhoneSubmit();
     const confirmPasswordValid = handleConfirmPasswordSubmit();
-    if (emailValid && passwordValid && nameValid && addressValid && phoneValid && confirmPasswordValid) {
-      console.log("call api here");
-    }
-
+    if (emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
+      console.log("Sign Up Success!");
+          mainApi.post(SIGNUP_USER_API_URL,
+            {firstname, lastname, address, phone, email, password}
+        ).then((result) => {console.log(result.data);} ).catch((error) => {console.log(error);} );   
   }
+}
+
   return (
     <div className='signup-main'>
       <form className='signup-sub-main' autoComplete='off'
@@ -206,8 +225,10 @@ export default function SignUpPage() {
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
           <>
-            <InputName onChange={handleNameChange} valueData={name} sendNameToParent={sendNameDataToParent} />
-            {nameError && <div className='error-msg'>{nameError}</div>}
+            <InputFirstName onChange={handleFirstNameChange} valueData={firstname } sendFirstNameToParent={sendFirstNameDataToParent} />
+            {firstnameError && <div className='error-msg'>{firstnameError}</div>}
+            <InputLastName onChange={handleLastNameChange} valueData={lastname}sendLastNameToParent={sendLastNameDataToParent}/>
+            {lastnameError && <div className='error-msg'>{lastnameError}</div>}
             <InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
             {emailError && <div className='error-msg'>{emailError}</div>}
             <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
@@ -230,5 +251,4 @@ export default function SignUpPage() {
       </form>
     </div>
   );
-  // }
 }
