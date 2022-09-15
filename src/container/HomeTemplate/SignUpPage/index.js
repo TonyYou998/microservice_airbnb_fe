@@ -8,13 +8,15 @@ import InputLastName from './components/inputLastName';
 import InputSignUpPassword from './components/inputPassword';
 import InputPhone from './components/inputPhone';
 import InputUsername from './components/inputUsername';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { mainApi } from '../../../api';
 import { data } from 'jquery';
-
+// import LoginPage from '../LoginPage';
+// import { Alert } from 'bootstrap';
 
 export default function SignUpPage() {
+  // const history = useHistory();
 
   const [username, setUsername] = useState('');
   const [usernameEror, setUsernameError] = useState('');
@@ -38,9 +40,9 @@ export default function SignUpPage() {
   const [passwordError, setPasswordError] = useState('');
 
   const [_confirmPassword, setConfirmPassword] = useState('');
-  const [_confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [_confirmPasswordError, setConfirmPasswordError] = useState(false);
 
-  //  const [success, setSuccess]= useState(false);
+  const [success, setSuccess] = useState(false);
 
   //username const
   const handleUsernameChange = (e) => {
@@ -229,46 +231,68 @@ export default function SignUpPage() {
     const phoneValid = handlePhoneSubmit();
     const confirmPasswordValid = handleConfirmPasswordSubmit();
     if (usernameValid && emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
-      alert("Đã đăng ký thành công!")
       mainApi.post(SIGNUP_USER_API_URL,
         { username, firstname, lastname, address, phone, email, password }
-      ).then((result) => { console.log(result.data); }).catch((error) => { console.log(error); });
+      ).then((result) => {
+        console.log(result.data);
+        // if (success){
+        alert("Đăng ký thành công!");
+        return <Redirect to={{pathname:"/login"}} />
+        // }
     }
-  }
-  return (
-    <div className='signup-main'>
-      <form className='signup-sub-main' autoComplete='off'
-        onSubmit={handleFormSubmit}>
-        <div className='signup-form'>
-          <h1>Create an account</h1>
-          <h3>Create an account to enjoy all the services</h3>
-          <h3>without any ads for free!</h3>
-          <>
-            <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
-            {firstnameError && <div className='error-msg'>{firstnameError}</div>}
-            <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
-            {lastnameError && <div className='error-msg'>{lastnameError}</div>}
-            <InputUsername onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent} />
-            {usernameEror && <div className='error-msg'>{usernameEror}</div>}<InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
-            {emailError && <div className='error-msg'>{emailError}</div>}
-            <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
-            {phoneError && <div className='error-msg'>{phoneError}</div>}
-            <InputAddress onChange={handleAddressChange} valueData={address} sendAddressToParent={sendAddressDataToParent} />
-            {addressError && <div className='error-msg'>{addressError}</div>}
-            <InputSignUpPassword onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent} />
-            {passwordError && <div className='error-msg'>{passwordError}</div>}
-            <InputConfirmPass onChange={handleConfirmPasswordChange} valueData={_confirmPassword} sendConfirmPasswordToParent={sendConfirmPasswordDataToParent} />
-            {_confirmPasswordError && <div className='error-msg'>{_confirmPasswordError}</div>}
-          </>
-          <>
-            <ButtonSignUp
-            />
-          </>
-          <h>Already have an account?</h><NavLink to="/login" className="signup-text"> Login</NavLink>
-          <br></br>
+        ).catch((error) => { alert("Lỗi! Đăng ký không thành công!"); console.log(error); });
+    }
 
-        </div>
-      </form>
-    </div>
+  } 
+  return (
+    <>
+      {/* {success ? (
+        <section>
+          <Alert>Success! </Alert>
+         <Redirect to={{pathname:"/login"}} />
+
+        </section>
+      ) : ( */}
+        <section>
+          <div className='signup-main'>
+            <form className='signup-sub-main' autoComplete='off'
+              onSubmit={handleFormSubmit}>
+              <div className='signup-form'>
+                <h1>Create an account</h1>
+                <h3>Create an account to enjoy all the services</h3>
+                <h3>without any ads for free!</h3>
+                <>
+                  <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
+                  {firstnameError && <div className='error-msg'>{firstnameError}</div>}
+                  <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
+                  {lastnameError && <div className='error-msg'>{lastnameError}</div>}
+                  <InputUsername onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent} />
+                  {usernameEror && <div className='error-msg'>{usernameEror}</div>}<InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
+                  {emailError && <div className='error-msg'>{emailError}</div>}
+                  <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
+                  {phoneError && <div className='error-msg'>{phoneError}</div>}
+                  <InputAddress onChange={handleAddressChange} valueData={address} sendAddressToParent={sendAddressDataToParent} />
+                  {addressError && <div className='error-msg'>{addressError}</div>}
+                  <InputSignUpPassword onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent} />
+                  {passwordError && <div className='error-msg'>{passwordError}</div>}
+                  <InputConfirmPass onChange={handleConfirmPasswordChange} valueData={_confirmPassword} sendConfirmPasswordToParent={sendConfirmPasswordDataToParent} />
+                  {_confirmPasswordError && <div className='error-msg'>{_confirmPasswordError}</div>}
+                  <div className='success-msg'>{setSuccess}</div>
+                </>
+                <>
+                  <ButtonSignUp 
+                  // onSubmit={handleFormSubmit}
+                  />
+                </>
+                <h>Already have an account?</h><NavLink to="/login" className="signup-text"> Login</NavLink>
+                <br></br>
+
+              </div>
+            </form>
+          </div>
+        </section>
+      {/* )
+      } */}
+    </>
   );
 }
