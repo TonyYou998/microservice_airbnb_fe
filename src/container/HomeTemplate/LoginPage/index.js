@@ -1,23 +1,26 @@
 import React, {useState} from 'react'
-import InputEmail from './component/inputEmail'
+import InputUsername from './component/inputUsername'
 import InputPassword from './component/inputPassword'
 import ButtonSignIn from './component/buttonSignIn';
 import { NavLink } from 'react-router-dom';
 
 
+import { mainApi } from '../../../api';
+import {Redirect,useHistory} from "react-router-dom";
+
 
 export default function LoginPage() {
-
-  const [email, setEmail]=useState('');
-  const [emailError, setEmailError]=useState('');
+const history=useHistory();
+  const [username, setUsername]=useState('');
+  const [usernameError, setUsernameError]=useState('');
   const [password, setPassword]=useState('');
   const [passwordError, setPasswordError]=useState('');
 
 
-  const handleEmailChange=(e)=>{
+  const handleUsernameChange=(e)=>{
   
    
-    setEmail(e.target.value);
+    setUsername(e.target.value);
   }
 
   const handlePasswordChange=(e)=>{
@@ -26,8 +29,8 @@ export default function LoginPage() {
     setPassword(e.target.value);
   }
 
-  const sendEmailDataToParent=(data)=>{
-    setEmail(data);
+  const sendUsernameDataToParent=(data)=>{
+    setUsername(data);
   }
 
   const sendPasswordDataToParent=(data)=>{
@@ -36,29 +39,36 @@ export default function LoginPage() {
 
   
   
-  const handleEmailSubmit=(e)=>{
-    let isEmail=false;
-    setEmailError("");
+  const handleUsernameSubmit=(e)=>{
+    let isUsername=false;
+    setUsernameError("");
     
-    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+    // const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
 
-    if(email!=='' ){
+    // if(email!=='' ){
      
-      if(!regEx.test(email)){
+    //   if(!regEx.test(email)){
         
-        setEmailError('Email invalid');
+    //     setEmailError('Email invalid');
         
-      }
-      else
-        isEmail=true;
+    //   }
+    //   else
+    //     isEmail=true;
 
+    // }
+    // else{
+    //   setEmailError('Email Required');
+    // }
+
+    if (username==''){
+      setUsernameError('Email Requiered');
     }
     else{
-      setEmailError('Email Required');
+      isUsername = true;
     }
 
-    setEmail('');
-    return isEmail;
+    setUsername('');
+    return isUsername;
   }
 
   const handlePasswordSubmit=(e)=>{
@@ -75,12 +85,41 @@ export default function LoginPage() {
     return isPassword;
   }
 
-  const handleFormSubmit=(e)=>{
+  const LOGIN_USER_API_URL = '/user/login'
+
+  const handleFormSubmit = async(e)=>{
     e.preventDefault();
-    const emailValid= handleEmailSubmit();
+    // setSuccessMsg("");
+
+    const usernameValid= handleUsernameSubmit();
     const passwordValid= handlePasswordSubmit();
-    if(emailValid && passwordValid){
-      console.log("call api here");
+
+    if(usernameValid && passwordValid){
+      console.log({username, password});
+
+      mainApi.post(LOGIN_USER_API_URL,{
+        username: username,
+        password: password,       
+      })
+      .then(result=>{
+        console.log(result.data);
+        //save token to cookie
+        let bearer = "bearer=" + result.data;
+        document.cookie = bearer;
+        //notify when receive to token
+        if (result.data == 'username or password are invalid'){
+          setUsernameError('Username or Password is wrong');
+          setPasswordError('Username or Password is wrong');
+        }
+        else{
+         
+          history.push("/");
+        }
+      })
+      .catch(error=>{
+        console.log(error.response.data);
+        setPasswordError('Some Errors has occured')
+      })
     }
    
   }
@@ -97,13 +136,15 @@ export default function LoginPage() {
           <h3>without any ads for free!</h3>
 
           <>
-            <InputEmail
-            onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent}/>
-            {emailError&&<div className='error-msg'>{emailError}</div>}
+            <InputUsername
+            onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent}/>
+            {usernameError&&<div className='error-msg'>{usernameError}</div>}
             
             <InputPassword
             onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent}/>
             {passwordError&&<div className='error-msg'>{passwordError}</div>}
+
+            {/* <div className='success-msg'>{successMsg}</div> */}
            
           </>
 
