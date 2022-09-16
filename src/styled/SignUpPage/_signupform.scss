@@ -1,4 +1,4 @@
-.signup-main{
+.signup-main {
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -14,31 +14,27 @@
   position: relative;
 }
 
-.signup-sub-main{
+.signup-sub-main {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 900px ;
+  max-width: 900px;
   min-width: 325px;
   max-height: 1000px;
   min-height: 535px;
-  width: 45%;
-  height: 60%;
+  width: 50%;
+  height: 88%;
   margin: 100px auto;
   background-color: rgb(246, 251, 249);
   border-radius: 40px;
-
+  
   h1 {
-    // max-width: 4rem;
-    // min-width: 2rem;
     display: block;
     max-height: 3rem;
-    // min-height: 1rem;
     margin-top: 0.1em;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.2em;
     margin-left: 0;
     margin-right: 0;
-    // text-align: center;
     font-family: 'open sans', sans-serif;
     padding: 1rem 0;
     font-weight: bold;
@@ -56,19 +52,21 @@
     font-size: 1rem;
     box-sizing: border-box;
   }
-  
+
   input {
     border-color: rgb(0, 0, 0, .1);
-    width: 80%;
-    padding: 10px 30px;
+    width: 75%;
+    height: 58%;
+    padding: 10px 20px;
     margin: auto;
-    // margin-top: 0.67em;
-    margin-bottom: 0.27em;
+    margin-top: 0.3em;
+    margin-bottom: 0.25em;
     box-sizing: border-box;
     border-radius: 16px;
     font-size: small;
   }
-  .error-msg{
+
+  .error-msg {
     font-size: medium;
     color: red;
   }
@@ -79,7 +77,7 @@
   border-radius: 16px;
   background-color: #F94C66;
   color: white;
-  padding: 14px 72px;
+  padding: 11px 68px;
   margin-top: 0.47em;
   margin-bottom: 0.5em;
   font-size: 1rem;
@@ -87,10 +85,10 @@
   cursor: pointer;
 }
 
-.signup-text{
+.signup-text {
   text-decoration: none;
   font-weight: bold;
-  color:#F94C66;
+  color: #F94C66;
   box-sizing: border-box;
 }
 
