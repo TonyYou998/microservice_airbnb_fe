@@ -16,7 +16,7 @@ import { data } from 'jquery';
 // import { Alert } from 'bootstrap';
 
 export default function SignUpPage() {
-  // const history = useHistory();
+  const history = useHistory();
 
   const [username, setUsername] = useState('');
   const [usernameEror, setUsernameError] = useState('');
@@ -234,13 +234,13 @@ export default function SignUpPage() {
       mainApi.post(SIGNUP_USER_API_URL,
         { username, firstname, lastname, address, phone, email, password }
       ).then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         // if (success){
         alert("Đăng ký thành công!");
-        return <Redirect to={{pathname:"/login"}} />
+        history.push('/login');
         // }
     }
-        ).catch((error) => { alert("Lỗi! Đăng ký không thành công!"); console.log(error); });
+        ).catch((error) => { alert("Lỗi! Đăng ký không thành công!"); });
     }
 
   } 
