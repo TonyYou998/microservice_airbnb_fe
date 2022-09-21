@@ -10,7 +10,7 @@ import {Redirect,useHistory} from "react-router-dom";
 
 
 export default function LoginPage() {
-const history=useHistory();
+  const history=useHistory();
   const [username, setUsername]=useState('');
   const [usernameError, setUsernameError]=useState('');
   const [password, setPassword]=useState('');

@@ -6,40 +6,38 @@ import Grid from "@mui/material/Grid";
 import { Button } from 'bootstrap';
 import { IconButton } from '@mui/material';
 
-export default function AddGuests(){
-    const [guestCount, setGuestCount]=useState(0);
+export default function AddToilets(){
+    const [toiletCount, setToiletCount]=useState(0);
     const [errorMsg, setErrorMsg]=useState('');
 
-    var i = 1;
-
-    const handleRemoveGuest=(e)=>{
+    const handleRemoveToilet=(e)=>{
         setErrorMsg('')
 
-        setGuestCount(guestCount - 1)
+        setToiletCount(toiletCount - 1)
 
-        if (guestCount < 1){
-            setErrorMsg("The number of guests can't be a negative number.")
-            setGuestCount(0);
+        if (toiletCount < 1){
+            setErrorMsg("The number of toilets can't be a negative number.")
+            setToiletCount(0);
         }
 
         
     }
 
-    const handleAddGuest=(e)=>{
+    const handleAddToilet=(e)=>{
         setErrorMsg('')
-        setGuestCount(guestCount + 1)
+        setToiletCount(toiletCount + 1)
     }
     return(
-        <div className='add-guests-column'>
-            <div className='add-guests-row'>
+        <div className='add-toilet-column'>
+            <div className='add-toilet-row'>
             
-                <text className='add-guests-header' type='text'>Add Guests</text>
+                <text className='add-toilet-header' type='text'>Add Toilets</text>
                 <div>
-                <IconButton className='remove-btn' onClick={handleRemoveGuest}>
+                <IconButton className='remove-btn' onClick={handleRemoveToilet}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
-                <text className='add-guests-count' value={guestCount}>{guestCount}</text>
-                <IconButton className='add-btn' onClick={handleAddGuest}>
+                <text className='add-toilet-count' value={toiletCount}>{toiletCount}</text>
+                <IconButton className='add-btn' onClick={handleAddToilet}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>
                 </div>           
