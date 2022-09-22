@@ -123,6 +123,22 @@
             // font-size: 1.5rem;
         }
 
+        .add-price-row{
+            min-width: 380px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+
+        .add-price-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // font-size: 1.5rem;
+        }
+
         .btn-row{
             max-width: 45vw;
             min-width: 35vw;
@@ -144,6 +160,18 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        .price-input[type=number] {
+            border-color: rgb(0, 0, 0, .1);
+            min-width: 40px;
+            max-width: 90px;
+            padding: 5px 5px;
+            // margin-top: 0.67em;
+            // margin-bottom: 0.27em;
+            box-sizing: border-box;
+            border-radius: 15px;
+            font-size: 1.4rem;
+          }
 
         // .add-btn{
         //     color: #53BF9D,

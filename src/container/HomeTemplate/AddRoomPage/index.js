@@ -8,10 +8,22 @@ import AddBathroom from './component/addBathrooms';
 import AddToilets from './component/addToilets';
 import ButtonRow from './component/buttonRow';
 import { Button } from 'bootstrap';
+import AddPrice from './component/addPrice';
 
 
 export default function AddRoomPage() {
   const history=useHistory();
+  const [price, setPrice]=useState('');
+
+  const handlePriceChange=(e)=>{  
+   
+    setPrice(e.target.value);
+  }
+
+  const sendPriceDataToParent=(data)=>{
+    setPrice(data);
+  }
+
   return (
     <div>
         <>
@@ -30,6 +42,7 @@ export default function AddRoomPage() {
               <AddBeds/>
               <AddBathroom/>
               <AddToilets/>
+              <AddPrice onChange={handlePriceChange} valueData={price} sendPriceToParent={sendPriceDataToParent}/>
               </>
             </div>
 
