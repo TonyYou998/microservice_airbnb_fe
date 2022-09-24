@@ -8,19 +8,25 @@ import { IconButton } from '@mui/material';
 
 export default function AddBeds(props){
     
-    const [bedCount, setBedCount]=useState({bed: 0});
+    const [bedCount, setBedCount]=useState(0);
     const [errorMsg, setErrorMsg]=useState('');
 
-    setBedCount(0);
+    //setBedCount(0);
+
+    const{sendBadsToParent}=props;
 
     const handleRemoveBed=(e)=>{
         setErrorMsg('')
 
-        setBedCount(bed - 1);
+        setBedCount(bedCount - 1);
 
-        if (bed < 1){
+        if (bedCount < 1){
             setErrorMsg("The number of beds can't be a negative number.")
             setBedCount({bed: 0});
+        }
+
+        if(bedCount  > 0) {
+            sendBadsToParent(bedCount + 1);
         }
 
         
@@ -28,16 +34,18 @@ export default function AddBeds(props){
 
     const handleAddBed=(e)=>{
         setErrorMsg('')
-        setBedCount(bed + 1)
+        setBedCount(bedCount + 1)
+
+        if(bedCount  > 0) {
+            sendBadsToParent(bedCount + 1);
+        }
     }
 
-    const{sendBedsToParent}=props;
+ 
 
-    const{bed}=props;
-
-    const handleOnChange=(e)=>{
-        sendBedsToParent(e.target.value);
-    }
+    // const handleOnChange=(e)=>{
+    //     sendBedsToParent(e.target.value);
+    // }
     return(
         <div className='add-beds-column'>
             <div className='add-beds-row'>
@@ -47,8 +55,7 @@ export default function AddBeds(props){
                 <IconButton className='remove-btn' onClick={handleRemoveBed}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
-                <text className='add-beds-count' value={bed}
-                        onChange={handleOnChange}>{bed}</text>
+                <text className='add-beds-count' value={bedCount}>{bedCount}</text>
                 <IconButton className='add-btn' onClick={handleAddBed}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>    

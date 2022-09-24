@@ -6,13 +6,17 @@ import Grid from "@mui/material/Grid";
 import { Button } from 'bootstrap';
 import { IconButton } from '@mui/material';
 
-export default function AddBathroom(){
+export default function AddBathroom(props){
     const [bathroomCount, setBathroomCount]=useState(0);
     const [errorMsg, setErrorMsg]=useState('');
     
+    const{sendBathroomToParent}=props;
+
+
+    //const{valueData}=props;
+
     const handleRemoveBathroom=(e)=>{
         setErrorMsg('')
-
         setBathroomCount(bathroomCount - 1)
 
         if (bathroomCount < 1){
@@ -20,13 +24,25 @@ export default function AddBathroom(){
             setBathroomCount(0);
         }
 
+        if(bathroomCount  > 0) {
+            sendBathroomToParent(bathroomCount - 1);
+        } 
+        
         
     }
 
     const handleAddBathroom=(e)=>{
         setErrorMsg('')
         setBathroomCount(bathroomCount + 1)
+
+        if(bathroomCount  > 0) {
+            sendBathroomToParent(bathroomCount + 1);
+        }
+      
+        
     }
+
+  
     return(
         <div className='add-bathroom-column'>
             <div className='add-bathroom-row'>

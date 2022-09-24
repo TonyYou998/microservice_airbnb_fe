@@ -6,9 +6,12 @@ import Grid from "@mui/material/Grid";
 import { Button } from 'bootstrap';
 import { IconButton } from '@mui/material';
 
-export default function AddBedrooms(){
+export default function AddBedrooms(props){
     const [bedroomCount, setBedroomCount]=useState(0);
     const [errorMsg, setErrorMsg]=useState('');
+
+
+    const{sendBadroomToParent}=props;
 
     const handleRemoveBedroom=(e)=>{
         setErrorMsg('')
@@ -20,12 +23,20 @@ export default function AddBedrooms(){
             setBedroomCount(0);
         }
 
+        if(bedroomCount  > 0) {
+            sendBadroomToParent(bedroomCount + 1);
+        }
+
         
     }
 
     const handleAddBedroom=(e)=>{
         setErrorMsg('')
         setBedroomCount(bedroomCount + 1)
+
+        if(bedroomCount  > 0) {
+            sendBadroomToParent(bedroomCount + 1);
+        }
     }
     return(
         <div className='add-bedroom-column'>

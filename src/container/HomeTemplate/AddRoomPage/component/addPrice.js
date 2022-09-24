@@ -17,6 +17,7 @@ export default function AddPrice(props){
 
     const handleOnChange=(e)=>{
         sendPriceToParent(e.target.value);
+       
         if (valueData < 0){
             setErrorMsg("Price can't be a negative number")
             
