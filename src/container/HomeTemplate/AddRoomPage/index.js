@@ -2,10 +2,9 @@ import React, {useState} from 'react'
 import Navbar from '../../../components/Navbar';
 import { NavLink } from 'react-router-dom';
 import {Redirect,useHistory} from "react-router-dom";
-import AddGuests from './component/addGuests';
+import AddBedrooms from './component/addBedroom';
 import AddBeds from './component/addBeds';
 import AddBathroom from './component/addBathrooms';
-import AddToilets from './component/addToilets';
 import ButtonRow from './component/buttonRow';
 import { Button } from 'bootstrap';
 import AddPrice from './component/addPrice';
@@ -13,7 +12,38 @@ import AddPrice from './component/addPrice';
 
 export default function AddRoomPage() {
   const history=useHistory();
+  const [beds, setBeds]=useState('');
+  const [bedroom, setBedroom]=useState('');
+  const [bathroom, setBathroom]=useState('');
   const [price, setPrice]=useState('');
+
+  
+  const handleBedsChange=(e)=>{  
+   
+    setBeds(e.target.value);
+  }
+
+  const sendBedsDataToParent=(data)=>{
+    setBeds(data);
+  }
+
+  const handleBedroomChange=(e)=>{  
+   
+    setBedroom(e.target.value);
+  }
+
+  const sendBedroomDataToParent=(data)=>{
+    setBedroom(data);
+  }
+
+  const handleBathroomChange=(e)=>{  
+   
+    setBedroom(e.target.value);
+  }
+
+  const sendBathroomDataToParent=(data)=>{
+    setBedroom(data);
+  }
 
   const handlePriceChange=(e)=>{  
    
@@ -38,10 +68,9 @@ export default function AddRoomPage() {
                 
             <div className='ar-right-add-column'>
             <>
-              <AddGuests/>
-              <AddBeds/>
-              <AddBathroom/>
-              <AddToilets/>
+              <AddBedrooms onChange={handleBedroomChange} valueData={bedroom} sendPriceToParent={sendBedroomDataToParent}/>
+              <AddBeds onChange={handleBedsChange} valueData={beds} sendPriceToParent={sendBedsDataToParent}/>
+              <AddBathroom onChange={handleBathroomChange} valueData={bathroom} sendPriceToParent={sendBathroomDataToParent}/>
               <AddPrice onChange={handlePriceChange} valueData={price} sendPriceToParent={sendPriceDataToParent}/>
               </>
             </div>

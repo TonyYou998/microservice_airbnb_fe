@@ -6,40 +6,38 @@ import Grid from "@mui/material/Grid";
 import { Button } from 'bootstrap';
 import { IconButton } from '@mui/material';
 
-export default function AddGuests(){
-    const [guestCount, setGuestCount]=useState(0);
+export default function AddBedrooms(){
+    const [bedroomCount, setBedroomCount]=useState(0);
     const [errorMsg, setErrorMsg]=useState('');
 
-    var i = 1;
-
-    const handleRemoveGuest=(e)=>{
+    const handleRemoveBedroom=(e)=>{
         setErrorMsg('')
 
-        setGuestCount(guestCount - 1)
+        setBedroomCount(bedroomCount - 1)
 
-        if (guestCount < 1){
+        if (bedroomCount < 1){
             setErrorMsg("The number of guests can't be a negative number.")
-            setGuestCount(0);
+            setBedroomCount(0);
         }
 
         
     }
 
-    const handleAddGuest=(e)=>{
+    const handleAddBedroom=(e)=>{
         setErrorMsg('')
-        setGuestCount(guestCount + 1)
+        setBedroomCount(bedroomCount + 1)
     }
     return(
-        <div className='add-guests-column'>
-            <div className='add-guests-row'>
+        <div className='add-bedroom-column'>
+            <div className='add-bedroom-row'>
             
-                <text className='add-guests-header' type='text'>Add Guests</text>
+                <text className='add-bedroom-header' type='text'>Add Bedroom</text>
                 <div>
-                <IconButton className='remove-btn' onClick={handleRemoveGuest}>
+                <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
-                <text className='add-guests-count' value={guestCount}>{guestCount}</text>
-                <IconButton className='add-btn' onClick={handleAddGuest}>
+                <text className='add-bedroom-count' value={bedroomCount}>{bedroomCount}</text>
+                <IconButton className='add-btn' onClick={handleAddBedroom}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>
                 </div>           
