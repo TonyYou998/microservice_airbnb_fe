@@ -2,6 +2,7 @@ import HomePage from "../container/HomeTemplate/HomePage";
 import ResignPage from "../container/HomeTemplate/ResignPage";
 import LoginPage from "../container/HomeTemplate/LoginPage";
 import SignUpPage from "../container/HomeTemplate/SignUpPage";
+import AddRoomPage from "../container/HomeTemplate/AddRoomPage";
 
 const routesUser=[
     {
@@ -23,6 +24,11 @@ const routesUser=[
         exact:false,
         path:"/signup",
         Component:SignUpPage
+    },
+    {
+        exact:false,
+        path:"/addroom",
+        Component:AddRoomPage
     }
 ];
 

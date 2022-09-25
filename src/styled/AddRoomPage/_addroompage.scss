@@ -1,0 +1,188 @@
+.add-room-page-main{
+
+    height: 95vh;
+    // width: 100vw;
+    background-color: #F6FBF9;
+    display: flex;
+    flex-direction: row;
+    .ar-left{
+        display: flex;
+        position: relative;
+        flex: 3;
+        background-image: url("../AddRoomPage/add_room_page.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-attachment: fixed;
+        background-size: 60%;
+    }
+
+    .ar-right{
+        height: 92vh;
+        display: flex;
+        position: relative;
+        flex: 2;
+        // text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .ar-right-empty-box{
+            content: "";
+            margin: 2em;
+            display: block;
+            font-size: 24%;
+        }
+
+        .ar-header{
+            margin-top: 0.27em;
+            margin-bottom: 0.27em;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
+            font-family: 'open sans', sans-serif;
+            padding: 1rem 0;
+            font-weight: bold;
+            font-size: 3.0rem;
+        }
+
+        .header[type=text]{
+            font-weight: bold;
+            font-size: 3.0rem;
+
+        }
+
+        .ar-right-add-column{
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .add-bedroom-row{
+            min-width: 380px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+
+        .add-bedroom-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // font-size: 1.5rem;
+        }
+
+        .add-beds-row{
+            min-width: 380px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+
+        .add-beds-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // font-size: 1.5rem;
+        }
+
+        .add-bathroom-row{
+            min-width: 380px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+
+        .add-bathroom-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // font-size: 1.5rem;
+        }
+
+        .add-toilet-row{
+            min-width: 380px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+
+        .add-toilet-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // font-size: 1.5rem;
+        }
+
+        .add-price-row{
+            min-width: 380px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.5rem;
+        }
+
+        .add-price-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // font-size: 1.5rem;
+        }
+
+        .btn-row{
+            max-width: 45vw;
+            min-width: 35vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;       
+        }
+
+        .next-btn{
+            border: none;
+            border-radius: 16px;
+            background-color: #F94C66;
+            color: white;
+            padding: 14px 32px;
+            margin-top: 0.47em;
+            margin-bottom: 0.47em;
+            font-size: 1.4rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .price-input[type=number] {
+            border-color: rgb(0, 0, 0, .1);
+            min-width: 40px;
+            max-width: 90px;
+            padding: 5px 5px;
+            // margin-top: 0.67em;
+            // margin-bottom: 0.27em;
+            box-sizing: border-box;
+            border-radius: 15px;
+            font-size: 1.4rem;
+          }
+
+        // .add-btn{
+        //     color: #53BF9D,
+        // }
+
+        // .remove-btn{
+        //     color: #FFC54D;
+        // }
+
+        .error-msg{
+            color: red;
+        }
+    }
+  }
