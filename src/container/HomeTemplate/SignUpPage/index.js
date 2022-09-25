@@ -214,7 +214,7 @@ export default function SignUpPage() {
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
           <div className='signup-input'>
-            <div>
+            <div className='row'>
               <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
               {firstnameError && <div className='error-msg'>{firstnameError}</div>}
               <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent}/>
