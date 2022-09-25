@@ -11,6 +11,7 @@ export default function ButtonRow(){
     const history=useHistory();
 
     return(
+        
         <div className='btn-row'>
             <NavLink to="/" style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <IconButton>
@@ -19,9 +20,9 @@ export default function ButtonRow(){
                 </IconButton>
             </NavLink>
 
-            <NavLink to="/">
+            {/* <NavLink to="/"> */}
                 <button className='next-btn'>Next</button>
-            </NavLink>
+            {/* </NavLink> */}
         </div>
     )
 }

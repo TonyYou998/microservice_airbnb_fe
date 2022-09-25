@@ -8,6 +8,7 @@ import AddBathroom from './component/addBathrooms';
 import ButtonRow from './component/buttonRow';
 import { Button } from 'bootstrap';
 import AddPrice from './component/addPrice';
+import { mainApi } from '../../../api';
 
 
 export default function AddRoomPage() {
@@ -17,7 +18,8 @@ export default function AddRoomPage() {
   const [bathroom, setBathroom]=useState('');
   const [price, setPrice]=useState('');
 
-  
+  const ADD_ROOM_API_URL = '/create/create-a-room'
+
   const handleBedsChange=(e)=>{  
    
     setBeds(e.target.value);
@@ -25,6 +27,7 @@ export default function AddRoomPage() {
 
   const sendBedsDataToParent=(data)=>{
     setBeds(data);
+    
   }
 
   const handleBedroomChange=(e)=>{  
@@ -34,24 +37,45 @@ export default function AddRoomPage() {
 
   const sendBedroomDataToParent=(data)=>{
     setBedroom(data);
+    
+   
   }
 
   const handleBathroomChange=(e)=>{  
    
-    setBedroom(e.target.value);
+    setBathroom(e.target.value);
+
+
+
   }
 
   const sendBathroomDataToParent=(data)=>{
-    setBedroom(data);
+    setBathroom(data);
   }
+
+  
 
   const handlePriceChange=(e)=>{  
    
     setPrice(e.target.value);
+
   }
 
   const sendPriceDataToParent=(data)=>{
     setPrice(data);
+    
+  }
+  
+  const handleFormSubmit = () => {
+    // api
+    mainApi.post(ADD_ROOM_API_URL,{
+      roomType: "null",
+      pricePerNight:  price,
+      bedRoomCount: bedroom,
+      bathRoomCount: bathroom,
+      bedCount: beds,
+      status: "false"      
+    })
   }
 
   return (
@@ -62,22 +86,24 @@ export default function AddRoomPage() {
         <div className='add-room-page-main'>
           <div className='ar-left'></div>
 
-          <div className='ar-right'>
+          <form className='ar-right' onSubmit={handleFormSubmit}>
             <br className='ar-right-empty-box'></br>
             <text className='ar-header'>Add a room</text>
                 
             <div className='ar-right-add-column'>
             <>
-              <AddBedrooms onChange={handleBedroomChange} valueData={bedroom} sendPriceToParent={sendBedroomDataToParent}/>
-              <AddBeds onChange={handleBedsChange} valueData={beds} sendPriceToParent={sendBedsDataToParent}/>
-              <AddBathroom onChange={handleBathroomChange} valueData={bathroom} sendPriceToParent={sendBathroomDataToParent}/>
+              <AddBedrooms onChange={handleBedroomChange} valueData={bedroom} sendBadroomToParent={sendBedroomDataToParent}/>
+              <AddBeds onChange={handleBedsChange} valueData={beds} sendBadsToParent={sendBedsDataToParent}/>
+              <AddBathroom onChange={handleBathroomChange} valueData={bathroom} sendBathroomToParent={sendBathroomDataToParent}/>
               <AddPrice onChange={handlePriceChange} valueData={price} sendPriceToParent={sendPriceDataToParent}/>
               </>
             </div>
+              <><ButtonRow/></>
+              
 
-              <ButtonRow/>
-
-          </div>
+             
+            
+          </form>
             
         </div>
 
