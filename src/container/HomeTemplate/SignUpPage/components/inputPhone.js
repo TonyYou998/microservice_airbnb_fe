@@ -6,7 +6,7 @@ export default function InputPhone(props) {
         sendPhoneToParent(e.target.value);
     }
     return (
-        <div className="input-phone">
+        <div className='input-phone'>
             <input type="phone" placeholder="Phone" value={valueData} required onChange={handleOnChange}/>
         </div>)
 }

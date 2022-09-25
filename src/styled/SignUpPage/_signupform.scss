@@ -53,30 +53,20 @@
   background-color: rgb(246, 251, 249);
   border-radius: 40px;
 }
+.signup-input{
+    // display: flex;
+    // box-sizing: border-box;
+    font-size: small;
+    input{
+    border-color: rgb(0, 0, 0, .1);
+    width: 40%;
+    padding: 10px 30px;
+    border-radius: 16px;
+    margin-bottom: 0.27em;
+    margin: auto;
 
-input[type=text] {
-  border-color: rgb(0, 0, 0, .1);
-  width: 80%;
-  padding: 10px 30px;
-  // margin-top: 0.67em;
-  // margin-bottom: 0.27em;
-  box-sizing: border-box;
-  border-radius: 16px;
-  font-size: small;
+    }
 }
-input {
-  border-color: rgb(0, 0, 0, .1);
-  width: 80%;
-  padding: 10px 30px;
-  margin: auto;
-  // margin-top: 0.67em;
-  margin-bottom: 0.27em;
-  box-sizing: border-box;
-  border-radius: 16px;
-  font-size: small;
-}
-
-
 
 .signup-button {
   border: none;
