@@ -8,12 +8,19 @@ import InputSignUpPassword from './components/inputPassword';
 import InputPhone from './components/inputPhone';
 import { NavLink } from 'react-router-dom';
 import InputLastName from './components/inputLastName';
+import InputUsername from './components/inputUsername';
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function SignUpPage() {
 
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
+
+  const [username, setUsername] = useState('');
+  const [usernameError, setUsernameError] = useState('');
 
   const [firstname, setFirstName] = useState('');
   const [firstnameError, setFirstNameError] = useState('');
@@ -57,6 +64,14 @@ export default function SignUpPage() {
   const sendConfirmPasswordDataToParent = (data) => {
     setConfirmPassword(data);
   }
+  //uname handle
+  const handleUsernameChange = (e) => {
+
+    setUsername(e.target.value);
+  }
+  const sendUsernameDataToParent = (data) => {
+    setUsername(data);
+  }
   //fname handle
   const handleFirstNameChange = (e) => {
 
@@ -91,6 +106,16 @@ export default function SignUpPage() {
     setAddress(data);
   }
 
+  //Uname Submit
+  const handleUsernameSubmit = (e) => {
+    let isUsername = false;
+    setUsernameError("");
+    isUsername = true;
+    console.log(username);
+    setUsername('');
+    return isUsername;
+  }
+
   //Fname Submit
   const handleFirstNameSubmit = (e) => {
     let isFirstName = false;
@@ -100,15 +125,15 @@ export default function SignUpPage() {
     setFirstName('');
     return isFirstName;
   }
- //Lname Submit
- const handleLastNameSubmit = (e) => {
-  let isLastName = false;
-  setLastNameError("");
-  isLastName = true;
-  console.log(lastname);
-  setLastName('');
-  return isLastName;
-}
+  //Lname Submit
+  const handleLastNameSubmit = (e) => {
+    let isLastName = false;
+    setLastNameError("");
+    isLastName = true;
+    console.log(lastname);
+    setLastName('');
+    return isLastName;
+  }
   const handleEmailSubmit = (e) => {
     let isEmail = false;
     setEmailError("");
@@ -193,6 +218,7 @@ export default function SignUpPage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    const usernameValid = handleUsernameSubmit();
     const firstnameValid = handleFirstNameSubmit();
     const lastnameValid = handleLastNameSubmit();
     const emailValid = handleEmailSubmit();
@@ -200,7 +226,7 @@ export default function SignUpPage() {
     const addressValid = handleAddressSubmit();
     const phoneValid = handlePhoneSubmit();
     const confirmPasswordValid = handleConfirmPasswordSubmit();
-    if (emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
+    if (emailValid && passwordValid && usernameValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
       console.log("call api here");
     }
 
@@ -214,22 +240,30 @@ export default function SignUpPage() {
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
           <div className='signup-input'>
-            <div>
+          <Container>
+            <Row>
               <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
               {firstnameError && <div className='error-msg'>{firstnameError}</div>}
-              <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent}/>
+              <Col>
+                <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
+                {phoneError && <div className='error-msg'>{phoneError}</div>}
+                <InputUsername onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent} />
+                {usernameError && <div className='error-msg'>{usernameError}</div>}
+                <InputSignUpPassword onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent} />
+                {passwordError && <div className='error-msg'>{passwordError}</div>}
+              </Col>
+              <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
               {lastnameError && <div className='error-msg'>{lastnameError}</div>}
-              <InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
-              {emailError && <div className='error-msg'>{emailError}</div>}
-              <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
-              {phoneError && <div className='error-msg'>{phoneError}</div>}
-              <InputAddress onChange={handleAddressChange} valueData={address} sendAddressToParent={sendAddressDataToParent} />
-              {addressError && <div className='error-msg'>{addressError}</div>}
-              <InputSignUpPassword onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent} />
-              {passwordError && <div className='error-msg'>{passwordError}</div>}
-              <InputConfirmPass onChange={handleConfirmPasswordChange} valueData={_confirmPassword} sendConfirmPasswordToParent={sendConfirmPasswordDataToParent} />
-              {_confirmPasswordError && <div className='error-msg'>{_confirmPasswordError}</div>}
-            </div>
+              <Col>
+                <InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
+                {emailError && <div className='error-msg'>{emailError}</div>}
+                <InputAddress onChange={handleAddressChange} valueData={address} sendAddressToParent={sendAddressDataToParent} />
+                {addressError && <div className='error-msg'>{addressError}</div>}
+                <InputConfirmPass onChange={handleConfirmPasswordChange} valueData={_confirmPassword} sendConfirmPasswordToParent={sendConfirmPasswordDataToParent} />
+                {_confirmPasswordError && <div className='error-msg'>{_confirmPasswordError}</div>}
+              </Col>
+            </Row>
+            </Container>
           </div>
           <>
             <ButtonSignUp
@@ -237,7 +271,6 @@ export default function SignUpPage() {
           </>
           <h>Already have an account?</h><NavLink to="/login" className="signup-text"> Login</NavLink>
           <br></br>
-
         </div>
       </form>
     </div>
