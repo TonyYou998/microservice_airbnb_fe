@@ -10,10 +10,6 @@ import { NavLink } from 'react-router-dom';
 import InputLastName from './components/inputLastName';
 import InputUsername from './components/inputUsername';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 export default function SignUpPage() {
 
   const [email, setEmail] = useState('');
@@ -240,30 +236,28 @@ export default function SignUpPage() {
           <h3>Create an account to enjoy all the services</h3>
           <h3>without any ads for free!</h3>
           <div className='signup-input'>
-          <Container>
-            <Row>
-              <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
-              {firstnameError && <div className='error-msg'>{firstnameError}</div>}
-              <Col>
+            <div className="row">
+              <div className="col-4">
+                <InputFirstName onChange={handleFirstNameChange} valueData={firstname} sendFirstNameToParent={sendFirstNameDataToParent} />
+                {firstnameError && <div className='error-msg'>{firstnameError}</div>}
                 <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
                 {phoneError && <div className='error-msg'>{phoneError}</div>}
                 <InputUsername onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent} />
                 {usernameError && <div className='error-msg'>{usernameError}</div>}
                 <InputSignUpPassword onChange={handlePasswordChange} valueData={password} sendPasswordToParent={sendPasswordDataToParent} />
                 {passwordError && <div className='error-msg'>{passwordError}</div>}
-              </Col>
-              <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
-              {lastnameError && <div className='error-msg'>{lastnameError}</div>}
-              <Col>
+              </div>
+              <div className="col-4">
+                <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
+                {lastnameError && <div className='error-msg'>{lastnameError}</div>}
                 <InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
                 {emailError && <div className='error-msg'>{emailError}</div>}
                 <InputAddress onChange={handleAddressChange} valueData={address} sendAddressToParent={sendAddressDataToParent} />
                 {addressError && <div className='error-msg'>{addressError}</div>}
                 <InputConfirmPass onChange={handleConfirmPasswordChange} valueData={_confirmPassword} sendConfirmPasswordToParent={sendConfirmPasswordDataToParent} />
                 {_confirmPasswordError && <div className='error-msg'>{_confirmPasswordError}</div>}
-              </Col>
-            </Row>
-            </Container>
+              </div>
+            </div>
           </div>
           <>
             <ButtonSignUp

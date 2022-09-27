@@ -7,7 +7,7 @@ export default function InputSignUpPassword(props){
     }
     return (
         <div className="input-password">
-            <input className='signup-input-password' type="password" value={valueData} placeholder="Password" required 
+            <input  type="password" value={valueData} placeholder="Password" required 
             onChange={handleOnChange}></input>
         </div>
         )
