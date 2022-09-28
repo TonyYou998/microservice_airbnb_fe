@@ -1,0 +1,110 @@
+.edit-room-page-main {
+    height: 95vh;
+    // width: 100vw;
+    background-color: #F6FBF9;
+    display: flex;
+    flex-direction: row;
+
+    .edr-left {
+        display: flex;
+        position: relative;
+        flex: 3;
+        background-image: url("../EditRoomPage/_edit_room_page_bg.png");
+        background-repeat: no-repeat;
+        background-position: left;
+        background-attachment: fixed;
+        background-size: 40%;
+    }
+
+    .edr-right {
+        background-color: #FFFF;
+        min-width: 320px;
+        min-height: 400px;
+        width: 30%;
+        height: 54%;
+        display: flex;
+        position: relative;
+        flex: 2;
+        margin-top: 9%;
+        margin-right: 7%;
+        // text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 16px;
+        .edr-header {
+            margin-top: 0.27em;
+            margin-bottom: 0.1rem;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
+            font-family: 'open sans', sans-serif;
+            padding: 1rem 0;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .edr-right-empty-box {
+            content: "";
+            margin: 0.2em;
+            display: block;
+            font-size: 24%;
+        }
+
+        .edr-right-input-column {
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            input {
+                background: #FFFFFF;
+                border: 1.53407px solid rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                height: 2rem;
+            }
+            select{
+                background: #FFFFFF;
+                border: 1.53407px solid rgba(0, 0, 0, 0.1);
+                border-radius: 12px;
+                width: 192px;
+                height: 2rem;
+            }
+        }
+
+        .btn-row {
+            max-width: 20vw;
+            min-width: 15vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            size: 50%;
+            margin-right: 2rem;
+
+            text {
+                font-size: 75%;
+            }
+
+            .css-i4bv87-MuiSvgIcon-root {
+                font-size: 0.6rem;
+            }
+
+        }
+
+        .next-btn {
+            border: none;
+            border-radius: 10px;
+            background-color: #F94C66;
+            color: white;
+            padding: 10px 26px;
+            margin-top: 0.2em;
+            margin-bottom: 0.6em;
+            margin-left: 2rem;
+            font-size: 78%;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
