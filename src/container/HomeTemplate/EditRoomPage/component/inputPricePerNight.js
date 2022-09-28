@@ -16,9 +16,9 @@ export default function InputPricePerNight(props) {
   }
   return (
     <div className='input-price-per-night'>
-      <input type="text" min="0" placeholder='Price Per Night' class="text-currency" required value={valueData} 
+      <input type="number" min="0" placeholder='Price Per Night' required value={valueData} 
       onChange={handleOnChange}></input>
-      <span class="currency-code">$</span>
+      <span className="currency-code">$</span>
     </div>
   )
 }

@@ -13,25 +13,26 @@
         background-repeat: no-repeat;
         background-position: left;
         background-attachment: fixed;
-        background-size: 40%;
+        background-size: 50%;
     }
 
     .edr-right {
         background-color: #FFFF;
-        min-width: 320px;
-        min-height: 400px;
-        width: 30%;
-        height: 54%;
+        min-width: 400px;
+        min-height: 480px;
+        width: 38%;
+        height: 65%;
         display: flex;
         position: relative;
         flex: 2;
-        margin-top: 9%;
+        margin-top: 7%;
         margin-right: 7%;
         // text-align: center;
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
         border-radius: 16px;
+
         .edr-header {
             margin-top: 0.27em;
             margin-bottom: 0.1rem;
@@ -41,18 +42,18 @@
             font-family: 'open sans', sans-serif;
             padding: 1rem 0;
             font-weight: bold;
-            font-size: 2rem;
+            font-size: 3.5rem;
         }
 
         .edr-right-empty-box {
             content: "";
             margin: 0.2em;
             display: block;
-            font-size: 24%;
+            font-size: 30%;
         }
 
         .edr-right-input-column {
-            min-height: 240px;
+            min-height: 280px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -63,48 +64,58 @@
                 border: 1.53407px solid rgba(0, 0, 0, 0.1);
                 border-radius: 12px;
                 height: 2rem;
+                width: 260px;
             }
-            select{
+
+            select {
                 background: #FFFFFF;
                 border: 1.53407px solid rgba(0, 0, 0, 0.1);
                 border-radius: 12px;
                 width: 192px;
                 height: 2rem;
+                width: 130px;
+                justify-content: space-between;
+                margin-left: 2rem;
+            }
+
+            label {
+                color: #696969;
             }
         }
 
         .btn-row {
-            max-width: 20vw;
-            min-width: 15vw;
+            max-width: 24vw;
+            min-width: 18vw;
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
-            size: 50%;
-            margin-right: 2rem;
+            justify-content: space-around;
+            size: 60%;
+            // margin-right: 7rem;
 
             text {
-                font-size: 75%;
+                font-size: 80%;
             }
 
             .css-i4bv87-MuiSvgIcon-root {
-                font-size: 0.6rem;
+                font-size: 0.8rem;
             }
 
+            .next-btn {
+                border: none;
+                border-radius: 10px;
+                background-color: #F94C66;
+                color: white;
+                padding: 10px 26px;
+                margin-top: 0.2em;
+                margin-bottom: 0.6em;
+                margin-left: 10rem;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
         }
 
-        .next-btn {
-            border: none;
-            border-radius: 10px;
-            background-color: #F94C66;
-            color: white;
-            padding: 10px 26px;
-            margin-top: 0.2em;
-            margin-bottom: 0.6em;
-            margin-left: 2rem;
-            font-size: 78%;
-            font-weight: bold;
-            cursor: pointer;
-        }
+
     }
 }

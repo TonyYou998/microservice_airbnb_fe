@@ -18,10 +18,7 @@ export default function ButtonBackSave(){
                     <text>Back</text>
                 </IconButton>
             </NavLink>
-
-            <NavLink to="/">
                 <button className='next-btn'>Save</button>
-            </NavLink>
         </div>
     )
 }

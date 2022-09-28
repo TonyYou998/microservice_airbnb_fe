@@ -15,10 +15,11 @@ export default function InputStatus(props) {
     }
     return (
         <div className='input-status' >
+            <label >Room status</label>
+
             <select value={valueData} required onChange={handleOnChange}>
-                <option value="0">Room status </option>
-                <option value="1">True</option>
-                <option value="2">False</option>
+                <option value="0">True</option>
+                <option value="1">False</option>
             </select>
         </div>
     )
