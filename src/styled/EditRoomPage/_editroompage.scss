@@ -1,9 +1,9 @@
 .edit-room-page-main {
-    height: 95vh;
-    // width: 100vw;
+    height: 85vh;
+    //  width: 100%;
     background-color: #F6FBF9;
-    display: flex;
-    flex-direction: row;
+   display: flex;
+   flex-direction: row;
 
     .edr-left {
         display: flex;
@@ -13,19 +13,19 @@
         background-repeat: no-repeat;
         background-position: left;
         background-attachment: fixed;
-        background-size: 55%;
+         background-size: 50%;
     }
 
     .edr-right {
         background-color: #FFFF;
-        min-width: 320px;
-        min-height: 400px;
+        // min-width: 320px;
+        min-height:  85vh;
         width: 10%;
         height: 34%;
         display: flex;
         position: relative;
-        flex: 2;
-        margin-top: 7%;
+        flex: 3;
+        // margin-top: 7%;
         margin-right: 3%;
         // text-align: center;
         align-items: center;
@@ -53,19 +53,21 @@
 
         .edr-right-input-column {
             min-height: 240px;
+      
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
 
             input {
+      
                 background: #FFFFFF;
                 border: 1.53407px solid rgba(0, 0, 0, 0.1);
                 border-radius: 12px;
             }
         }
 
-        .btn-row {
+        .btn-row {  
             max-width: 20vw;
             min-width: 15vw;
             display: flex;
@@ -98,3 +100,5 @@
         }
     }
 }
+
+
