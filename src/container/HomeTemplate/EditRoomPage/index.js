@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import Navbar from '../../../components/Navbar';
 import ButtonBackSave from './component/buttonBackSave';
 import InputNumberOfBathrooms from './component/inputBathroom';
 import InputNumberOfBedrooms from './component/inputBedrooms';
@@ -8,6 +7,7 @@ import InputStatus from './component/inputStatus';
 import InputNumberOfBeds from './component/inputNumberOfBeds';
 import InputPricePerNight from './component/inputPricePerNight';
 import InputRoomType from './component/inputRoomType';
+import { mainApi } from '../../../api';
 
 export default function EditRoomPage() {
   const history = useHistory();
@@ -18,6 +18,7 @@ export default function EditRoomPage() {
   const [bathroom, setBathroom] = useState('');
   const [price, setPrice] = useState('');
 
+  const EDIT_ROOM_API_URL = '/edit/edit-a-room'
 
   const handleRoomTypeChange = (e) => {
 
@@ -76,20 +77,25 @@ export default function EditRoomPage() {
 
   const sendPricePerNightDataToParent = (data) => {
     setPrice(data);
-
   }
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
     // api
-  
+    mainApi.put(EDIT_ROOM_API_URL, {
+      id: "74c7b502-53c9-4629-9436-fd2d8eb10a1b",
+      roomType: roomtype,
+      pricePerNight: price,
+      bedRoomCount: bedroom,
+      bathRoomCount: bathroom,
+      bedCount: beds,
+      status: status
+    })
   }
-
 
   return (
     <div>
-      <>
-        {/* <Navbar/> */}
-      </>
+
       <div className='edit-room-page-main'>
         <div className='edr-left'></div>
 
