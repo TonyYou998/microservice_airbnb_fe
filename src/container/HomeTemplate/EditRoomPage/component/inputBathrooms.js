@@ -16,7 +16,7 @@ export default function InputBathrooms(props) {
   }
   return (
     <div className='input-bathrooms'>
-      <input type="number" min="0" placeholder="Bathrooms" required value={valueData} onChange={handleOnChange}></input> 
+      <input type="number" min="0" placeholder="Number Of Bathrooms" required value={valueData} onChange={handleOnChange}></input> 
     </div>
   )
 }

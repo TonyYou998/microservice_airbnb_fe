@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 import ButtonBackSave from './component/buttonBackSave';
-import InputNumberOfBathrooms from './component/inputBathroom';
+import InputNumberOfBathrooms from './component/inputBathrooms';
 import InputNumberOfBedrooms from './component/inputBedrooms';
 import InputStatus from './component/inputStatus';
 import InputNumberOfBeds from './component/inputNumberOfBeds';
 import InputPricePerNight from './component/inputPricePerNight';
 import InputRoomType from './component/inputRoomType';
 import { mainApi } from '../../../api';
+import { logDOM } from '@testing-library/react';
 
 export default function EditRoomPage() {
   const history = useHistory();
@@ -17,6 +18,7 @@ export default function EditRoomPage() {
   const [bedroom, setBedroom] = useState('');
   const [bathroom, setBathroom] = useState('');
   const [price, setPrice] = useState('');
+  const [success, setSuccess] = useState('');
 
   const EDIT_ROOM_API_URL = '/edit/edit-a-room'
 
@@ -78,20 +80,59 @@ export default function EditRoomPage() {
   const sendPricePerNightDataToParent = (data) => {
     setPrice(data);
   }
+  //Roomtype valid
+  // const handleRoomtypeSubmit = (e) => {
+  //   let isRoomtype = false;
+  //   setRoomtypeError("");
+  //   const testEr = /[0-9]|\./;
+  //   if (!testEr.test(roomtype)) {
+  //     setRoomtypeError('Room type invalid');
+  //   }
+  //   else isRoomtype = true;
+  //   console.log(roomtype);
+  //   setRoomtype('');
+  //   return isRoomtype;
+  // }
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setSuccess('');
+    // const roomtypeValid = handleRoomtypeSubmit();
     // api
-    mainApi.put(EDIT_ROOM_API_URL, {
-      id: "74c7b502-53c9-4629-9436-fd2d8eb10a1b",
-      roomType: roomtype,
-      pricePerNight: price,
-      bedRoomCount: bedroom,
-      bathRoomCount: bathroom,
-      bedCount: beds,
-      status: status
-    })
+    if (true) {
+      mainApi.post(EDIT_ROOM_API_URL, {
+        id: "74c7b502-53c9-4629-9436-fd2d8eb10a1b",
+        roomType: roomtype,
+        pricePerNight: price,
+        bedRoomCount: bedroom,
+        bathRoomCount: bathroom,
+        bedCount: beds,
+        status: status,
+      }
+      ).then((result) => {
+        console.log(result.data);
+        if (success) {
+          setSuccess('Đã lưu thông tin');
+          history.push('/edit');
+        }
+      }
+      ).catch((error) => { alert("Lỗi! Không thành công!"); });
+    }
   }
+
+  // if (usernameValid && emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
+  //   mainApi.post(SIGNUP_USER_API_URL,
+  //     { username, firstname, lastname, address, phone, email, password }
+  //   ).then((result) => {
+  //     // console.log(result.data);
+  //     // if (success){
+  //     alert("Đăng ký thành công!");
+  //     history.push('/login');
+  //     // }
+  //   }
+  //   ).catch((error) => { alert("Lỗi! Đăng ký không thành công!"); });
+  // }
+  // }
 
   return (
     <div>

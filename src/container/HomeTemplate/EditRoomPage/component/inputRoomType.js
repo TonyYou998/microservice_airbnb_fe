@@ -16,7 +16,13 @@ export default function InputRoomType(props) {
   }
   return (
     <div className='input-room-type'>
-      <input type="text" placeholder="Room Type" value={valueData} required onChange={handleOnChange}></input>
+            <label >Room Type</label>
+
+            <select value={valueData} required onChange={handleOnChange}>
+                <option value="0">Value 1</option>
+                <option value="1">Value 2</option>
+                <option value="2">Value 3</option>
+            </select>
     </div>
   )
 }
