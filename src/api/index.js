@@ -1,6 +1,7 @@
 import axios from 'axios';
+import  { BASE_URL } from './utils/apiConstant';
 const mainApi=axios.create({
-    // baseURL:"http://localhost:8090/api/v1",
-    baseURL:"http://localhost:8081/api/v1",
+   
+    baseURL:BASE_URL,
 });
 export {mainApi}

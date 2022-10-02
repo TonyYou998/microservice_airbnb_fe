@@ -1,5 +1,5 @@
 .edit-room-page-main {
-    height: 95vh;
+    height: 100vh;
     // width: 100vw;
     background-color: #F6FBF9;
     display: flex;
@@ -10,10 +10,12 @@
         position: relative;
         flex: 3;
         background-image: url("../EditRoomPage/_edit_room_page_bg.png");
+        
         background-repeat: no-repeat;
         background-position: left;
         background-attachment: fixed;
-        background-size: 44%;
+        // background-size: 44%;
+        height: 100%;
     }
 
     .edr-right {
