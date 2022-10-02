@@ -80,9 +80,7 @@ export default function AddRoomPage() {
 
   return (
     <div>
-        <>
-          <Navbar/>
-        </>
+   
         <div className='add-room-page-main'>
           <div className='ar-left'></div>
 
