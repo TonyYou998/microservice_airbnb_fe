@@ -1,4 +1,5 @@
-@import "../styled/LoginPage/loginpage";
-@import "../styled/SignUpPage/signupform";
-@import "../styled/AddRoomPage/addroompage";
-@import "../styled/EditRoomPage/editroompage";
+@import "./pages/LoginPage/loginpage";
+@import "./pages/SignUpPage/signupform";
+@import "./pages/AddRoomPage/addroompage";
+@import "./pages/EditRoomPage/editroompage";
+@import "./components/navbar";

@@ -1,0 +1,101 @@
+.signup-main {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  // background-color: rgb(83, 191, 157);
+  background-image: url("../LoginPage/loginbackground.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.signup-sub-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  min-width: 325px;
+  max-height: 1000px;
+  min-height: 535px;
+  width: 50%;
+  height: 88%;
+  margin: 100px auto;
+  background-color: rgb(246, 251, 249);
+  border-radius: 40px;
+  
+  h1 {
+    display: block;
+    max-height: 3rem;
+    margin-top: 0.1em;
+    margin-bottom: 0.2em;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'open sans', sans-serif;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 2.15rem;
+    position: top;
+    box-sizing: border-box;
+  }
+  h3 {
+    display: block;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  input {
+    border-color: rgb(0, 0, 0, .1);
+    width: 75%;
+    height: 58%;
+    padding: 10px 20px;
+    margin: auto;
+    margin-top: 0.3em;
+    margin-bottom: 0.25em;
+    box-sizing: border-box;
+    border-radius: 16px;
+    font-size: small;
+  }
+
+  .error-msg {
+    font-size: medium;
+    color: red;
+  }
+}
+
+.signup-button {
+  border: none;
+  border-radius: 16px;
+  background-color: #F94C66;
+  color: white;
+  padding: 11px 68px;
+  margin-top: 0.47em;
+  margin-bottom: 0.5em;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-text {
+  text-decoration: none;
+  font-weight: bold;
+  color: #F94C66;
+  box-sizing: border-box;
+}
+
+// @media screen and (min-width:320px) and (min-height:320px){
+//   .main::beforem .main::after{
+//     content: "";
+//     display: mobile;
+//     clear: both;
+//   }
+// }
