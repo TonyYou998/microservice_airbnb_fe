@@ -20,7 +20,7 @@ export default function AddBedrooms(props){
 
         if (bedroomCount < 1){
             setErrorMsg("The number of guests can't be a negative number.")
-            setBedroomCount(0);
+            // setBedroomCount(0);
         }
 
         if(bedroomCount  > 0) {
@@ -39,21 +39,32 @@ export default function AddBedrooms(props){
         }
     }
     return(
-        <div className='add-bedroom-column'>
-            <div className='add-bedroom-row'>
-            
-                <text className='add-bedroom-header' type='text'>Add Bedroom</text>
-                <div>
-                <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
-                    <RemoveCircleOutlineRoundedIcon/>
-                </IconButton>
-                <text className='add-bedroom-count' value={bedroomCount}>{bedroomCount}</text>
-                <IconButton className='add-btn' onClick={handleAddBedroom}>
-                    <AddCircleOutlineRoundedIcon/>
-                </IconButton>
-                </div>           
-            </div>
+        <div className='add-bedroom'>
+            <Grid
+                container spacing={16}
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <text className='add-bedroom-header' type='text'>Add Bedroom</text>
+                </Grid>
+
+                <Grid item>
+                    <div>
+                        <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
+                            <RemoveCircleOutlineRoundedIcon/>
+                        </IconButton>
+                        <text className='add-bedroom-count' value={bedroomCount}>{bedroomCount}</text>
+                        <IconButton className='add-btn' onClick={handleAddBedroom}>
+                        <AddCircleOutlineRoundedIcon/>
+                        </IconButton>
+                </div>
+                </Grid>
+            </Grid>
             {<div className='error-msg'>{errorMsg}</div>}
+                
+            
         </div>
     )
 }

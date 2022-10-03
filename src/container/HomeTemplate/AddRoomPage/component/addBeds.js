@@ -22,7 +22,7 @@ export default function AddBeds(props){
 
         if (bedCount < 1){
             setErrorMsg("The number of beds can't be a negative number.")
-            setBedCount({bed: 0});
+            // setBedCount({bed: 0});
         }
 
         if(bedCount  > 0) {
@@ -47,10 +47,17 @@ export default function AddBeds(props){
     //     sendBedsToParent(e.target.value);
     // }
     return(
-        <div className='add-beds-column'>
-            <div className='add-beds-row'>
-            
-                <text className='add-beds-header' type='text'>Add Beds</text>
+        <div className='add-beds'>
+            <Grid
+                container spacing={20}
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Grid item>
+                    <text className='add-beds-header' type='text'>Add Beds</text>
+                </Grid>
+                <Grid item>
                 <div>
                 <IconButton className='remove-btn' onClick={handleRemoveBed}>
                     <RemoveCircleOutlineRoundedIcon/>
@@ -59,9 +66,11 @@ export default function AddBeds(props){
                 <IconButton className='add-btn' onClick={handleAddBed}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>    
-                </div>           
-            </div>
+                </div>
+                    </Grid> 
+            </Grid>
             {<div className='error-msg'>{errorMsg}</div>}
         </div>
+        
     )
 }

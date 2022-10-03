@@ -28,18 +28,30 @@ export default function AddPrice(props){
     }
 
     return(
-        <div className='add-price-column'>
-            <div className='add-price-row'>
-            
+        <div className='add-price'>
+            <Grid
+                container spacing={12}
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Grid item>
                 <text className='add-price-header' type='text'>Price Per Night ($)</text>
-                <div>
-                    <div className='input-price'>
+                </Grid>
+
+                <Grid item>
+                <div className='input-price'>
                         <input type ="number" className="price-input" value={valueData}
                         onChange={handleOnChange}></input>
-                        </div>
-                    </div>           
-            </div>
+                    </div>
+                </Grid>
+                
+            </Grid>
             {<div className='error-msg'>{errorMsg}</div>}
+            
+                
+                            
+                        
         </div>
     )
 }
