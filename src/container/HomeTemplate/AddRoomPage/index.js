@@ -63,7 +63,6 @@ export default function AddRoomPage() {
 
   const sendPriceDataToParent=(data)=>{
     setPrice(data);
-    
   }
   
   const handleFormSubmit = () => {

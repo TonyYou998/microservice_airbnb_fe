@@ -267,7 +267,8 @@ export default function SignUpPage() {
                   <InputLastName onChange={handleLastNameChange} valueData={lastname} sendLastNameToParent={sendLastNameDataToParent} />
                   {lastnameError && <div className='error-msg'>{lastnameError}</div>}
                   <InputUsername onChange={handleUsernameChange} valueData={username} sendUsernameToParent={sendUsernameDataToParent} />
-                  {usernameEror && <div className='error-msg'>{usernameEror}</div>}<InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
+                  {usernameEror && <div className='error-msg'>{usernameEror}</div>}
+                  <InputSingupEmail onChange={handleEmailChange} valueData={email} sendEmailToParent={sendEmailDataToParent} />
                   {emailError && <div className='error-msg'>{emailError}</div>}
                   <InputPhone onChange={handlePhoneChange} valueData={phone} sendPhoneToParent={sendPhoneDataToParent} />
                   {phoneError && <div className='error-msg'>{phoneError}</div>}

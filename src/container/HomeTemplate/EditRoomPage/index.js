@@ -18,9 +18,8 @@ export default function EditRoomPage() {
   const [bedroom, setBedroom] = useState('');
   const [bathroom, setBathroom] = useState('');
   const [price, setPrice] = useState('');
-  const [success, setSuccess] = useState('');
-
-  const EDIT_ROOM_API_URL = '/edit/edit-a-room/'
+  const [priceError, setPriceError] = useState('');
+  const EDIT_ROOM_API_URL = '/edit/edit-a-room'
 
   const handleRoomTypeChange = (e) => {
 
@@ -80,70 +79,43 @@ export default function EditRoomPage() {
   const sendPricePerNightDataToParent = (data) => {
     setPrice(data);
   }
-  //Roomtype valid
-  // const handleRoomtypeSubmit = (e) => {
-  //   let isRoomtype = false;
-  //   setRoomtypeError("");
-  //   const testEr = /[0-9]|\./;
-  //   if (!testEr.test(roomtype)) {
-  //     setRoomtypeError('Room type invalid');
-  //   }
-  //   else isRoomtype = true;
-  //   console.log(roomtype);
-  //   setRoomtype('');
-  //   return isRoomtype;
-  // }
-
+  const handlePricePerNightSubmit = (e) => {
+    let isPrice = false;
+    setPriceError("");
+    isPrice = true;
+    setPrice('');
+    return isPrice;
+  }
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setSuccess('');
-    // const roomtypeValid = handleRoomtypeSubmit();
+    const priceValid = handlePricePerNightSubmit();
     // api
-    if (true) {
-      mainApi.put(EDIT_ROOM_API_URL + "7b03f370-30f2-47c0-9bc1-41c795d1ec8d" , {
+    if (priceValid) {
+      mainApi.post(EDIT_ROOM_API_URL, {
+        id: "74c7b502-53c9-4629-9436-fd2d8eb10a1b",
         roomType: roomtype,
         pricePerNight: price,
         bedRoomCount: bedroom,
         bathRoomCount: bathroom,
         bedCount: beds,
-        status: status
+        status,
       }
       ).then((result) => {
         console.log(result.data);
-        if (success) {
-          setSuccess('Đã lưu thông tin');
-          history.push('/edit');
-        }
+        alert("Đăng ký thành công!");
+        history.push('/edit');
       }
       ).catch((error) => { alert("Lỗi! Không thành công!"); });
     }
   }
 
-  // if (usernameValid && emailValid && passwordValid && firstnameValid && lastnameValid && addressValid && phoneValid && confirmPasswordValid) {
-  //   mainApi.post(SIGNUP_USER_API_URL,
-  //     { username, firstname, lastname, address, phone, email, password }
-  //   ).then((result) => {
-  //     // console.log(result.data);
-  //     // if (success){
-  //     alert("Đăng ký thành công!");
-  //     history.push('/login');
-  //     // }
-  //   }
-  //   ).catch((error) => { alert("Lỗi! Đăng ký không thành công!"); });
-  // }
-  // }
-
   return (
-    <div>
-
-      <div className='edit-room-page-main'>
-        <div className='edr-left'></div>
-
-        <form className='edr-right' onSubmit={handleFormSubmit}>
-          <br className='edr-right-empty-box'></br>
-          <text className='edr-header'>Edit room</text>
-
-          <div className='edr-right-input-column'>
+    <div className="edr-main-page">
+      <div className="edit row justify-content-center">
+        <div className="edr-left col-6"></div>
+        <form className='edr-right col align-self-center' onSubmit={handleFormSubmit}>
+          <text className='edr-header row'>Edit room</text>
+          <div className='edr-right-input col'>
             <InputRoomType onChange={handleRoomTypeChange} valueData={roomtype} sendRoomTypeToParent={sendRoomTypeDataToParent} />
             <InputNumberOfBedrooms onChange={handleBedroomsChange} valueData={bedroom} sendBedroomsToParent={sendBedroomsDataToParent} />
             <InputNumberOfBeds onChange={handleNumberOfBedsChange} valueData={beds} sendNumberOfBedsToParent={sendNumberOfBedsDataToParent} />
@@ -151,14 +123,9 @@ export default function EditRoomPage() {
             <InputPricePerNight onChange={handlePricePerNightChange} valueData={price} sendPricePerNightToParent={sendPricePerNightDataToParent} />
             <InputStatus onChange={handleStatusChange} valueData={status} sendStatusToParent={sendStatusDataToParent} />
           </div>
-
-          <ButtonBackSave />
-
+            <ButtonBackSave />
         </form>
-
       </div>
-
     </div>
-
   )
 }
