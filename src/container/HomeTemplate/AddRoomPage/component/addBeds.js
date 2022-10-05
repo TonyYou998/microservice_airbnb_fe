@@ -60,8 +60,7 @@ export default function AddBeds(props){
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>    
                 </div>
-                    </div>           
-            {<div className='error-msg'>{errorMsg}</div>}
+                    </div>
         </div>
     )
 }

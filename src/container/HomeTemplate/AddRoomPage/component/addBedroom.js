@@ -53,7 +53,6 @@ export default function AddBedrooms(props){
                 </IconButton>
             </div>
         </div>
-        {<div className='error-msg'>{errorMsg}</div>}
         </div>
     )
 }
