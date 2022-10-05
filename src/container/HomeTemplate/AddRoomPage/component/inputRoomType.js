@@ -13,15 +13,14 @@ export default function InputRoomType(props) {
   return (
     <div class='container'>
       <div className='input-room-type' class='row'>
-            <label class='col'>Room Type</label>
+            <label class='col-sm-8 p-0'>Room Type</label>
 
-            <div class='col'>
-            <select className='input-room-select' value={valueData} required onChange={handleOnChange}>
+            <select className='input-room-select col-sm-4 p-0' value={valueData} required onChange={handleOnChange}>
                 <option value="0">Value 1</option>
                 <option value="1">Value 2</option>
                 <option value="2">Value 3</option>
             </select>
-            </div>
+
     </div>
 
     </div>

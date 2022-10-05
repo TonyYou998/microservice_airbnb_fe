@@ -66,6 +66,15 @@
             flex-direction: row;
         }
 
+        .add-price{
+            width: 100%;
+            
+        }
+
+        // .add-price-header{
+        //     text-align: center;
+        // }
+
         .input-room-select {
             background: #FFFFFF;
             border: 1.5px solid rgba(0, 0, 0, 0.1);
@@ -102,7 +111,7 @@
             border-color: rgb(0, 0, 0, .1);
             min-width: 40px;
             max-width: 90px;
-            padding: 5px 5px;
+            // padding: 5px 5px;
             // margin-top: 0.67em;
             // margin-bottom: 0.27em;
             box-sizing: border-box;

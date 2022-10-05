@@ -47,11 +47,11 @@ export default function AddBeds(props){
     //     sendBedsToParent(e.target.value);
     // }
     return(
-        <div className='add-beds' class='container'>
+        <div className='add-beds container'>
             
                 <div class='row'>
-                <text className='add-beds-header' type='text' class='col'>Add Beds</text>
-                <div class='col'>
+                <text className='add-beds-header col-sm-8 p-0' type='text'>Add Beds</text>
+                <div className='col-sm-4 p-0'>
                 <IconButton className='remove-btn' onClick={handleRemoveBed}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>

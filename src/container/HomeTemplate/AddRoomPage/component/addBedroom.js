@@ -40,10 +40,10 @@ export default function AddBedrooms(props){
     }
     return(
         <div class="container">
-            <div className='add-bedroom' class="row row-cols-auto">
+            <div className='add-bedroom' class="row">
 
-            <text className='add-bedroom-header' type='text' class="col-md-6">Add Bedroom</text>
-                <div class="col-lg-6">
+            <text className='add-bedroom-header col-sm-8 p-0' type='text'>Add Bedroom</text>
+                <div className="col-sm-4 p-0">
                 <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
