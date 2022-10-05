@@ -20,7 +20,7 @@ export default function AddBedrooms(props){
 
         if (bedroomCount < 1){
             setErrorMsg("The number of guests can't be a negative number.")
-            // setBedroomCount(0);
+            setBedroomCount(0);
         }
 
         if(bedroomCount  > 0) {
@@ -39,32 +39,21 @@ export default function AddBedrooms(props){
         }
     }
     return(
-        <div className='add-bedroom'>
-            <Grid
-                container spacing={16}
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-            >
-                <Grid item>
-                    <text className='add-bedroom-header' type='text'>Add Bedroom</text>
-                </Grid>
+        <div class="container">
+            <div className='add-bedroom' class="row row-cols-auto">
 
-                <Grid item>
-                    <div>
-                        <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
-                            <RemoveCircleOutlineRoundedIcon/>
-                        </IconButton>
-                        <text className='add-bedroom-count' value={bedroomCount}>{bedroomCount}</text>
-                        <IconButton className='add-btn' onClick={handleAddBedroom}>
-                        <AddCircleOutlineRoundedIcon/>
-                        </IconButton>
-                </div>
-                </Grid>
-            </Grid>
-            {<div className='error-msg'>{errorMsg}</div>}
-                
-            
+            <text className='add-bedroom-header' type='text' class="col-md-6">Add Bedroom</text>
+                <div class="col-lg-6">
+                <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
+                    <RemoveCircleOutlineRoundedIcon/>
+                </IconButton>
+                <text className='add-bedroom-count' value={bedroomCount}>{bedroomCount}</text>
+                <IconButton className='add-btn' onClick={handleAddBedroom}>
+                    <AddCircleOutlineRoundedIcon/>
+                </IconButton>
+            </div>
+        </div>
+        {<div className='error-msg'>{errorMsg}</div>}
         </div>
     )
 }

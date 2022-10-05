@@ -21,7 +21,7 @@ export default function AddBathroom(props){
 
         if (bathroomCount < 1){
             setErrorMsg("The number of bathrooms can't be a negative number.")
-            // setBathroomCount(0);
+            setBathroomCount(0);
         }
 
         if(bathroomCount  > 0) {
@@ -44,18 +44,10 @@ export default function AddBathroom(props){
 
   
     return(
-        <div className='add-bathroom-column'>
-            <Grid
-            container spacing={14}
-            direction="row"
-            justifyContent="center"
-            alignItems="center">
-                <Grid item>
-                <text className='add-bathroom-header' type='text'>Add Bathrooms</text>
-                </Grid>
-
-                <Grid item>
-                <div>
+        <div class='container'>
+            <div className='add-bathroom' class='row'>
+                <text className='add-bathroom-header' type='text' class='col'>Add Bathrooms</text>
+                <div class='col'>
                 <IconButton className='remove-btn' onClick={handleRemoveBathroom}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
@@ -63,15 +55,10 @@ export default function AddBathroom(props){
                 <IconButton className='add-btn' onClick={handleAddBathroom}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>    
-                </div>
-
-                </Grid>
-
-            </Grid>
+                </div>           
             {<div className='error-msg'>{errorMsg}</div>}
-                
-                           
-            
+        </div>
+
         </div>
     )
 }
