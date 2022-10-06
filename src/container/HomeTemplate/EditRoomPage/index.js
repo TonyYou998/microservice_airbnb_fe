@@ -112,8 +112,8 @@ export default function EditRoomPage() {
   return (
     <div className="edr-main-page">
       <div className="edit row justify-content-center">
-        <div className="edr-left col-6"></div>
-        <form className='edr-right col align-self-center' onSubmit={handleFormSubmit}>
+        <div className="edr-left col"></div>
+        <form className='edr-right col-4 align-self-center' onSubmit={handleFormSubmit}>
           <text className='edr-header row'>Edit room</text>
           <div className='edr-right-input col'>
             <InputRoomType onChange={handleRoomTypeChange} valueData={roomtype} sendRoomTypeToParent={sendRoomTypeDataToParent} />

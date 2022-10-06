@@ -12,8 +12,6 @@ export default function InputNumberOfBeds(props) {
 
     const { sendBedsToParent } = props;
 
-    //const{valueData}=props;
-
     const handleDecreaseBeds = (e) => {
         setErrorMsg('')
         setBedAdd(bedAdd - 1)
@@ -52,7 +50,6 @@ export default function InputNumberOfBeds(props) {
                     </IconButton>
                 </div>
             </div>
-            {<div className='error-msg'>{errorMsg}</div>}
         </div>
     )
 }

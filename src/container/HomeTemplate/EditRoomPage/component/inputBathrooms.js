@@ -13,8 +13,6 @@ export default function InputNumberOfBathrooms(props) {
 
     const { sendBathroomsToParent } = props;
 
-    //const{valueData}=props;
-
     const handleDecreaseBathrooms = (e) => {
         setErrorMsg('')
         setBathroomAdd(bathroomAdd - 1)
@@ -52,7 +50,6 @@ export default function InputNumberOfBathrooms(props) {
                     </IconButton>
                 </div>
             </div>
-            {<div className='error-msg'>{errorMsg}</div>}
         </div>
     )
 }

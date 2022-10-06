@@ -17,7 +17,7 @@ export default function InputStatus(props) {
         <div className='edit-input-room-status row p-3' >
             <label className='room-status-label col'>Room status</label>
 
-            <select className='room-status-label col-6 align-self-center' value={valueData} required onChange={handleOnChange}>
+            <select className='room-status-label col-6 center-block text-center align-self-center' value={valueData} required onChange={handleOnChange}>
                 <option value="0">True</option>
                 <option value="1">False</option>
             </select>
