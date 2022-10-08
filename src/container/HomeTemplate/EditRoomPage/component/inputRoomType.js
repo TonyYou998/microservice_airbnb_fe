@@ -15,10 +15,10 @@ export default function InputRoomType(props) {
     sendRoomTypeToParent(e.target.value);
   }
   return (
-    <div className='input-room-type'>
-            <label >Room Type</label>
+    <div className='edit-input-room-type row p-3'>
+            <label className='room-type-label col'>Room Type</label>
 
-            <select value={valueData} required onChange={handleOnChange}>
+            <select className='room-type-select col-6 center-block text-center align-self-center' value={valueData} required onChange={handleOnChange}>
                 <option value="0">Value 1</option>
                 <option value="1">Value 2</option>
                 <option value="2">Value 3</option>
