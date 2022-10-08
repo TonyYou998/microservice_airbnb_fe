@@ -9,7 +9,7 @@ import ButtonRow from './component/buttonRow';
 import { Button } from 'bootstrap';
 import AddPrice from './component/addPrice';
 import { mainApi } from '../../../api';
-
+import InputRoomType from './component/inputRoomType';
 
 export default function AddRoomPage() {
   const history=useHistory();
@@ -17,6 +17,8 @@ export default function AddRoomPage() {
   const [bedroom, setBedroom]=useState('');
   const [bathroom, setBathroom]=useState('');
   const [price, setPrice]=useState('');
+  const [roomtype, setRoomtype] = useState('');
+  const [success, setSuccess] = useState('');
 
   const ADD_ROOM_API_URL = '/create/create-a-room'
 
@@ -65,11 +67,21 @@ export default function AddRoomPage() {
     setPrice(data);
     
   }
+
+  const handleRoomTypeChange = (e) => {
+
+    setRoomtype(e.target.value);
+  }
+
+  const sendRoomTypeDataToParent = (data) => {
+    setRoomtype(data);
+
+  }
   
   const handleFormSubmit = () => {
     // api
     mainApi.post(ADD_ROOM_API_URL,{
-      roomType: "null",
+      roomType: roomtype,
       pricePerNight:  price,
       bedRoomCount: bedroom,
       bathRoomCount: bathroom,
@@ -90,6 +102,7 @@ export default function AddRoomPage() {
                 
             <div className='ar-right-add-column'>
             <>
+              <InputRoomType onChange={handleRoomTypeChange} valueData={roomtype} sendRoomTypeToParent={sendRoomTypeDataToParent} />
               <AddBedrooms onChange={handleBedroomChange} valueData={bedroom} sendBadroomToParent={sendBedroomDataToParent}/>
               <AddBeds onChange={handleBedsChange} valueData={beds} sendBadsToParent={sendBedsDataToParent}/>
               <AddBathroom onChange={handleBathroomChange} valueData={bathroom} sendBathroomToParent={sendBathroomDataToParent}/>

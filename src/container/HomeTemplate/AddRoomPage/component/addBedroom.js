@@ -39,11 +39,11 @@ export default function AddBedrooms(props){
         }
     }
     return(
-        <div className='add-bedroom-column'>
-            <div className='add-bedroom-row'>
-            
-                <text className='add-bedroom-header' type='text'>Add Bedroom</text>
-                <div>
+        <div class="container">
+            <div className='add-bedroom' class="row">
+
+            <text className='add-bedroom-header col-sm-8 p-0' type='text'>Add Bedroom</text>
+                <div className="col-sm-4 p-0">
                 <IconButton className='remove-btn' onClick={handleRemoveBedroom}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
@@ -51,9 +51,8 @@ export default function AddBedrooms(props){
                 <IconButton className='add-btn' onClick={handleAddBedroom}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>
-                </div>           
             </div>
-            {<div className='error-msg'>{errorMsg}</div>}
+        </div>
         </div>
     )
 }

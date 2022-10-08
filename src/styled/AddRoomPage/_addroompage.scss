@@ -53,90 +53,36 @@
 
         .ar-right-add-column{
             min-height: 260px;
+            min-width: 300px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .add-bedroom-row{
-            min-width: 380px;
-            display: flex;
-            flex-direction: row;
             align-items: center;
             justify-content: space-between;
             font-size: 1.5rem;
+            
         }
 
-        .add-bedroom-column{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            // font-size: 1.5rem;
-        }
-
-        .add-beds-row{
-            min-width: 380px;
-            display: flex;
+        .add-bedroom{
             flex-direction: row;
-            align-items: center;
+        }
+
+        .add-price{
+            width: 100%;
+            
+        }
+
+        // .add-price-header{
+        //     text-align: center;
+        // }
+
+        .input-room-select {
+            background: #FFFFFF;
+            border: 1.5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            // height: 30px;
+            // width: 120px;
             justify-content: space-between;
-            font-size: 1.5rem;
-        }
-
-        .add-beds-column{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            // font-size: 1.5rem;
-        }
-
-        .add-bathroom-row{
-            min-width: 380px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 1.5rem;
-        }
-
-        .add-bathroom-column{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            // font-size: 1.5rem;
-        }
-
-        .add-toilet-row{
-            min-width: 380px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 1.5rem;
-        }
-
-        .add-toilet-column{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            // font-size: 1.5rem;
-        }
-
-        .add-price-row{
-            min-width: 380px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 1.5rem;
-        }
-
-        .add-price-column{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            // font-size: 1.5rem;
+            // margin-left: 2rem;
         }
 
         .btn-row{
@@ -165,12 +111,12 @@
             border-color: rgb(0, 0, 0, .1);
             min-width: 40px;
             max-width: 90px;
-            padding: 5px 5px;
+            // padding: 5px 5px;
             // margin-top: 0.67em;
             // margin-bottom: 0.27em;
             box-sizing: border-box;
             border-radius: 15px;
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
           }
 
         // .add-btn{
