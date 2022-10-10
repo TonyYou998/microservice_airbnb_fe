@@ -1,12 +1,18 @@
 import React from 'react'
-import Navbar from '../../../components/Navbar'
-import Carousel from './component/Carousel'
+import AttractivePlace from './component/AttractivePlaces'
+import Header from './component/Header'
+import Property from './component/Property'
+
+
 
 export default function HomePage() {
   return (
     <>
           
-    <Carousel/>
+    {/* <Carousel/> */}
+    <Header/>
+    <AttractivePlace/>
+    <Property/>
     </>
   
   )
