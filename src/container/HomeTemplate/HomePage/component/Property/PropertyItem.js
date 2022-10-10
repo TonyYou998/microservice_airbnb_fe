@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PropertyItem() {
   return (
-    <div className='item__container px-4 col-4'>
+    <div className='item__container '>
         <img className='item__img' src='https://a0.muscache.com/im/pictures/8e3c4402-e52b-4d98-9646-ab38f9af7e43.jpg?im_w=720'/>
         <div className='item__content'>
 

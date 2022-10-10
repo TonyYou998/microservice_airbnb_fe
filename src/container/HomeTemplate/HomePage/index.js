@@ -11,8 +11,9 @@ export default function HomePage() {
           
     {/* <Carousel/> */}
     <Header/>
-    <AttractivePlace/>
     <Property/>
+    <AttractivePlace/>
+   
     </>
   
   )
