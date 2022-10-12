@@ -4,7 +4,7 @@ import AttractiveComponentUp from '../AttractiveComponentUp'
 
 export default function AttractivePlace() {
   return (
-    <div className='container attractive'>
+    <div className='container attractive '>
         <div className='attractive__header py-3'>
             <h3>Most attractive places</h3>
 

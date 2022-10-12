@@ -12,7 +12,7 @@ export default function Property() {
     
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay:true,
     autoplaySpeed:1000,
@@ -21,9 +21,9 @@ export default function Property() {
     dotClass: 'slick-dots'
   };
   return (
-
-    <Tab.Container   defaultActiveKey="first">
-      <Nav className="container px-auto justify-content-around"  >
+   <div className="property__container ">
+       <Tab.Container   defaultActiveKey="first">
+      <Nav className="nav__container container-fluid    px-auto justify-content-around"  >
         <Nav.Item>
           <Nav.Link className='nav__item' eventKey="first">
               <button className="btn__nav" >
@@ -112,8 +112,24 @@ export default function Property() {
                 </div>
               </button></Nav.Link>
         </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className='nav__item' eventKey="second">
+          <button className="btn__nav" >
+                <div>
+                  <span>
+                    <img style={{width:'24px',height:"24px"}} src="https://a0.muscache.com/pictures/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg"/>
+                    <div>
+                      <span style={{fontSize:"12px" ,lineHeight:'16px'}}>
+                        national park
+                      </span>
+                    </div>
+                  </span>
+                </div>
+              </button>
+          </Nav.Link>
+        </Nav.Item>
       </Nav>
-      <Tab.Content className='container'>
+      <Tab.Content className=" container pt-4" >
         <Tab.Pane eventKey="first" >
           <Slider {...settings}>
             <PropertyItem />
@@ -196,5 +212,9 @@ export default function Property() {
         </Tab.Pane>
       </Tab.Content>
     </Tab.Container>
+    
+   </div>
+       
+  
   );
 }
