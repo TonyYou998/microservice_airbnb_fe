@@ -44,11 +44,10 @@ export default function AddBathroom(props){
 
   
     return(
-        <div className='add-bathroom-column'>
-            <div className='add-bathroom-row'>
-            
-                <text className='add-bathroom-header' type='text'>Add Bathrooms</text>
-                <div>
+        <div class='container'>
+            <div className='add-bathroom' class='row'>
+                <text className='add-bathroom-header col-sm-8 p-0' type='text'>Add Bathrooms</text>
+                <div className='col-sm-4 p-0'>
                 <IconButton className='remove-btn' onClick={handleRemoveBathroom}>
                     <RemoveCircleOutlineRoundedIcon/>
                 </IconButton>
@@ -56,9 +55,9 @@ export default function AddBathroom(props){
                 <IconButton className='add-btn' onClick={handleAddBathroom}>
                     <AddCircleOutlineRoundedIcon/>
                 </IconButton>    
-                </div>           
-            </div>
-            {<div className='error-msg'>{errorMsg}</div>}
+                </div>
+        </div>
+
         </div>
     )
 }
