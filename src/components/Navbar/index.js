@@ -1,4 +1,6 @@
 import React from 'react'
+import { Nav } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
@@ -7,6 +9,7 @@ export default function Navbar() {
 <nav className="navbar navbar__home navbar-expand px-5">
   
   {/* <a className="navbar-brand" href="#">logo</a> */}
+  
   <h4 className='' style={{fontStyle:"italic"}}>Rental<span style={{color:"blue",fontWeight:"700",fontStyle:"italic"}}>.com</span></h4>
   {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon" />
@@ -14,13 +17,22 @@ export default function Navbar() {
   <div  className='navbar__list' id="navbarNav">
     <ul className="navbar-nav">
       <li className="nav-item active ">
-        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+        <NavLink  className="nav-link" to={"/"}>
+            Home <span className="sr-only">(current)</span>
+        </NavLink>
+        {/* <a href="#"></a> */}
       </li>
       <li className="nav-item ">
-        <a className="nav-link" href="#">Sign Up</a>
+        <NavLink  className="nav-link" to={"/signup"}>
+          Sign up
+        </NavLink>
+       
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#">Sign In</a>
+        <NavLink className="nav-link" to={"/login"}>
+          Sign In
+        </NavLink>
+        
       </li>
       
     </ul>
