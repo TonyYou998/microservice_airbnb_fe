@@ -1,10 +1,12 @@
 import React from 'react'
 import {Route} from "react-router-dom";
+import Navbar from '../../components/Navbar';
 import HomePage from './HomePage';
 
 function LayoutHome(props){
     
     return <>
+    <Navbar/>
         {props.children}
     </>
 }
