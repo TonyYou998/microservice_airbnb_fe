@@ -1,0 +1,33 @@
+// .container{
+//     margin: 0 !important;
+
+    
+// }
+
+// *{
+//     background-color: #F6FBF9;
+// }
+
+.epp-main-page {
+    background-color: #F6FBF9;
+    
+    .epp-left{
+       background-image: url("../EditPropertyPage/add_room_page.png");
+        border-radius: 10px;
+       height: 600px;
+     
+    }
+    padding-top: 50px ;
+    .epp-right{
+        // margin-left: 20px;
+        // margin-right: 20px;
+        padding: 20px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        .edit-price{
+            border-radius: 20px;
+        }
+    }
+   
+          
+} 

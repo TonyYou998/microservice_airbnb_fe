@@ -4,6 +4,7 @@ import LoginPage from "../container/HomeTemplate/LoginPage";
 import SignUpPage from "../container/HomeTemplate/SignUpPage";
 import AddRoomPage from "../container/HomeTemplate/AddRoomPage";
 import EditRoomPage from "../container/HomeTemplate/EditRoomPage";
+import EditPropertyPage from "container/HomeTemplate/EditPropertyPage";
 
 const routesUser=[
     {
@@ -35,7 +36,13 @@ const routesUser=[
         exact:false,
         path:"/editroom",
         Component:EditRoomPage
+    },
+    {
+        exact:false,
+        path:"/editproperty",
+        Component:EditPropertyPage
     }
+
 ];
 
 export {routesUser};
