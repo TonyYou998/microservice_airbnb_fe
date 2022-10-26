@@ -1,0 +1,107 @@
+.container__background{
+    // background: linear-gradient(to bottom,#ffc54d,#53bf9d);
+}
+.video__container{
+    height: 100vh;
+    background-color: #7babff;
+    padding: 0 15px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+}
+.start__component{
+    position: relative;
+    background-color: #ff7961;
+   
+}
+.start__container{
+    position: absolute;
+    right: 50%;
+    top: 45%;
+    color: #000000;
+    h4{
+
+        color: #ffc54d;
+        
+    }
+    text-align: center;
+    padding: 0 100px;
+    button{
+        margin: 15px 0;
+        background-color:#c74936;
+        color: #000000;
+        padding: 14px 72px;
+        font-weight: bold;
+        border-radius: 16px;
+    }
+    transform: translate(50%,-50%);
+}
+
+.image__container{
+    background-color: #7babff;
+    box-shadow: 6px 10px  6px #999999;
+}
+.image__component{
+    height: 100vh;
+    // width: 100%;
+    img{
+        width: 100%;
+        height: 70%;
+        object-fit: contain;
+        // display: block;
+        margin: 80px 0 ;
+        
+        // top: 100px;
+        // bottom: 0;
+        
+    }
+}
+.option__container{
+    margin: 0 100px;
+    .option__btn{
+        &:hover{
+            box-shadow:  10px  5px 5px #999999;
+        }
+        &:focus{
+            background-color: #f7f7f7;
+        }
+        border-radius: 8px;
+        border: solid 1px #cccccc;
+        align-items: center;
+        color: #000000;
+        font-weight: 500;
+        text-align: left !important;
+        margin: 0 auto;
+        text-align: center;
+        padding: 12px 30px;
+        width: 90%;
+      
+        .btn__img{
+            img{
+                border-radius: 8px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+       
+    }
+}
+.options__container{
+    .MuiBox-root{
+        margin-left:4px;
+    }
+    .MuiAppBar-colorPrimary{
+        background-color: #ffffff;
+    }
+    .MuiAppBar-root{
+        padding: 12px 0;
+        // border-radius: 8px;
+    }
+}
+.option__items{
+    padding-top: 50px;
+
+}

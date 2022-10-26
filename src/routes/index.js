@@ -4,6 +4,10 @@ import LoginPage from "../container/HomeTemplate/LoginPage";
 import SignUpPage from "../container/HomeTemplate/SignUpPage";
 import AddRoomPage from "../container/HomeTemplate/AddRoomPage";
 import EditRoomPage from "../container/HomeTemplate/EditRoomPage";
+import BecomeAHostPage from "container/HostTemplate/BecomeAHostPage";
+import Classifycation from "container/HostTemplate/ClassifycactionPage";
+
+
 
 const routesUser=[
     {
@@ -37,5 +41,17 @@ const routesUser=[
         Component:EditRoomPage
     }
 ];
+const routeHost=[
+    {
+        exact:false,
+        path:"/become-a-host",
+        Component:BecomeAHostPage
+    },{
+        exact:false,
+        path:"/classifycation",
+        Component:Classifycation
+    }
+]
 
-export {routesUser};
+
+export {routesUser,routeHost};
