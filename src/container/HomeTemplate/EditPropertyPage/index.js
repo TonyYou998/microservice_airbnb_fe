@@ -4,15 +4,18 @@ import { useHistory } from 'react-router-dom';
 import { Col } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import ButtonSave from "./component/buttonsave";
-import InputPricePerNight from './component/inputPricePerNight';
+import InputPropertyName from './component/InputPropertyName';
+import InputContryName from './component/InputCountryName';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function EditPropertyPage() {
 
+   
 
     return(
     <div className="epp-main-page">
+
 
     
         <Container >
@@ -26,7 +29,8 @@ export default function EditPropertyPage() {
             <Col className="epp-right justify-content-md-center" >
             <div >
             <h2 className='row justify-content-md-center'>Edit Property</h2>
-            <InputPricePerNight></InputPricePerNight>
+            <InputPropertyName></InputPropertyName>
+            <InputContryName> </InputContryName>
             <ButtonSave></ButtonSave>
             </div>
             </Col> 
@@ -36,3 +40,12 @@ export default function EditPropertyPage() {
        
     )
 }
+
+
+
+// private String propertyName;
+// private String address;
+// private String description;
+// private int propertyTypeId;
+// private String images;
+// private UUID id;

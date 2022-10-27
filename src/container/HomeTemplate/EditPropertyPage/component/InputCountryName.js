@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'font-awesome/css/font-awesome.min.css';
 import Grid from "@mui/material/Grid";
 
-export default function InputPricePerNight(props) {
+export default function InputPropertyName(props) {
     const [errorMsg, setErrorMsg] = useState('');
 
     const { sendPricePerNightToParent } = props;
