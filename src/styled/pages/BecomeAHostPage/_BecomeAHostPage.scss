@@ -1,6 +1,4 @@
-.container__background{
-    // background: linear-gradient(to bottom,#ffc54d,#53bf9d);
-}
+
 .video__container{
     height: 100vh;
     background-color: #7babff;
@@ -104,4 +102,24 @@
 .option__items{
     padding-top: 50px;
 
+}
+.navigate__components{
+    margin-top: 20px;
+    padding: 0 50px;
+    .next__btn{
+        background-color: #ffffff;
+        color: #000000;
+        border: unset;
+        padding: 10px 34px;
+        box-shadow:  4px  2px 2px #999999;
+        font-weight: 600;
+    }
+    .back__btn{
+        background-color: #ffffff;
+        font-weight: 600;
+        color: #000000;
+        padding: 10px 34px;
+        border: unset;
+        box-shadow:  4px  2px 2px #999999;
+    }
 }

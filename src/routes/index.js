@@ -6,6 +6,8 @@ import AddRoomPage from "../container/HomeTemplate/AddRoomPage";
 import EditRoomPage from "../container/HomeTemplate/EditRoomPage";
 import BecomeAHostPage from "container/HostTemplate/BecomeAHostPage";
 import Classifycation from "container/HostTemplate/ClassifycactionPage";
+import PrivacyPage from "container/HostTemplate/PrivacyPage";
+import LocationPage from "container/HostTemplate/LocationPage";
 
 
 
@@ -50,6 +52,16 @@ const routeHost=[
         exact:false,
         path:"/classifycation",
         Component:Classifycation
+    },
+    {
+        exact:false,
+        path:"/privacy",
+        Component:PrivacyPage
+    },
+    {
+        exact:false,
+        path:"/location",
+        Component:LocationPage
     }
 ]
 
