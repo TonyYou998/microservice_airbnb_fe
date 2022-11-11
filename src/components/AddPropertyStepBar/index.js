@@ -7,9 +7,10 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 export default function AddPropertyStepBar(props) {
-  const {tittle}=props;
+  const {tittle,className}=props;
+  
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} className={className}>
       <AppBar position="static">
         <Toolbar variant="dense">
         

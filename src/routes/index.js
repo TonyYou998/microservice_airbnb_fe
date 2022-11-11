@@ -8,6 +8,8 @@ import BecomeAHostPage from "container/HostTemplate/BecomeAHostPage";
 import Classifycation from "container/HostTemplate/ClassifycactionPage";
 import PrivacyPage from "container/HostTemplate/PrivacyPage";
 import LocationPage from "container/HostTemplate/LocationPage";
+import TitlePage from "container/HostTemplate/TitlePage";
+import DescriptionPage from "container/HostTemplate/DescriptionPage";
 
 
 
@@ -62,6 +64,17 @@ const routeHost=[
         exact:false,
         path:"/location",
         Component:LocationPage
+    },
+    {
+        exact:false,
+        path:"/title",
+        Component:TitlePage
+    
+    },
+    {
+        exact:false,
+        path:"/description",
+        Component:DescriptionPage
     }
 ]
 
