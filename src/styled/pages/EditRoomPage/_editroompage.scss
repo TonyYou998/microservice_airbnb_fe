@@ -1,27 +1,35 @@
 .edr-main-page {
-
-    height: 100vh;
+    padding: 50px;
+    
+    // height: 100vh;
     background-color: #F6FBF9;
     .edit {
-        width: 100% !important;
-        height: 100vh;
+        // width: 100% !important;
+        // height: 100vh;
     }
 
     .edr-left {
+      
+        padding: 20px;
+        margin-top: 50px;
         background-image: url("../EditRoomPage/_edit_room_page_bg.png");
         background-repeat: no-repeat;
-        background-position: left bottom;
-        background-size: contain;
+        
+        // background-position: left bottom;
+        background-size: 85%;
     }
 
     .edr-right {
-        min-height: 320px;
-        max-height: 825px;
-        min-width: 380px;
+         margin-top: 50px;
+        // min-height: 320px;
+        // max-height: 825px;
+        // min-width: 380px;
+        // width: 35%;
+        padding: 40px 20px;
         background-color: #FFFFFF;
         border-radius: 16px;
         align-items: center;
-        overflow: auto;
+       
         margin-right: 2rem;
        
         .edr-header {
@@ -29,7 +37,7 @@
             margin-left: auto;
             line-height: 33px;
             font-family: "open sans", sans-serif;
-            padding: 1rem 0;
+           
             font-weight: bold;
         }
 

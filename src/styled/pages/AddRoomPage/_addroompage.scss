@@ -1,15 +1,17 @@
 .add-room-page-main{
 
-    height: 100vh;
+    height: 100%;
     // width: 100vw;
     background-color: #F6FBF9;
-    display: flex;
-    flex-direction: row;
+    font-family: 'open sans', sans-serif;
+    padding: 50px;
     .ar-left{
-        display: flex;
-        position: relative;
-        flex: 3;
+        // height: 100vh;
+        // flex: 3;
+        border-radius: 10px;
+        padding: 20px;
         background-image: url("../AddRoomPage/add_room_page.png");
+        
         background-repeat: no-repeat;
         background-position: left;
         background-attachment: fixed;
@@ -17,14 +19,12 @@
     }
 
     .ar-right{
-        height: 92vh;
-        display: flex;
-        position: relative;
-        flex: 2;
+       background-color: #ffffff;
+       border-radius: 10px;
+        margin-top: 50px;
+       padding: 40px;
         // text-align: center;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
+       
 
         .ar-right-empty-box{
             content: "";
@@ -36,10 +36,9 @@
         .ar-header{
             margin-top: 0.27em;
             margin-bottom: 0.27em;
-            margin-left: 0;
-            margin-right: 0;
-            text-align: center;
-            // font-family: 'open sans', sans-serif;
+          
+         
+          
             padding: 1rem 0;
             font-weight: bold;
             font-size: 3.0rem;
@@ -55,6 +54,7 @@
             min-height: 260px;
             min-width: 300px;
             display: flex;
+            margin-top: 1rem;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
@@ -101,6 +101,10 @@
             color: white;
             padding: 14px 32px;
             margin-top: 0.47em;
+
+            //?
+            margin-right: 5em;
+
             margin-bottom: 0.47em;
             font-size: 1.4rem;
             font-weight: bold;
@@ -110,7 +114,7 @@
         .price-input[type=number] {
             border-color: rgb(0, 0, 0, .1);
             min-width: 40px;
-            max-width: 90px;
+            max-width: 145px;
             // padding: 5px 5px;
             // margin-top: 0.67em;
             // margin-bottom: 0.27em;

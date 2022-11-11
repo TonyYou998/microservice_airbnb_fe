@@ -111,8 +111,8 @@ export default function EditRoomPage() {
 
   return (
     <div className="edr-main-page">
-      <div className="edit row justify-content-center">
-        <div className="edr-left col"></div>
+      <div className="edit row justify-content-center ">
+        <div className="edr-left col-sm"></div>
         <form className='edr-right col-4 align-self-center' onSubmit={handleFormSubmit}>
           <text className='edr-header row'>Edit room</text>
           <div className='edr-right-input col'>

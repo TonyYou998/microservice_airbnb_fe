@@ -92,12 +92,12 @@ export default function AddRoomPage() {
   return (
     <div>
    
-        <div className='add-room-page-main'>
-          <div className='ar-left'></div>
+        <div className='add-room-page-main row justify-content-sm-center '>
+          <div className='ar-left col-sm-7'></div>
 
-          <form className='ar-right' onSubmit={handleFormSubmit}>
+          <form className='ar-right col-sm-4' onSubmit={handleFormSubmit}>
             <br className='ar-right-empty-box'></br>
-            <text className='ar-header'>Add a room</text>
+            <text className='ar-header text-center'>Add a room</text>
                 
             <div className='ar-right-add-column'>
             <>
