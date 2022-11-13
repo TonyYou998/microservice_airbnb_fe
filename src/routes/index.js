@@ -11,6 +11,7 @@ import LocationPage from "container/HostTemplate/LocationPage";
 import TitlePage from "container/HostTemplate/TitlePage";
 import DescriptionPage from "container/HostTemplate/DescriptionPage";
 import PricePage from "container/HostTemplate/PricePage";
+import CongrastPage from "container/HostTemplate/CongrastPage";
 
 
 
@@ -81,6 +82,11 @@ const routeHost=[
         exact:false,
         path:"/price",
         Component:PricePage
+    },
+    {
+        exact:false,
+        path:"/congrast",
+        Component:CongrastPage
     }
 ]
 

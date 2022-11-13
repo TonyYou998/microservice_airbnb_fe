@@ -275,3 +275,20 @@
         text-align: center;
     }    
 }
+
+.message__wrapper{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    .message__container{
+        // margin: 0 100px;
+        // max-width: 480px;
+        position: absolute;
+        margin: 0 auto;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;    
+        top:40%;
+        // transform: translate(0, 50%);
+    }
+}

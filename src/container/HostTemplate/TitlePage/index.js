@@ -6,7 +6,6 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { NavLink } from 'react-router-dom'
-
 import { actAddCategory, actAddTitle } from '../modules/actions'
 import Content from './components/Content'
 
@@ -18,7 +17,6 @@ export default function TitlePage() {
   const [title,setTitle]=useState("");
   const handleOnClick=(data)=>{
       dispatch(actAddTitle(data));
-
   }
   return (
 
@@ -43,8 +41,6 @@ export default function TitlePage() {
 
         </div>
       </div>
-
-
     </div>
   )
 }

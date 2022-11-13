@@ -40,7 +40,7 @@ export default function DescriptionPage() {
           <NavLink to="/description">
             <button className='btn   back__btn'>Back</button>
           </NavLink>
-          <NavLink onClick={()=>handleOnClick(price,data)} to="/">
+          <NavLink onClick={()=>handleOnClick(price,data)} to="/congrast">
             <button  className='btn  next__btn'>Next</button>
           </NavLink>
 
