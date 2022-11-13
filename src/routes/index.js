@@ -4,6 +4,15 @@ import LoginPage from "../container/HomeTemplate/LoginPage";
 import SignUpPage from "../container/HomeTemplate/SignUpPage";
 import AddRoomPage from "../container/HomeTemplate/AddRoomPage";
 import EditRoomPage from "../container/HomeTemplate/EditRoomPage";
+import BecomeAHostPage from "container/HostTemplate/BecomeAHostPage";
+import Classifycation from "container/HostTemplate/ClassifycactionPage";
+import PrivacyPage from "container/HostTemplate/PrivacyPage";
+import LocationPage from "container/HostTemplate/LocationPage";
+import TitlePage from "container/HostTemplate/TitlePage";
+import DescriptionPage from "container/HostTemplate/DescriptionPage";
+import PricePage from "container/HostTemplate/PricePage";
+
+
 
 const routesUser=[
     {
@@ -37,5 +46,43 @@ const routesUser=[
         Component:EditRoomPage
     }
 ];
+const routeHost=[
+    {
+        exact:false,
+        path:"/become-a-host",
+        Component:BecomeAHostPage
+    },{
+        exact:false,
+        path:"/classifycation",
+        Component:Classifycation
+    },
+    {
+        exact:false,
+        path:"/privacy",
+        Component:PrivacyPage
+    },
+    {
+        exact:false,
+        path:"/location",
+        Component:LocationPage
+    },
+    {
+        exact:false,
+        path:"/title",
+        Component:TitlePage
+    
+    },
+    {
+        exact:false,
+        path:"/description",
+        Component:DescriptionPage
+    },
+    {
+        exact:false,
+        path:"/price",
+        Component:PricePage
+    }
+]
 
-export {routesUser};
+
+export {routesUser,routeHost};

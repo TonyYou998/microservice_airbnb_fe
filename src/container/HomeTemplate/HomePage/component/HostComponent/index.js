@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function HostComponent() {
   return (
@@ -17,7 +18,10 @@ export default function HostComponent() {
             faucibus orci luctus et ultrices posuere cubilia Curae; Nulla mollis
             dapibus nunc.
           </p>
+          <NavLink to="/become-a-host">
           <button className="btn host__btn">Become a host</button>
+          </NavLink>
+         
         </div>
         
       </div>

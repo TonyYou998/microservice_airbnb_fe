@@ -95,16 +95,14 @@ export default function LoginPage() {
     const passwordValid= handlePasswordSubmit();
 
     if(usernameValid && passwordValid){
-      console.log({username, password});
-
       mainApi.post(LOGIN_USER_API_URL,{
         username: username,
         password: password,       
       })
       .then(result=>{
-        console.log(result.data);
+      
         //save token to cookie
-        let bearer = "bearer=" + result.data;
+        let bearer = "token=" + `Bearer ${result.data}`;
         document.cookie = bearer;
         //notify when receive to token
         if (result.data == 'username or password are invalid'){
