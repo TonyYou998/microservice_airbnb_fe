@@ -6,8 +6,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { NavLink } from 'react-router-dom'
-import ClassifyOption from '../../../components/Classifycation/ClassifyOption';
-import ClassifyOptionWithInput from '../../../components/Classifycation/ClassifyOptionWithInput';
+
 import { actAddCategory, actAddTitle } from '../modules/actions'
 import Content from './components/Content'
 

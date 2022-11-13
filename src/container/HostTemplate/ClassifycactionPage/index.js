@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { NavLink } from 'react-router-dom'
 import ClassifyOption from '../../../components/Classifycation/ClassifyOption';
-import ClassifyOptionWithInput from '../../../components/Classifycation/ClassifyOptionWithInput';
+
 import { actAddCategory } from '../modules/actions'
 import { actGetCategoryApi } from './modules/action'
 
