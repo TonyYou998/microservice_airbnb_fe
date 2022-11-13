@@ -3,39 +3,44 @@ import AddPropertyStepBar from 'components/AddPropertyStepBar'
 import ImageComponent from 'components/ImageComponent/ImageComponent'
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 import { NavLink } from 'react-router-dom'
-import { actAddDescription } from '../modules/actions'
-import Content from '../TitlePage/components/Content'
+import { actAddDescription, actAddPrice, actAddPropertyApi } from '../modules/actions'
+
+import InputPrice from './components/InputPrice'
 
 
 
 
 
 export default function DescriptionPage() {
-  const [description,setDescription]=useState("");
+  const [price,setPrice]=useState(0);
   const dispatch=useDispatch();
-  const handleOnClick=(description)=>{
-      dispatch(actAddDescription(description));
+  const data =useSelector(state=>state.hostReducer)
+  const handleOnClick=(price,data)=>{
+    
+      dispatch(actAddPrice(price));
+      dispatch(actAddPropertyApi(data))
 
   }
+
   return (
     <div className='d-flex'>
     <div className='col-6 image__container'>
-      <ImageComponent img={"./img/Stay.svg"} />
+      <ImageComponent img={"./img/Investments.svg"} />
     </div>
 
     <div className='col-6 options__container'>
-      <AddPropertyStepBar tittle={"Describe your property"} />
-      <Content title={"Enter description"} fun={setDescription}/>
+      <AddPropertyStepBar tittle={"Price per night"} />
+        <InputPrice fun={setPrice}/>
       <div className='navigate__components'>
         <div className='d-flex justify-content-between'>
-          <NavLink to="/title">
+          <NavLink to="/description">
             <button className='btn   back__btn'>Back</button>
           </NavLink>
-          <NavLink onClick={()=>handleOnClick(description)} to="/price">
+          <NavLink onClick={()=>handleOnClick(price,data)} to="/">
             <button  className='btn  next__btn'>Next</button>
           </NavLink>
 

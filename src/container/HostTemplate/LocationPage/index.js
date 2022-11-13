@@ -27,7 +27,7 @@ export default function LocationPage() {
 
   });
   const panTo = ({ lat, lng }) => {
-    console.log("run panto");
+   
     mapRef.current.panTo({ lat, lng });
     // mapRef.current.SetZoom(19);
 

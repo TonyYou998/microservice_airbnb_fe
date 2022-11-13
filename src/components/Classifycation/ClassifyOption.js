@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 export default function ClassifyOption(props) {
     const {img,name,value,fun}=props;
+  
    
   
     return (

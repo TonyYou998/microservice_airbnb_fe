@@ -1,24 +1,44 @@
+import { Cookie } from '@mui/icons-material'
 import { Button } from '@mui/material'
 import AddPropertyStepBar from 'components/AddPropertyStepBar'
 import ImageComponent from 'components/ImageComponent/ImageComponent'
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { NavLink } from 'react-router-dom'
 import ClassifyOption from '../../../components/Classifycation/ClassifyOption';
 import ClassifyOptionWithInput from '../../../components/Classifycation/ClassifyOptionWithInput';
 import { actAddCategory } from '../modules/actions'
+import { actGetCategoryApi } from './modules/action'
 
 
 
 export default function Classifycation() {
-  const demo=()=>{
-    console.log("demo");
-}
+const result=useSelector(state=>state.categoryReducer);
 let dispatch=useDispatch();
+useEffect(()=>{
+  dispatch(actGetCategoryApi(document.cookie));
+},[]);
+
+
   const handleOnClick=(categoryId)=>{
-    console.log("run onClick");
+    
     dispatch(actAddCategory(categoryId));
+  }
+
+  const renderCategory=(result)=>{
+    if(result.data){
+      const{Content}=result.data;
+       return Content.map((item,index)=>{
+        
+        return<ClassifyOption key={index} img={"./img/house.png"} name={item.name} value={item.id} fun={handleOnClick} />
+    })
+    }
+   
+
+  
+
   }
 
   return (
@@ -31,11 +51,12 @@ let dispatch=useDispatch();
       <div className='col-6 options__container'>
         <AddPropertyStepBar tittle={"Kind of your property"} />
         <div className='option__items'>
-          <ClassifyOption img={"./img/house.png"} name={"House"} value={"a54d6122-6eb2-4fa0-8cec-de446f6d2574"} fun={handleOnClick} />
-          <ClassifyOption img={"./img/apartment.png"} name={"Apartment"} value={"a54d6122-6eb2-4fa0-8cec-de446f6d2574"} fun={handleOnClick}  />
+          {/* <ClassifyOption img={"./img/house.png"} name={"House"} value={"1bc38725-5709-4bfe-b07b-18c19dc276cb"} fun={handleOnClick} />
+          <ClassifyOption img={"./img/apartment.png"} name={"Apartment"} value={"1bc38725-5709-4bfe-b07b-18c19dc276cb"} fun={handleOnClick}  />
           <ClassifyOption img={"./img/villa.png"} name={"Villa"} />
           <ClassifyOption img={"./img/apartment.png"} name={"Homestay"} />
-          <ClassifyOptionWithInput name={"Other"} />
+          <ClassifyOptionWithInput name={"Other"} /> */}
+          {renderCategory(result)}
           <div className='navigate__components'>
             <div className='d-flex justify-content-between'>
               <NavLink to="/become-a-host">

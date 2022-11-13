@@ -6,7 +6,8 @@ let hostState={
     longitude:null,
     latitude:null,
     propertyName:null,
-    propertyDescription:null
+    propertyDescription:null,
+    price:null,
 };
 const propertyState={
     data:null,
@@ -20,6 +21,9 @@ const propertyState={
             state.propertyTypeId=action.payload;
         
             return{...state};
+        case ActionType.ADD_PRICE:
+            state.price=action.payload;
+            return {...state};
         case ActionType.ADD_PRIVACY:
             state.privacy=action.payload;
             return {...state};
@@ -42,6 +46,8 @@ const propertyState={
             return {...state}
         case ActionType.ADD_PROPERTY_SUCCESS:
             return{...state}
+       
+
 
         default:
             return state;

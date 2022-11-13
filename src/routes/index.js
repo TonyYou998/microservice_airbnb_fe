@@ -10,6 +10,7 @@ import PrivacyPage from "container/HostTemplate/PrivacyPage";
 import LocationPage from "container/HostTemplate/LocationPage";
 import TitlePage from "container/HostTemplate/TitlePage";
 import DescriptionPage from "container/HostTemplate/DescriptionPage";
+import PricePage from "container/HostTemplate/PricePage";
 
 
 
@@ -75,6 +76,11 @@ const routeHost=[
         exact:false,
         path:"/description",
         Component:DescriptionPage
+    },
+    {
+        exact:false,
+        path:"/price",
+        Component:PricePage
     }
 ]
 

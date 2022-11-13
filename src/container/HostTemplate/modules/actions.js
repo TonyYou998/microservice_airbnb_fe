@@ -8,6 +8,14 @@ export const actAddCategory=(categoryId)=>{
         payload:categoryId
     }
 }
+export const actAddPrice=(price)=>{
+    console.log(price);
+    return{
+        type:ActionType.ADD_PRICE,
+        payload:price,
+    }
+
+}
 export const actAddPrivacy=(privacyType)=>{
     return{
         type:ActionType.ADD_PRIVACY,

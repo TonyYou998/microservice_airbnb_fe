@@ -31,8 +31,8 @@ export default function PrivacyPage() {
             <NavLink to="/classifycation">
               <button className='btn   back__btn'>Back</button>
             </NavLink>
-            <NavLink disabled to="/location">
-              <button disabled className='btn  next__btn'>Next</button>
+            <NavLink  to="/location">
+              <button  className='btn  next__btn'>Next</button>
             </NavLink>
 
           </div>
