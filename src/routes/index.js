@@ -12,7 +12,7 @@ import TitlePage from "container/HostTemplate/TitlePage";
 import DescriptionPage from "container/HostTemplate/DescriptionPage";
 import PricePage from "container/HostTemplate/PricePage";
 import CongrastPage from "container/HostTemplate/CongrastPage";
-import Copyright from "container/HostTemplate/HomePage";
+import HomePageHost from "container/HostTemplate/HomePage";
 
 
 
@@ -91,8 +91,8 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/test",
-        Component:Copyright
+        path:"/homepagehost",
+        Component:HomePageHost
     }
 ]
 
