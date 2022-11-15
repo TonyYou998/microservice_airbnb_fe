@@ -1,11 +1,12 @@
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import TableElement from './TableElement';
 
 export default function TableItem() {
     return (
         <>
         
-       <Table bordered hover>
+       <Table bordered hover className='text-center justify-content-center align-items-center'>
       <thead>
         <tr>
           <th>Nhà/Phòng Cho Thuê</th>
@@ -19,19 +20,8 @@ export default function TableItem() {
           <th>Sửa Đổi Lần Cuối  </th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>  </td>
-          <td>  </td>
-     
-          <td>   </td>
-          <td>  </td>
-          <td>  </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          <td> </td>
-          </tr>
+      <tbody className='text-center justify-content-center align-items-center'>
+          <TableElement></TableElement>
       </tbody>
     </Table>
               
