@@ -12,6 +12,7 @@ import TitlePage from "container/HostTemplate/TitlePage";
 import DescriptionPage from "container/HostTemplate/DescriptionPage";
 import PricePage from "container/HostTemplate/PricePage";
 import CongrastPage from "container/HostTemplate/CongrastPage";
+import HomePageHost from "container/HostTemplate/HomePage";
 
 
 
@@ -87,6 +88,11 @@ const routeHost=[
         exact:false,
         path:"/congrast",
         Component:CongrastPage
+    },
+    {
+        exact:false,
+        path:"/homepagehost",
+        Component:HomePageHost
     }
 ]
 
