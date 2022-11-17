@@ -55,16 +55,17 @@ export const actAddDescription=(description)=>{
 
 
 export const actAddPropertyApi=(data)=>{
-   console.log(typeof(document.cookie));
+   
    const token=document.cookie.split("=");
     return (dispatch)=>{
         dispatch(actAddPropertyRequest);
         mainApi.post(HOST_SERVICE_END_POINT+"/add-property",data,{headers:{Authorization:token[1]}})
                 .then((result)=>{
-                    console.log("success");
+                  dispatch(actAddPropertySuccess(result.data))
                 })
                 .catch((err)=>{
                     const {message}=err;
+                    dispatch(actAddPropertyFailed(message));
                     console.log(message);
 
                 })
