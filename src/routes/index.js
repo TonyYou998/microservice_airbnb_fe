@@ -13,6 +13,8 @@ import DescriptionPage from "container/HostTemplate/DescriptionPage";
 import PricePage from "container/HostTemplate/PricePage";
 import CongrastPage from "container/HostTemplate/CongrastPage";
 import HomePageHost from "container/HostTemplate/HomePage";
+import DetailPropertyPage from "container/HostTemplate/DetailPropertyPage";
+import DetailPropertyHomePage from "container/HomeTemplate/DetailPropertyPage";
 
 
 
@@ -46,6 +48,11 @@ const routesUser=[
         exact:false,
         path:"/editroom",
         Component:EditRoomPage
+    },
+    {
+        exact:false,
+        path:"/dtpropertypage",
+        Component:DetailPropertyHomePage
     }
 ];
 const routeHost=[
@@ -93,7 +100,13 @@ const routeHost=[
         exact:false,
         path:"/homepagehost",
         Component:HomePageHost
+    },
+    {
+        exact:false,
+        path:"/dtpropertypage",
+        Component:DetailPropertyPage
     }
+    
 ]
 
 
