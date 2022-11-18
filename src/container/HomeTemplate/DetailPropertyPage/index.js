@@ -9,9 +9,11 @@ import HostAvatar from "./Components/HostAvatar";
 import FormBooking from "./Components/FormBooking";
 import FooterHomePage from "./Components/FooterHomePage";
 import DescriptionProperty from "./Components/DescriptionProperty";
+
+import MoreInfo from "./Components/MoreInfor";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { FaHeart } from "react-icons/fa";
+
 
 
 
@@ -25,7 +27,7 @@ export default function DetailPropertyHomePage() {
         <>
         <Container className="body">
                 <Row className="row_2">
-                <FaHeart />  
+       
                     <HeaderDtPropertyPage></HeaderDtPropertyPage>
                 </Row>
                 <Row>
@@ -55,9 +57,11 @@ export default function DetailPropertyHomePage() {
                     <Col className="col-sm-5">
               
                     <HostName></HostName>
+                   
                
                     <RoomCount ></RoomCount>
                     <DescriptionProperty></DescriptionProperty>
+                    <MoreInfo></MoreInfo>
                   </Col>
                   <Col className="col-sm-1">
                        <HostAvatar className="d-flex justify-content-end"></HostAvatar>

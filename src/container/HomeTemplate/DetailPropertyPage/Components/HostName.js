@@ -1,11 +1,11 @@
-
+import { RiAdminFill } from "react-icons/ri";
 
 
 
 export default function HostName() {
     return ( 
   
-        <strong>  Entire villa hosted by Jenny </strong>
+        <strong className="namehost"> <RiAdminFill></RiAdminFill>  Entire villa hosted by Jenny </strong>
       
   
     );

@@ -34,11 +34,16 @@ export default function FormBooking() {
       </Form.Group>
       </Col>
         </Row>
+        <Row className='total_price'>
+        <Col> Total </Col>
+        <Col className='d-flex justify-content-end'>  100</Col>
+      </Row>
         <Row className='r_bttnsm'>
       <Button className='btnsm' variant="outline-danger" type="submit">
         Submit
       </Button>
       </Row>
+  
     </Form>
 </div>
           
