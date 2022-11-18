@@ -31,8 +31,8 @@ export default function DetailPropertyHomePage() {
                     <HeaderDtPropertyPage></HeaderDtPropertyPage>
                 </Row>
                 <Row>
-                    <Col> <LocationDtPropertyPage></LocationDtPropertyPage> <TypeProperty></TypeProperty> </Col>
-                    {/* <Col> <TypeDtPropertyPage></TypeDtPropertyPage> </Col> */}
+                    <Col className="col-5"> <LocationDtPropertyPage></LocationDtPropertyPage>  </Col>
+                    <Col className="d-flex justify-content-start"> <TypeProperty></TypeProperty> </Col>
                   
                 </Row>
                 <Row className="row_2">
