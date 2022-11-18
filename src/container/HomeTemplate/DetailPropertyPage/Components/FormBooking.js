@@ -7,7 +7,10 @@ export default function FormBooking() {
     
         <div className='formbooking'>
         <Form>
-     
+        <Row className='price'>
+        <Col> <p>  <strong className='price_number'>$ 100 </strong>  /Night </p> </Col>
+      
+      </Row>
         <Row >
         <Col>       
             <Form.Group controlId="checkin">
