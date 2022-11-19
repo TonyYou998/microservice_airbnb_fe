@@ -13,6 +13,7 @@ import DescriptionPage from "container/HostTemplate/DescriptionPage";
 import PricePage from "container/HostTemplate/PricePage";
 import CongrastPage from "container/HostTemplate/CongrastPage";
 import HomePageHost from "container/HostTemplate/HomePage";
+import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
 
 
 
@@ -93,6 +94,10 @@ const routeHost=[
         exact:false,
         path:"/listing",
         Component:HomePageHost
+    },{
+        exact:false,
+        path:"/add-img",
+        Component:AddPropertyImg
     }
 ]
 

@@ -8,6 +8,13 @@ export const actAddCategory=(categoryId)=>{
         payload:categoryId
     }
 }
+export const actAddImg=(data)=>{
+    
+    return{
+        type:ActionType.ADD_IMG,
+        payload:data
+    }
+}
 export const actAddPrice=(price)=>{
     console.log(price);
     return{

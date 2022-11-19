@@ -9,3 +9,4 @@ export const ADD_PROPERTY_REQUEST="hostReducer/ADD_PROPERTY_REQUEST";
 export const ADD_PROPERTY_SUCCESS="hostReducer/ADD_PROPERTY_SUCCESS";
 export const ADD_PROPERTY_FAILED="hostReducer/ADD_PROPERTY_FAILED";
 export const ADD_PRICE="hostReducer/ADD_PRICE";
+export const ADD_IMG="hostReducer/ADD_IMG";
