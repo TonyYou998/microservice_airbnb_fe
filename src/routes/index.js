@@ -17,6 +17,7 @@ import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
 
 
 
+
 const routesUser=[
     {
         exact:true,
