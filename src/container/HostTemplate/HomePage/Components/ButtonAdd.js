@@ -6,7 +6,7 @@ export default function ButttonAdd() {
     return (
         <>
        
-              <Button variant="outline-dark"> <i class="gg-abstract"></i> Tạo Mục Cho Thuê </Button>
+              <Button variant="outline-dark"><span style={{fontSize:"14px",lineHeight:"18px"}}>+ Tạo Mục Cho Thuê </span></Button>
         </>
   
     );

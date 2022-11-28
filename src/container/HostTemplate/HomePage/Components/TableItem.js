@@ -1,8 +1,26 @@
+// import { actGetHostPropertyApi } from 'container/HostTemplate/modules/actions';
+import { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
+import { useDispatch,useSelector } from 'react-redux';
 import TableElement from './TableElement';
 
 export default function TableItem() {
+  const dispatch=useDispatch();
+  // useEffect(()=>{
+  //   dispatch(actGetHostPropertyApi());
+  // },[]);
+  let content =useSelector(state=>state.hostPropertyReducer);
+  // const renderTable=(content)=>{
+  //   const {data}=content;
+  //   if(data){
+  //       console.log(data);
+  //       return data.map((item,index)=>{
+  //         return (<TableElement key={item.id} data={item}/>)
+  //       })
+      
+  //   }
+   
+  // }
     return (
         <>
         
@@ -21,7 +39,7 @@ export default function TableItem() {
         </tr>
       </thead>
       <tbody className='text-center justify-content-center align-items-center'>
-          <TableElement></TableElement>
+         {/* {renderTable(content)} */}
       </tbody>
     </Table>
               

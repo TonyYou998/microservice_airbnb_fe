@@ -1,7 +1,9 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import NavBarHost from './HomePage/Components/NavbarHost'
 function LayoutHost(props){
   return<>
+  <NavBarHost/>
     {props.children}
   </>
 }

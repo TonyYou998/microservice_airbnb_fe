@@ -91,7 +91,7 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/homepagehost",
+        path:"/host-dashboard",
         Component:HomePageHost
     }
 ]

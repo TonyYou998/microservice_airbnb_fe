@@ -55,13 +55,14 @@ export const actAddDescription=(description)=>{
 
 
 export const actAddPropertyApi=(data)=>{
-   console.log(typeof(document.cookie));
+
    const token=document.cookie.split("=");
     return (dispatch)=>{
         dispatch(actAddPropertyRequest);
         mainApi.post(HOST_SERVICE_END_POINT+"/add-property",data,{headers:{Authorization:token[1]}})
                 .then((result)=>{
                     console.log("success");
+                    
                 })
                 .catch((err)=>{
                     const {message}=err;
@@ -87,5 +88,42 @@ const actAddPropertyFailed=(err)=>{
     return{
         type:ActionType.ADD_PROPERTY_FAILED,
         payload:err
+    }
+}
+
+
+const actGetHostPropertyRequest=()=>{
+    return{
+        type:ActionType.GET_HOST_PROPERTY_REQUEST,
+
+    }
+
+}
+const actGetHostPropertSuccess=(data)=>{
+    return{
+        type:ActionType.GET_HOST_PROPERTY_SUCCESS,
+        payload:data
+    }
+}
+const actGetHostPropertyFailed=(err)=>{
+    return{
+        type:ActionType.GET_HOST_PROPERTY_FAILED,
+        payload:err.message,
+    }
+
+}
+const actGetHostPropertyApi=()=>{
+    return (dispatch)=>{
+
+         dispatch(actGetHostPropertyRequest);
+         mainApi.get(HOST_SERVICE_END_POINT+"/get-property-by-host-id")
+         .then((result)=>{
+            console.log(result.data);
+
+         })
+         .catch((err)=>{
+            console.log(err);
+
+         })
     }
 }
