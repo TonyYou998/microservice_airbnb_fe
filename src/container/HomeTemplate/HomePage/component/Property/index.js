@@ -27,12 +27,16 @@ export default function Property() {
 
   useEffect(()=>{
     dispatch(actHomePropertyApi());
-    console.log("run");
+  
   },[]);
   const renderListProperty=(result)=>{
     const data=result.data;
+    // console.log(data);
+    
     if(data){
-      return data.map((item,index)=>{
+      const {Content}=data;
+    // console.log(Content);
+      return Content.map((item,index)=>{
       
         return ( <PropertyItem key={index} info={item} />);
     })
