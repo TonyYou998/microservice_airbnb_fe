@@ -8,6 +8,7 @@ let hostState={
     propertyName:null,
     propertyDescription:null,
     price:null,
+    img:null,
 };
 const propertyState={
     data:null,
@@ -25,8 +26,11 @@ const hostPropertyState={
     switch(action.type){
         case ActionType.ADD_CATEGORY:
             state.propertyTypeId=action.payload;
-        
+            
             return{...state};
+        case ActionType.ADD_IMG:
+            state.img=action.payload;
+            return {...state};
         case ActionType.ADD_PRICE:
             state.price=action.payload;
             return {...state};

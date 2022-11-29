@@ -12,4 +12,4 @@ export const ADD_PRICE="hostReducer/ADD_PRICE";
 export const GET_HOST_PROPERTY_REQUEST="hostPropertyReducer/GET_HOST_PROPERTY_REQUEST";
 export const GET_HOST_PROPERTY_SUCCESS="hostPropertyReducer/GET_HOST_PROPERTY_SUCCESS";
 export const GET_HOST_PROPERTY_FAILED="hostPropertyReducer/GET_HOST_PROPERTY_FAILED";
-
+export const ADD_IMG="hostReducer/ADD_IMG";
