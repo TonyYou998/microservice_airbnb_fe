@@ -15,6 +15,12 @@ const propertyState={
     err:null,
     loading:null
 }
+const hostPropertyState={
+    data:null,
+    err:null,
+    loading:null,
+
+}
  const hostReducer=(state=hostState,action)=>{
     
     switch(action.type){
@@ -79,4 +85,26 @@ const propertyReducer=(state=propertyState,action)=>{
             return state;
     }
 }
-export  {hostReducer,propertyReducer};
+const hostPropertyReducer=(state=hostPropertyState,action)=>{
+    switch(action.type){
+        case ActionType.GET_HOST_PROPERTY_REQUEST:
+            state.loading=true;
+            state.data=null;
+            state.err=null;
+            return{...state}
+        case ActionType.GET_HOST_PROPERTY_SUCCESS:
+            state.loading=false;
+            state.data=action.payload;
+            state.err=false;
+            return{...state}
+        case ActionType.GET_HOST_PROPERTY_FAILED:
+            state.loading=false;
+            state.err=action.payload;
+            state.data=null;
+            return{...state};
+        default:
+            return state;
+    }
+
+}
+export  {hostReducer,propertyReducer,hostPropertyReducer};

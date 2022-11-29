@@ -93,7 +93,7 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/listing",
+        path:"/host-dashboard",
         Component:HomePageHost
     },{
         exact:false,

@@ -5,15 +5,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function NavBarHost() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">LOGO </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className='d-flex justify-content-end'>
-          <Nav className="text-center ">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+    <Navbar className='host__navbar'>
+      <Container fluid>
+        <Navbar style={{ fontStyle: "italic", fontWeight: "400" }}><h5>Rental<span style={{ color: "blue" }}>.com</span></h5></Navbar>
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+
+        <Nav className="text-center ">
+          <Nav.Link ><span style={{ fontWeight: "500", fontSize: "14px", lineHeight: "18px" }}>Today</span></Nav.Link>
+          <Nav.Link ><span style={{ fontWeight: "500", fontSize: "14px", lineHeight: "18px" }}>Message</span></Nav.Link>
+          <Nav.Link ><span style={{ fontWeight: "500", fontSize: "14px", lineHeight: "18px" }}>Callendar</span></Nav.Link>
+          <Nav.Link ><span style={{ fontWeight: "500", fontSize: "14px", lineHeight: "18px" }}>Statistic</span></Nav.Link>
+          {/* <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -23,14 +25,18 @@ export default function NavBarHost() {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+            </NavDropdown> */}
+        </Nav>
+
+        <Nav>
+          <Nav.Link ><span style={{ fontWeight: "500", fontSize: "14px", lineHeight: "18px" }}>Today</span></Nav.Link>
+          <Nav.Link ><span style={{ fontWeight: "500", fontSize: "14px", lineHeight: "18px" }}>Today</span></Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
 
 
-      
+
   );
 }
 
