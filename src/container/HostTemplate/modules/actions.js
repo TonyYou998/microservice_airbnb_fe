@@ -61,11 +61,12 @@ export const actAddDescription=(description)=>{
 }
 
 
-export const actAddPropertyApi=(data)=>{
+export const actAddPropertyApi=(form_data)=>{
    const token=document.cookie.split("=");
+//    console.log(model);
     return (dispatch)=>{
         dispatch(actAddPropertyRequest);
-        mainApi.post(HOST_SERVICE_END_POINT+"/add-property",data,{headers:{Authorization:token[1]}})
+        mainApi.post(HOST_SERVICE_END_POINT+"add-property",form_data,{headers:{Authorization:token[1]}})
                 .then((result)=>{
                   dispatch(actAddPropertySuccess(result.data))
                 })
@@ -73,7 +74,6 @@ export const actAddPropertyApi=(data)=>{
                     const {message}=err;
                     dispatch(actAddPropertyFailed(message));
                     console.log(message);
-
                 })
 
     }

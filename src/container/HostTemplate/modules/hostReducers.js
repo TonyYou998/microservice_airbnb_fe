@@ -1,5 +1,5 @@
 import * as ActionType from "./constants";
-let hostState={
+let model={
     propertyTypeId:null,
     privacy:null,
     address:null,
@@ -21,7 +21,7 @@ const hostPropertyState={
     loading:null,
 
 }
- const hostReducer=(state=hostState,action)=>{
+ const hostReducer=(state=model,action)=>{
     
     switch(action.type){
         case ActionType.ADD_CATEGORY:

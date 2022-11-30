@@ -3,17 +3,17 @@ import AddPropertyStepBar from 'components/AddPropertyStepBar'
 import ImageComponent from 'components/ImageComponent/ImageComponent'
 import React from 'react'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 import { NavLink } from 'react-router-dom'
-import Upload from './components/Upload'
-
-
+import { actAddPropertyApi } from '../modules/actions'
+import Upload from './components/Upload';
 
 
 
 export default function AddPropertyImg() {
+
 
   return (
     <div className='d-flex'>
@@ -30,7 +30,7 @@ export default function AddPropertyImg() {
           <NavLink to="/description">
             <button className='btn   back__btn'>Back</button>
           </NavLink>
-          <NavLink to="/price">
+          <NavLink to="/price" >
             <button  className='btn  next__btn'>Next</button>
           </NavLink>
 
