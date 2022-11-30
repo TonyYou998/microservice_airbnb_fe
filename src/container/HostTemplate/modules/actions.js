@@ -118,17 +118,18 @@ const actGetHostPropertyFailed=(err)=>{
     }
 
 }
-const actGetHostPropertyApi=()=>{
+export const actGetHostPropertyApi=()=>{
+    const token=document.cookie.split("=");
     return (dispatch)=>{
 
          dispatch(actGetHostPropertyRequest);
-         mainApi.get(HOST_SERVICE_END_POINT+"/get-property-by-host-id")
+         mainApi.get(HOST_SERVICE_END_POINT+"/get-property-by-host-id",{headers:{Authorization:token[1]}})
          .then((result)=>{
-            console.log(result.data);
-
+            dispatch(actGetHostPropertSuccess(result.data));
          })
          .catch((err)=>{
             console.log(err);
+            dispatch(actGetHostPropertyFailed(err.message));
 
          })
     }
