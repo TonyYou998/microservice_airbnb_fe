@@ -128,7 +128,7 @@ export const actGetHostPropertyApi=()=>{
             dispatch(actGetHostPropertSuccess(result.data));
          })
          .catch((err)=>{
-            console.log(err);
+           
             dispatch(actGetHostPropertyFailed(err.message));
 
          })
