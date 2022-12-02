@@ -75,7 +75,7 @@ export default function DetailPropertyHomePage() {
 
             
         </Container>
-        <FooterHomePage></FooterHomePage>
+        {/* <FooterHomePage></FooterHomePage> */}
         </>
     );
   }

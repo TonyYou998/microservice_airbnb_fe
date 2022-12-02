@@ -51,7 +51,7 @@ const routesUser=[
     },
     {
         exact:false,
-        path:"/dtpropertypage",
+        path:"/property/:id",
         Component:DetailPropertyHomePage
     }
 ];
