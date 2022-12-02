@@ -6,20 +6,45 @@ import Slider from "react-slick";
 import Nav from "react-bootstrap/Nav";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { actHomePropertyApi } from "../../modules/action";
 
 export default function Property() {
+  const dispatch=useDispatch();
   const settings = {
     
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay:true,
+    // autoplay:true,
     autoplaySpeed:1000,
     rows: 2,
     dot:true,
     dotClass: 'slick-dots'
   };
+
+  useEffect(()=>{
+    dispatch(actHomePropertyApi());
+  
+  },[]);
+  const renderListProperty=(result)=>{
+    const data=result.data;
+    // console.log(data);
+    
+    if(data){
+      const {Content}=data;
+    // console.log(Content);
+      return Content.map((item,index)=>{
+      
+        return ( <PropertyItem key={index} info={item} />);
+    })
+    }
+    
+  }
+  let data=useSelector(state=>state.homePropertyReducer);
+
   return (
    <div className="property__container ">
        <Tab.Container   defaultActiveKey="first">
@@ -132,26 +157,7 @@ export default function Property() {
       <Tab.Content className=" container pt-4" >
         <Tab.Pane eventKey="first" >
           <Slider {...settings}>
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
+            {renderListProperty(data)}
           </Slider>
         </Tab.Pane>
         <Tab.Pane eventKey="second">
@@ -160,12 +166,7 @@ export default function Property() {
             <PropertyItem />
             <PropertyItem />
             <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
-            <PropertyItem />
+          
           </Slider>
         </Tab.Pane>
         <Tab.Pane eventKey="third" >

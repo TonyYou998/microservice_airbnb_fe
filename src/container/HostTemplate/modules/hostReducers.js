@@ -1,5 +1,5 @@
 import * as ActionType from "./constants";
-let hostState={
+let model={
     propertyTypeId:null,
     privacy:null,
     address:null,
@@ -8,19 +8,29 @@ let hostState={
     propertyName:null,
     propertyDescription:null,
     price:null,
+    img:null,
 };
 const propertyState={
     data:null,
     err:null,
     loading:null
 }
- const hostReducer=(state=hostState,action)=>{
+const hostPropertyState={
+    data:null,
+    err:null,
+    loading:null,
+
+}
+ const hostReducer=(state=model,action)=>{
     
     switch(action.type){
         case ActionType.ADD_CATEGORY:
             state.propertyTypeId=action.payload;
-        
+            
             return{...state};
+        case ActionType.ADD_IMG:
+            state.img=action.payload;
+            return {...state};
         case ActionType.ADD_PRICE:
             state.price=action.payload;
             return {...state};
@@ -75,4 +85,26 @@ const propertyReducer=(state=propertyState,action)=>{
             return state;
     }
 }
-export  {hostReducer,propertyReducer};
+const hostPropertyReducer=(state=hostPropertyState,action)=>{
+    switch(action.type){
+        case ActionType.GET_HOST_PROPERTY_REQUEST:
+            state.loading=true;
+            state.data=null;
+            state.err=null;
+            return{...state}
+        case ActionType.GET_HOST_PROPERTY_SUCCESS:
+            state.loading=false;
+            state.data=action.payload;
+            state.err=false;
+            return{...state}
+        case ActionType.GET_HOST_PROPERTY_FAILED:
+            state.loading=false;
+            state.err=action.payload;
+            state.data=null;
+            return{...state};
+        default:
+            return state;
+    }
+
+}
+export  {hostReducer,propertyReducer,hostPropertyReducer};

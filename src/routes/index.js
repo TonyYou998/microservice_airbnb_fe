@@ -15,6 +15,8 @@ import CongrastPage from "container/HostTemplate/CongrastPage";
 import HomePageHost from "container/HostTemplate/HomePage";
 import DetailPropertyPage from "container/HostTemplate/DetailPropertyPage";
 import DetailPropertyHomePage from "container/HomeTemplate/DetailPropertyPage";
+import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
+
 
 
 
@@ -98,13 +100,17 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/homepagehost",
+        path:"/host-dashboard",
         Component:HomePageHost
     },
     {
         exact:false,
         path:"/dtpropertypage",
         Component:DetailPropertyPage
+    },{
+        exact:false,
+        path:"/add-img",
+        Component:AddPropertyImg
     }
     
 ]
