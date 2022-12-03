@@ -3,7 +3,7 @@
     border-radius: 10px;
     padding: 20px;
     position: sticky;
-    top: 30px;
+    top: 60px;
 }
 
 .form_pe{
@@ -33,7 +33,7 @@ body{
 }
 
 .body_book{
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .header_book{
@@ -80,8 +80,9 @@ body{
     color: rgb(133, 133, 133);
 }
 
-a{
+.a{
     cursor: pointer;
+    text-decoration: none;
     box-shadow: 0 1px rgb(0, 0, 0);
     color: rgb(0, 0, 0);
    
@@ -117,7 +118,7 @@ a{
     padding: 20px;
     border: 1px solid #999;
     overflow: auto;
-    // width: 50vh;
+        // width: 50vh;
  
   }
    

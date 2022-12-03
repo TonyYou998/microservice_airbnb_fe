@@ -39,7 +39,7 @@ export default function Policy() {
         <Form.Group controlId="formBasicEmail">
         <Form.Label> <strong> Free cancellation for 48 hours.</strong> Cancel before Jan 25 for a partial refund </Form.Label>
 
-        <Form.Label>       <a onClick={togglePopup}>Learn More</a></Form.Label>
+        <Form.Label>       <a className='a' onClick={togglePopup}>Learn More</a></Form.Label>
       
       </Form.Group>
       </Col>

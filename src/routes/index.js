@@ -54,6 +54,11 @@ const routesUser=[
         exact:false,
         path:"/dtpropertypage",
         Component:DetailPropertyHomePage
+    },
+    {
+        exact:false,
+        path:"/book",
+        Component:BookingPage
     }
 ];
 const routeHost=[
@@ -107,11 +112,7 @@ const routeHost=[
         path:"/dtpropertypage",
         Component:DetailPropertyPage
     },
-    {
-        exact:false,
-        path:"/book",
-        Component:BookingPage
-    }
+    
     
 ]
 
