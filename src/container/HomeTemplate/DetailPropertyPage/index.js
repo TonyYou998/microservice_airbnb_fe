@@ -9,6 +9,7 @@ import HostAvatar from "./Components/HostAvatar";
 import FormBooking from "./Components/FormBooking";
 import FooterHomePage from "./Components/FooterHomePage";
 import DescriptionProperty from "./Components/DescriptionProperty";
+import PictureCoreDtPropertyPage from "./Components/PictureCoreDtPropertyPage";
 
 import MoreInfo from "./Components/MoreInfor";
 import Button from 'react-bootstrap/Button';
@@ -36,16 +37,17 @@ export default function DetailPropertyHomePage() {
                   
                 </Row>
                 <Row className="row_2">
-                    <Col className="image_core col-sm-6">       
-                    <PictureDtPropertyPage></PictureDtPropertyPage>
+                    <Col sm className="image_core col-sm-6">       
+                    <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>
+              
                     
                      </Col>
-                     <Col className="image_sub col-sm-3">       
+                     <Col sm className="image_sub col-sm-3">       
                      <PictureDtPropertyPage></PictureDtPropertyPage>
                      <PictureDtPropertyPage></PictureDtPropertyPage>
                     
                      </Col>
-                     <Col className="image_sub col-sm-3">       
+                     <Col sm className="image_sub col-sm-3">       
                      <PictureDtPropertyPage></PictureDtPropertyPage>
                      <PictureDtPropertyPage></PictureDtPropertyPage>
                     

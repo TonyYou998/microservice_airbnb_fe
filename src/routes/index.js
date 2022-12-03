@@ -15,6 +15,7 @@ import CongrastPage from "container/HostTemplate/CongrastPage";
 import HomePageHost from "container/HostTemplate/HomePage";
 import DetailPropertyPage from "container/HostTemplate/DetailPropertyPage";
 import DetailPropertyHomePage from "container/HomeTemplate/DetailPropertyPage";
+import BookingPage from "container/HomeTemplate/BookingPage";
 
 
 
@@ -105,6 +106,11 @@ const routeHost=[
         exact:false,
         path:"/dtpropertypage",
         Component:DetailPropertyPage
+    },
+    {
+        exact:false,
+        path:"/book",
+        Component:BookingPage
     }
     
 ]

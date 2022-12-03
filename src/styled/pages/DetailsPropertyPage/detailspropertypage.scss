@@ -22,6 +22,9 @@
 
 .body{
     padding:50px 80px 100px 80px;
+    // font-size: 14px;
+    line-height: 1.43;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;   
     
 }
 .footer_home{
@@ -66,23 +69,45 @@ img[alt="birce3"]{
 }
 picture{
     border: none;
+    padding: 0 !important;
 }
 
-.image_sub{
-    margin-left: -15px !important;
-    // border: none !important;
+.image_sub{ // 4 ảnh nhỏ
+    padding: 0px !important;
+    padding-left: 5px !important;
 }
+
 .img_property{
     border: none;
-    border-bottom: 13px solid rgb(255, 255, 255);
+    border-bottom: 0 solid rgb(255, 255, 255);
 }
-.image_core{
-    // padding: 0 !important;
-}
-.picture_home{
-    border: none !important;
+.image_core{   //anh core
+    padding-left: 5px !important;
+    padding: 0px !important;
+    border: none;
 }
 
+
+.picture_home{   //4 anh
+    img{
+        padding: 0 !important;
+ 
+        margin-bottom: 5px;
+   
+    }
+    img:hover{
+      
+        // filter: invert(5%) sepia(10%) hue-rotate(0deg) saturate(500%);
+    }
+
+}
+.picture_core_home{  //anh core
+    img{
+        padding: 0 !important;
+   
+    }
+
+}
 .desproperty{
     margin-top: 20px;
 }
