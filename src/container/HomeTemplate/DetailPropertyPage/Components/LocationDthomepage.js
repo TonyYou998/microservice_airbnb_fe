@@ -2,11 +2,19 @@ import { IoLocation } from "react-icons/io5";
 
 
 
-export default function LocationDtPropertyPage() {
+export default function LocationDtPropertyPage({data}) {
+const renderAddress=(data)=>{
+    console.log(data);
+    if(data){
+        const {Content}=data;
+        return <strong> <IoLocation></IoLocation>{Content.address} </strong>
+    }
+    
+}
     return ( 
         <>
-       
-        <strong> <IoLocation></IoLocation> Cape Town, Western Cape, South Africa </strong>
+            {renderAddress(data)}   
+        
         </>
   
     );

@@ -1,10 +1,15 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 export default function PropertyItem(props) {
   const{info}=props;
- 
+
+ if(info){
+  
   return (
-    <div className='item__container '>
+  
+    <NavLink to={`/property/${info.id}`}>
+      <div className='item__container '>
         <img className='item__img' src={info&&info.images}/>
         <div className='item__content'>
 
@@ -14,5 +19,9 @@ export default function PropertyItem(props) {
 
         </div>
     </div>
+    </NavLink>
+    
   )
+ }
+  
 }

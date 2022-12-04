@@ -16,7 +16,7 @@ export default function Property() {
     
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     // autoplay:true,
     autoplaySpeed:1000,
@@ -24,27 +24,29 @@ export default function Property() {
     dot:true,
     dotClass: 'slick-dots'
   };
+  let data=useSelector(state=>state.homePropertyReducer);
+  // useEffect(()=>{
+  //   console.log("run useEffect");
+  //   dispatch(actHomePropertyApi());
+   
+  // },[]);
 
-  useEffect(()=>{
-    dispatch(actHomePropertyApi());
-  
-  },[]);
+
   const renderListProperty=(result)=>{
+
     const data=result.data;
-    // console.log(data);
-    
+
     if(data){
+
       const {Content}=data;
-    // console.log(Content);
-      return Content.map((item,index)=>{
       
+      return Content.map((item,index)=>{
+       
         return ( <PropertyItem key={index} info={item} />);
     })
     }
     
   }
-  let data=useSelector(state=>state.homePropertyReducer);
-
   return (
    <div className="property__container ">
        <Tab.Container   defaultActiveKey="first">

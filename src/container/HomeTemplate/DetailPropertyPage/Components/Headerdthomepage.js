@@ -1,11 +1,23 @@
 
+import { useSelector } from "react-redux";
 
 
 
-export default function HeaderDtPropertyPage() {
+
+export default function HeaderDtPropertyPage({data}) {
+
+
+    // const{Content}=data;
+    const renderName=()=>{
+        if(data){
+          const{Content}=data;
+            return<h3>{Content.propertyName}</h3> 
+        }
+    }
+  
     return ( 
         <>
-        <h3>  Hidden Haven - 5 Bed Villa with pool & Sea Views </h3>
+       {renderName()}
         </>
   
     );

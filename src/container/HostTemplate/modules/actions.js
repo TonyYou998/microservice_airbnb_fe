@@ -16,7 +16,7 @@ export const actAddImg=(data)=>{
     }
 }
 export const actAddPrice=(price)=>{
-    console.log(price);
+  
     return{
         type:ActionType.ADD_PRICE,
         payload:price,

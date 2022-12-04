@@ -38,6 +38,7 @@ export default function DescriptionPage() {
 
     
     dispatch(actAddPrice(price));
+    console.log("run submit");
     dispatch(actAddPropertyApi(form_data));
 
   }

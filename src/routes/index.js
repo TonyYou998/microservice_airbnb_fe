@@ -105,7 +105,7 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/dtpropertypage",
+        path:"/host/property/:id",
         Component:DetailPropertyPage
     },{
         exact:false,
