@@ -55,7 +55,13 @@ export default function DetailPropertyHomePage() {
             return<LocationDtPropertyPage data={data}/>
         }
     }
- 
+    const renderHostName=()=>{
+        if(data){
+            return<HostName data={data}/>
+        }
+    }
+
+
     return (
         <>
         <Container className="body">
@@ -65,24 +71,24 @@ export default function DetailPropertyHomePage() {
                     {renderName()}
                 </Row>
                 <Row>
-                    <Col className="col-5"> {renderAddress(data)} </Col>
+                    <Col className="col-5"> {renderAddress()} </Col>
                     <Col className="d-flex justify-content-start"> <TypeProperty></TypeProperty> </Col>
                   
                 </Row>
                 <Row className="row_2">
                     <Col className="image_core col-sm-6">       
                     {/* <PictureDtPropertyPage></PictureDtPropertyPage> */}
-                    {renderImage(data)}
+                    {renderImage()}
                     
                      </Col>
                      <Col className="image_sub col-sm-3">       
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
+                     {renderImage()}
+                     {renderImage()}
                     
                      </Col>
                      <Col className="image_sub col-sm-3">       
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
+                     {renderImage()}
+                     {renderImage()}
                     
                      </Col>
                   
@@ -91,9 +97,9 @@ export default function DetailPropertyHomePage() {
                 <Row className="row_2">
                     <Col className="col-sm-5">
               
-                    <HostName></HostName>
+                    {/* <HostName></HostName> */}
                    
-               
+                        {renderHostName()}
                     <RoomCount ></RoomCount>
                     <DescriptionProperty></DescriptionProperty>
                     <MoreInfo></MoreInfo>

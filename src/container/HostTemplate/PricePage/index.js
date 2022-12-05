@@ -28,16 +28,13 @@ export default function DescriptionPage() {
     latitude:data.latitude,
     propertyName:data.propertyName,
     propertyDescription:data.propertyDescription,
-    price:data.price,
+    price,
     }
    
     var form_data = new FormData();
-
     form_data.append("model", JSON.stringify(model));
     form_data.append("file",data.img);
-
-    
-    dispatch(actAddPrice(price));
+    // dispatch(actAddPrice(price));
     console.log("run submit");
     dispatch(actAddPropertyApi(form_data));
 
