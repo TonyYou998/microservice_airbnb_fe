@@ -7,8 +7,18 @@ import PictureCoreDtPropertyPage from 'container/HomeTemplate/DetailPropertyPage
 import HeaderDtPropertyPage from './Headerpage';
 
 
-export default function Formtoalprice() {
- 
+export default function Formtoalprice(props) {
+
+    const price_per_night = 100;
+    let day = props.date;
+    const price =  day * price_per_night;
+    const VAT = price/10;
+    const total_price = price + VAT;
+    
+    if(day < 0){
+        day = 0;
+    }
+  
 
     return ( 
     
@@ -31,18 +41,26 @@ export default function Formtoalprice() {
         </div>
         <div className="price_body">
         <Row className='price'>
-        <Col className='col'>$369.67 x 5 nights </Col>
-        <Col className='col d-flex justify-content-end'>$1,848.35 </Col>
+        <Col className='col'>People <i className='text_small'>(Ages{'>'}12):</i> </Col>
+        <Col className='col d-flex justify-content-end'>{props.people < 0  ? 1 : props.people}  </Col>
+        </Row>
+        <Row className='price'>
+        <Col className='col'> People <i className='text_small'>(Ages{'<'}12):</i>  </Col>
+        <Col className='col d-flex justify-content-end'>{props.child < 0  ? 1 : props.child}  </Col>
+        </Row>
+        <Row className='price'>
+        <Col className='col'>${price_per_night} x {day} nights </Col>
+        <Col className='col d-flex justify-content-end'>${price} </Col>
         </Row>
     
         <Row className='price'>
-        <Col className='col'>$369.67 x 5 nights </Col>
-        <Col className='col d-flex justify-content-end'>$1,848.35 </Col>
+        <Col className='col'>$VAT </Col>
+        <Col className='col d-flex justify-content-end'>${VAT} </Col>
         </Row>
         </div>
         <Row className='price_total'>
         <Col className='col'>Total (USD) </Col>
-        <Col className='col d-flex justify-content-end'>$1,848.35 </Col>
+        <Col className='col d-flex justify-content-end'>${total_price} </Col>
         </Row>
             
           

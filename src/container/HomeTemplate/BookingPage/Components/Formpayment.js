@@ -15,20 +15,17 @@ import { PayPalScriptProvider, PayPalButtons,  PayPalHostedFieldsProvider,
     // };
   
 
-export default function Formpayment() {
+export default function Formpayment(props) {
   
     return (
    
         <>
-        
+          {/* <h2> {props.message} </h2> */}
         <PayPalScriptProvider options={{ "client-id": "sb" }}>
             <PayPalButtons style={{ layout: "horizontal" }} />
         </PayPalScriptProvider>
        
 
-       {/* <PayPalScriptProvider  deferLoading={true} options={initialOptions}>
-            <PayPalButtons />
-        </PayPalScriptProvider> */}
         
         </>
 
