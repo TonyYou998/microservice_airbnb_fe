@@ -65,7 +65,7 @@ export default function BookingPage() {
 
     if( ((new Date(data2) - new Date(date1)) /1000 / 86400) <  0 ){
       
-      
+
       setNumberError("Ngày Nhập Vào Không Được Bé Hơn Ngày Hiện Tại")
   
     }
@@ -122,6 +122,7 @@ export default function BookingPage() {
 
   Date.parse(DateCI)
   Date.parse(DateCO)
+  console.log(DateCO)
   let date =  (new Date(DateCO) - new Date(DateCI) ) / 1000 / 86400;
 
   date < 0  ? date = 0 : date = date;
