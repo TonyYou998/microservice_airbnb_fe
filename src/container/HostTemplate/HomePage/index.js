@@ -4,47 +4,68 @@ import Search from "./Components/Search";
 import ButttonAdd from "./Components/ButtonAdd";
 import TableItem from "./Components/TableItem";
 import Alert from "./Components/Alert";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+// import { actGetHostPropertyApi } from "../modules/actions";
 
 
 
 export default function HomePageHost() {
-  return(
-    <>
-        <div>
-      <NavBarHost></NavBarHost>
-    </div>
-    {/* <Alert></Alert> */}
-    <div className="container">
-    <div className="header_host row ">
-        <div className="col-6">
-            <TextHeader></TextHeader>
-        </div>
-      
-        <div className="col-6 d-flex justify-content-end">
-            <ButttonAdd></ButttonAdd>
-        </div>
-    </div>
-
-
-    <div className="row ">
-        <div className="col-3">
-        <Search></Search>
-        </div>
-    </div>
-
-
-    <div className="row ">
-     
-     <TableItem></TableItem>
-   
-
- </div>
-
-    </div>
  
+  // const dispatch=useDispatch();
+  // useEffect(()=>{
+  //   dispatch(actGetHostPropertyApi());
+  // },[]);
+  // let content =useSelector(state=>state.hostPropertyReducer);
+ 
+// const renderTable=(content)=>{
+//   const {data}=content;
+//   if(data){
+//     // console.log(data);
+      
+//       return data.map((item,index)=>{
+//         return (<TableItem key={index}/>)
+//       })
+    
+//   }
+ 
+// }
+  return (
+    <>
+
+      {/* <Alert></Alert> */}
+      <div className="container-fluid">
+        <div className="header_host row ">
+          <div className="col-6">
+            <TextHeader></TextHeader>
+          </div>
+
+          <div className="col-6 d-flex justify-content-end">
+            <ButttonAdd></ButttonAdd>
+          </div>
+        </div>
+
+
+        <div className="row ">
+          <div className="col-3">
+            <Search></Search>
+          </div>
+        </div>
+
+
+        <div className="row ">
+
+          {/* <TableItem></TableItem> */}
+         <TableItem/>
+
+
+        </div>
+
+      </div>
+
     </>
 
 
-  
+
   );
 }

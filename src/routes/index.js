@@ -16,6 +16,8 @@ import HomePageHost from "container/HostTemplate/HomePage";
 import DetailPropertyPage from "container/HostTemplate/DetailPropertyPage";
 import DetailPropertyHomePage from "container/HomeTemplate/DetailPropertyPage";
 import BookingPage from "container/HomeTemplate/BookingPage";
+import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
+
 
 
 
@@ -52,7 +54,7 @@ const routesUser=[
     },
     {
         exact:false,
-        path:"/dtpropertypage",
+        path:"/property/:id",
         Component:DetailPropertyHomePage
     },
     {
@@ -104,15 +106,18 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/homepagehost",
+        path:"/host-dashboard",
         Component:HomePageHost
     },
     {
         exact:false,
-        path:"/dtpropertypagehost",
+        path:"/host/property/:id",
         Component:DetailPropertyPage
-    },
-    
+    },{
+        exact:false,
+        path:"/add-img",
+        Component:AddPropertyImg
+    }
     
 ]
 
