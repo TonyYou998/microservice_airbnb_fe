@@ -30,7 +30,7 @@ export default function FormBooking() {
 
         <Row>
             <Col>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group controlId="formBasicEmail">
         <Form.Label>Enter People</Form.Label>
         <Form.Control type="number" placeholder="Enter People" />
       

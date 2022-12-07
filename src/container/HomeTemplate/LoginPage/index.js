@@ -31,6 +31,7 @@ export default function LoginPage() {
 
   const sendUsernameDataToParent=(data)=>{
     setUsername(data);
+    console.log(data);
   }
 
   const sendPasswordDataToParent=(data)=>{

@@ -15,6 +15,7 @@ import CongrastPage from "container/HostTemplate/CongrastPage";
 import HomePageHost from "container/HostTemplate/HomePage";
 import DetailPropertyPage from "container/HostTemplate/DetailPropertyPage";
 import DetailPropertyHomePage from "container/HomeTemplate/DetailPropertyPage";
+import BookingPage from "container/HomeTemplate/BookingPage";
 import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
 
 
@@ -55,6 +56,11 @@ const routesUser=[
         exact:false,
         path:"/property/:id",
         Component:DetailPropertyHomePage
+    },
+    {
+        exact:false,
+        path:"/book",
+        Component:BookingPage
     }
 ];
 const routeHost=[

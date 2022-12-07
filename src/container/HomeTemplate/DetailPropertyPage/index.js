@@ -9,6 +9,7 @@ import HostAvatar from "./Components/HostAvatar";
 import FormBooking from "./Components/FormBooking";
 import FooterHomePage from "./Components/FooterHomePage";
 import DescriptionProperty from "./Components/DescriptionProperty";
+import PictureCoreDtPropertyPage from "./Components/PictureCoreDtPropertyPage";
 
 import MoreInfo from "./Components/MoreInfor";
 import Button from 'react-bootstrap/Button';
