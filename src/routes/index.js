@@ -109,7 +109,7 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/dtpropertypage",
+        path:"/dtpropertypagehost",
         Component:DetailPropertyPage
     },
     
