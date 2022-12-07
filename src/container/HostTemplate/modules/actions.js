@@ -8,8 +8,15 @@ export const actAddCategory=(categoryId)=>{
         payload:categoryId
     }
 }
+export const actAddImg=(data)=>{
+    
+    return{
+        type:ActionType.ADD_IMG,
+        payload:data
+    }
+}
 export const actAddPrice=(price)=>{
-    console.log(price);
+  
     return{
         type:ActionType.ADD_PRICE,
         payload:price,
@@ -54,19 +61,19 @@ export const actAddDescription=(description)=>{
 }
 
 
-export const actAddPropertyApi=(data)=>{
-   console.log(typeof(document.cookie));
+export const actAddPropertyApi=(form_data)=>{
    const token=document.cookie.split("=");
+//    console.log(model);
     return (dispatch)=>{
         dispatch(actAddPropertyRequest);
-        mainApi.post(HOST_SERVICE_END_POINT+"/add-property",data,{headers:{Authorization:token[1]}})
+        mainApi.post(HOST_SERVICE_END_POINT+"add-property",form_data,{headers:{Authorization:token[1]}})
                 .then((result)=>{
-                    console.log("success");
+                  dispatch(actAddPropertySuccess(result.data))
                 })
                 .catch((err)=>{
                     const {message}=err;
+                    dispatch(actAddPropertyFailed(message));
                     console.log(message);
-
                 })
 
     }
@@ -87,5 +94,43 @@ const actAddPropertyFailed=(err)=>{
     return{
         type:ActionType.ADD_PROPERTY_FAILED,
         payload:err
+    }
+}
+
+
+const actGetHostPropertyRequest=()=>{
+    return{
+        type:ActionType.GET_HOST_PROPERTY_REQUEST,
+
+    }
+
+}
+const actGetHostPropertSuccess=(data)=>{
+    return{
+        type:ActionType.GET_HOST_PROPERTY_SUCCESS,
+        payload:data
+    }
+}
+const actGetHostPropertyFailed=(err)=>{
+    return{
+        type:ActionType.GET_HOST_PROPERTY_FAILED,
+        payload:err.message,
+    }
+
+}
+export const actGetHostPropertyApi=()=>{
+    const token=document.cookie.split("=");
+    return (dispatch)=>{
+
+         dispatch(actGetHostPropertyRequest);
+         mainApi.get(HOST_SERVICE_END_POINT+"/get-property-by-host-id",{headers:{Authorization:token[1]}})
+         .then((result)=>{
+            dispatch(actGetHostPropertSuccess(result.data));
+         })
+         .catch((err)=>{
+           
+            dispatch(actGetHostPropertyFailed(err.message));
+
+         })
     }
 }

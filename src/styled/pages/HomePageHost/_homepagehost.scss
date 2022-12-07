@@ -20,3 +20,23 @@
   height: 10px;
 }
 
+.host__navbar{
+  border-bottom: 1px solid #e4e4e4;
+}
+.search_host{
+  border-radius: 100px;
+  border: 1px solid #e4e4e4 !important;
+  box-shadow: rgb(176 176 176) 0px 0px 0px 1px inset !important;
+  input{
+    border: unset;
+   border-radius: 100px;
+   background-color: unset;
+   &:focus{
+    box-shadow: none;
+   }
+  }
+ i{
+  font-size: 24px;
+
+ }
+}

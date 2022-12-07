@@ -19,37 +19,77 @@ import Form from 'react-bootstrap/Form';
 
 
 import { FormControl } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
+import { actGetDetailPropertyApi } from "./modules/action";
+import { useParams } from "react-router-dom";
 
 
 
 
 export default function DetailPropertyHomePage() {
+    const dispatch=useDispatch();
+    const {id}=useParams();
+
+    useEffect(()=>{
+      
+        dispatch(actGetDetailPropertyApi(id));
+     
+    },[]);
+    let data=useSelector(state=>{
+        return state.detailPropertyReducer.data;
+     });
+     const renderName=()=>{
+        if(data){
+           
+            return<HeaderDtPropertyPage data={data}/>
+        }
+    }
+    const renderImage=()=>{
+        if(data){
+            return<PictureDtPropertyPage data={data}/>
+        }
+    }
+    const renderAddress=()=>{
+        if(data){
+            return<LocationDtPropertyPage data={data}/>
+        }
+    }
+    const renderHostName=()=>{
+        if(data){
+            return<HostName data={data}/>
+        }
+    }
+
+
     return (
         <>
         <Container className="body">
                 <Row className="row_2">
        
-                    <HeaderDtPropertyPage></HeaderDtPropertyPage>
+                    {/* <HeaderDtPropertyPage></HeaderDtPropertyPage> */}
+                    {renderName()}
                 </Row>
                 <Row>
-                    <Col className="col-5"> <LocationDtPropertyPage></LocationDtPropertyPage>  </Col>
+                    <Col className="col-5"> {renderAddress()} </Col>
                     <Col className="d-flex justify-content-start"> <TypeProperty></TypeProperty> </Col>
                   
                 </Row>
                 <Row className="row_2">
-                    <Col sm className="image_core col-sm-6">       
-                    <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>
-              
+                    <Col className="image_core col-sm-6">       
+                    {/* <PictureDtPropertyPage></PictureDtPropertyPage> */}
+                    {renderImage()}
                     
                      </Col>
-                     <Col sm className="image_sub col-sm-3">       
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
+                     <Col className="image_sub col-sm-3">       
+                     {renderImage()}
+                     {renderImage()}
                     
                      </Col>
-                     <Col sm className="image_sub col-sm-3">       
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
-                     <PictureDtPropertyPage></PictureDtPropertyPage>
+                     <Col className="image_sub col-sm-3">       
+                     {renderImage()}
+                     {renderImage()}
                     
                      </Col>
                   
@@ -58,9 +98,9 @@ export default function DetailPropertyHomePage() {
                 <Row className="row_2">
                     <Col className="col-sm-5">
               
-                    <HostName></HostName>
+                    {/* <HostName></HostName> */}
                    
-               
+                        {renderHostName()}
                     <RoomCount ></RoomCount>
                     <DescriptionProperty></DescriptionProperty>
                     <MoreInfo></MoreInfo>
@@ -77,7 +117,7 @@ export default function DetailPropertyHomePage() {
 
             
         </Container>
-        <FooterHomePage></FooterHomePage>
+        {/* <FooterHomePage></FooterHomePage> */}
         </>
     );
   }
