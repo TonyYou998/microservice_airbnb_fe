@@ -73,42 +73,37 @@ picture{
 }
 
 .image_sub{ // 4 ảnh nhỏ
-    padding: 0px !important;
-    padding-left: 5px !important;
+    padding: 2px !important;
+    // padding-left: 5px !important;
 }
 
 .img_property{
     border: none;
-    border-radius: 16px;
-    border-bottom: 13px solid rgb(255, 255, 255);
+    padding: 3px !important;
+    border-radius: 10px;
+    // border-bottom: 13px solid rgb(255, 255, 255);
+    img{
+        padding: 0;
+    }
 }
 .image_core{   //anh core
-    padding-left: 5px !important;
+    // padding-left: 5px !important;
     padding: 0px !important;
-    border: none;
+    // border: none;
 }
 
 
-.picture_home{   //4 anh
-    img{
-        padding: 0 !important;
- 
-        margin-bottom: 5px;
-   
-    }
-    img:hover{
-      
-        // filter: invert(5%) sepia(10%) hue-rotate(0deg) saturate(500%);
-    }
-
-}
-.picture_core_home{  //anh core
-    img{
-        padding: 0 !important;
-   
-    }
-
-}
+// .picture_home{   //4 anh
+//     img{
+//         padding: 0 !important;
+//         margin-bottom: 5px; 
+//     }
+// }
+// .picture_core_home{  //anh core
+//     img{
+//         padding: 0 !important; 
+//     }
+// }
 .desproperty{
     margin-top: 20px;
 }

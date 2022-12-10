@@ -42,7 +42,8 @@ export default function TableItem() {
         </tr>
       </thead>
       <tbody className='text-center justify-content-center align-items-center'>
-         {renderTable(content)}
+         {/* {renderTable(content)} */}
+         <TableElement></TableElement>
       </tbody>
     </Table>
               

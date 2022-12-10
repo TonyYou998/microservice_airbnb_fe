@@ -48,7 +48,7 @@ export default function DetailPropertyHomePage() {
     }
     const renderImage=()=>{
         if(data){
-            return<PictureDtPropertyPage data={data}/>
+            return<PictureCoreDtPropertyPage data={data}/>
         }
     }
     const renderAddress=()=>{
@@ -77,17 +77,21 @@ export default function DetailPropertyHomePage() {
                   
                 </Row>
                 <Row className="row_2">
-                    <Col className="image_core col-sm-6">       
-                    {/* <PictureDtPropertyPage></PictureDtPropertyPage> */}
+                    <Col sm className="image_core col-sm-6 ">       
+                    {/* <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage> */}
                     {renderImage()}
-                    
+
                      </Col>
-                     <Col className="image_sub col-sm-3">       
+                     <Col sm className="image_sub col-sm-3">    
+                     {/* <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>
+                     <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>    */}
                      {renderImage()}
                      {renderImage()}
                     
                      </Col>
-                     <Col className="image_sub col-sm-3">       
+                     <Col sm className="image_sub col-sm-3">       
+                     {/* <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>
+                     <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage> */}
                      {renderImage()}
                      {renderImage()}
                     
