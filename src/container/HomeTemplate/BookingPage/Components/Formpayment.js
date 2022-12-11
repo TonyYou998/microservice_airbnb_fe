@@ -20,7 +20,7 @@ export default function Formpayment(props) {
     return (
    
         <>
-          {/* <h2> {props.message} </h2> */}
+ 
         <PayPalScriptProvider options={{ "client-id": "sb" }}>
             <PayPalButtons style={{ layout: "horizontal" }} />
         </PayPalScriptProvider>

@@ -15,9 +15,7 @@ export default function Formtoalprice(props) {
     const VAT = price/10;
     const total_price = price + VAT;
     
-    if(day < 0){
-        day = 0;
-    }
+   
   
 
     return ( 

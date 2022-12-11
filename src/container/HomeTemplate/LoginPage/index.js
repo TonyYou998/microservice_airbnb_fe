@@ -25,9 +25,9 @@ export default function LoginPage() {
 
   const handlePasswordChange=(e)=>{
    
-   
     setPassword(e.target.value);
   }
+
 
   const sendUsernameDataToParent=(data)=>{
     setUsername(data);

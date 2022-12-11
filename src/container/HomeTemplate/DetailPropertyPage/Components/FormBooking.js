@@ -36,6 +36,7 @@ export default function FormBooking() {
       
       </Form.Group>
       </Col>
+      
         </Row>
         <Row className='total_price'>
         <Col> Total </Col>
