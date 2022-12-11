@@ -7,7 +7,7 @@ export const actHomePropertyApi=()=>{
     const token=document.cookie.split("=");
     return (dispatch)=>{
         dispatch(actHomePropertyRequest);
-        mainApi.get(USER_SERVICE_END_POINT+"/get-recent-property")
+        mainApi.get(USER_SERVICE_END_POINT+"get-recent-property")
                 .then((result)=>{
                     dispatch(actHomePropertySuccess(result.data));
                 })

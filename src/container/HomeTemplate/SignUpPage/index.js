@@ -172,7 +172,7 @@ export default function SignUpPage() {
     } else if (password.length >= 20) {
       setPasswordError('Password must shorter than 20 characters');
     } else if (!password.match(cond1)) {
-      console.log(password);
+     
       setPasswordError('Password must contain at least one lowercase');
     } else if (!password.match(cond2)) {
       setPasswordError('Password must contain at least one capital letter');

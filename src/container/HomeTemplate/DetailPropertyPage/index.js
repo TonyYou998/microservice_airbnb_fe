@@ -12,12 +12,6 @@ import DescriptionProperty from "./Components/DescriptionProperty";
 import PictureCoreDtPropertyPage from "./Components/PictureCoreDtPropertyPage";
 
 import MoreInfo from "./Components/MoreInfor";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-
-
-
-
 import { FormControl } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
