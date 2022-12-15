@@ -45,7 +45,9 @@ img[alt="birce3"]{
     border-radius:50%
   }
 .formbooking{
-    background-color: rgb(239, 239, 239);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(237, 237, 237);
+    box-shadow: 0 3px 15px rgba(165, 165, 165, 0.2);
     padding: 30px;
     border-radius: 10px;
     margin-left: 20px;
@@ -79,21 +81,30 @@ picture{
 
 .img_property{
     border: none;
-    border-radius: 16px;
-    border-bottom: 13px solid rgb(255, 255, 255);
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    border-radius: 8px;
+    
 }
+
 .image_core{   //anh core
     padding-left: 5px !important;
     padding: 0px !important;
-    border: none;
+    border-radius: 10px;
+    // border: none;
 }
 
 
 .picture_home{   //4 anh
+    // border-radius: 10px;
+
     img{
-        padding: 0 !important;
- 
-        margin-bottom: 5px;
+        margin: 5px;
+        padding: 0px;
+        // border-radius: 10px;
+        // padding: 0 !important;
+        // border-radius: 10px;
+    
    
     }
     img:hover{
@@ -125,4 +136,8 @@ picture{
 }
 .price{
     font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
 }

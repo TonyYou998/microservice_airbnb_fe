@@ -3,11 +3,19 @@
 
 export default function PictureDtPropertyPage({data}) {
     const renderImg=(data)=>{
-        if(data){
+        // if(true){
             const {Content}=data;
             console.log(Content);
-            return <img src={Content.images} class="img_property img-fluid img-thumbnail" alt="..."></img>
-        }
+            // Content.images
+            return (
+            <>
+            <a rel="gallery1" data-fancybox="images" href={Content.images}> 
+              <img src={Content.images} class="img_property img-fluid img-thumbnail" alt="..."></img>
+            </a>
+            </>
+            )
+          
+      //  }
       
     }
     return ( 

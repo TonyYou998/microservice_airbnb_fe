@@ -17,7 +17,7 @@ import DetailPropertyPage from "container/HostTemplate/DetailPropertyPage";
 import DetailPropertyHomePage from "container/HomeTemplate/DetailPropertyPage";
 import BookingPage from "container/HomeTemplate/BookingPage";
 import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
-
+import ConfirmPage from "container/HostTemplate/ConfirmPage";
 
 
 
@@ -117,7 +117,13 @@ const routeHost=[
         exact:false,
         path:"/add-img",
         Component:AddPropertyImg
+    },
+    {
+        exact:false,
+        path:"/homes",
+        Component:ConfirmPage
     }
+
     
 ]
 

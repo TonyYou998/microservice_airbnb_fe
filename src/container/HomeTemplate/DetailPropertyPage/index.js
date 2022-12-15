@@ -72,16 +72,20 @@ export default function DetailPropertyHomePage() {
                 </Row>
                 <Row className="row_2">
                     <Col className="image_core col-sm-6">       
-                    {/* <PictureDtPropertyPage></PictureDtPropertyPage> */}
+                    {/* <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage> */}
                     {renderImage()}
                     
                      </Col>
                      <Col className="image_sub col-sm-3">       
+                     {/* <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>
+                     <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage> */}
                      {renderImage()}
                      {renderImage()}
                     
                      </Col>
                      <Col className="image_sub col-sm-3">       
+                     {/* <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage>
+                     <PictureCoreDtPropertyPage></PictureCoreDtPropertyPage> */}
                      {renderImage()}
                      {renderImage()}
                     
