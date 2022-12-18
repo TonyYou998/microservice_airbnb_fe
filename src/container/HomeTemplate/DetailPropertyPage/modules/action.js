@@ -1,5 +1,5 @@
 import { mainApi } from "api";
-import { USER_SERVICE_END_POINT } from "api/utils/apiConstant";
+import { BOOKING_SERVICE_END_POINT, USER_SERVICE_END_POINT } from "api/utils/apiConstant";
 import axios from "axios";
 import * as ActionType from "./constants";
 const actGetDetailPropertyRequest=()=>{
@@ -35,4 +35,18 @@ export const actGetDetailPropertyApi=(id)=>{
             });
     }
    
+}
+export const actPostCheckout=(data)=>{
+   return (dispatch)=>{
+        mainApi.post(BOOKING_SERVICE_END_POINT+"/checkout",data)
+            .then((result)=>{
+                console.log("success");
+
+            })
+            .catch((err)=>{
+                console.log(err.message);
+
+            })
+
+   } 
 }

@@ -18,6 +18,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { actGetDetailPropertyApi } from "./modules/action";
 import { useParams } from "react-router-dom";
+import { Elements, useElements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 
 
@@ -25,6 +27,8 @@ import { useParams } from "react-router-dom";
 export default function DetailPropertyHomePage() {
     const dispatch=useDispatch();
     const {id}=useParams();
+    
+    const stripePromise=loadStripe('pk_test_51MFgtADG7fwzFQTedvRdnq6UjWj3ylpqDTjYQKzwmE7yHp8WpZfvrl67VYYFHXdPMynx6IwSCUJx06BAhzjba9ul00kyH4JStu');
 
     useEffect(()=>{
       
@@ -53,6 +57,12 @@ export default function DetailPropertyHomePage() {
     const renderHostName=()=>{
         if(data){
             return<HostName data={data}/>
+        }
+    }
+    const renderFormBooking=()=>{
+        if(data){
+         
+            return <FormBooking data={data}/>
         }
     }
 
@@ -103,7 +113,10 @@ export default function DetailPropertyHomePage() {
                        <HostAvatar className="d-flex justify-content-end"></HostAvatar>
                     </Col>
                     <Col className="col-sm-6">
-                    <FormBooking></FormBooking>
+                        <Elements stripe={stripePromise}>
+                        {renderFormBooking()}
+                        </Elements>
+                  
 
                     </Col>
                     
