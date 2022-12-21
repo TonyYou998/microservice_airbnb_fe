@@ -62,7 +62,7 @@ export default function DetailPropertyHomePage() {
     const renderFormBooking=()=>{
         if(data){
          
-            return <FormBooking data={data}/>
+            return <FormBooking  data={data}/>
         }
     }
 

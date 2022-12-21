@@ -19,6 +19,8 @@ export default function Formbooking(props) {
 
   const{sendDateCOToParent}=props;
   const{valueDataDateCO}=props;
+  const {pricePerNight}=props;
+  const {startDate,endDate,guestAmount}=props;
 
   const handleOnChange=(e)=>{
     sendPeopleToParent(e.target.value);
@@ -36,7 +38,7 @@ const handleOnChangedDateCO=(e)=>{
   sendDateCOToParent(e.target.value);
 }
 
-    
+   
 
 
   
@@ -50,7 +52,7 @@ const handleOnChangedDateCO=(e)=>{
       
       </Row>
         <Row className='price'>
-        <Col> <p>  <strong className='price_number'>$ 100 </strong>  /Night </p> </Col>
+        <Col> <p>  <strong className='price_number'>$ {pricePerNight}</strong>  /Night </p> </Col>
       
       </Row>
         <Row >
@@ -58,14 +60,17 @@ const handleOnChangedDateCO=(e)=>{
 
             <Form.Group controlId="checkin">
         <Form.Label>Check In</Form.Label>
-        <Form.Control onKeyDown={(e) => e.preventDefault()}   value={valueDataDateCI} onChange={handleOnChangedDateCI } type="date" name="checkin" placeholder="Check In" lable="2" />
+        <Form.Control value={startDate} onKeyDown={(e) => e.preventDefault()}   onChange={(e)=>{
+
+
+        } } type="date" name="checkin" placeholder="Check In" lable="2" />
          </Form.Group>
          </Col>
 
          <Col>       
             <Form.Group controlId="checkout">
         <Form.Label>Check Out</Form.Label>
-        <Form.Control onKeyDown={(e) => e.preventDefault()}  value={valueDataDateCO} onChange={handleOnChangedDateCO}  type="date" name="checkout" placeholder="Check Out" />
+        <Form.Control value={endDate} onKeyDown={(e) => e.preventDefault()} onChange={handleOnChangedDateCO}  type="date" name="checkout" placeholder="Check Out" />
          </Form.Group>
          </Col>
  
@@ -75,7 +80,7 @@ const handleOnChangedDateCO=(e)=>{
             <Col>
            <Form.Group controlId="formBasicEmail">
         <Form.Label>Enter People  <i className='text_small'>(Ages{'>'}12)</i></Form.Label>
-        <Form.Control onKeyDown={(e) => e.preventDefault()} value={valueData} onChange={handleOnChange}  type="number" placeholder="Enter People" />
+        <Form.Control value={guestAmount} onKeyDown={(e) => e.preventDefault()} onChange={handleOnChange}  type="number" placeholder="Enter People" />
       
       </Form.Group>
       </Col>

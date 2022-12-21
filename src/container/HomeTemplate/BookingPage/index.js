@@ -11,8 +11,13 @@ import Rule from './Components/Rule';
 import validator from 'validator';
 import Alert from 'react-bootstrap/Alert';
 import { ChildFriendly } from '@mui/icons-material';
+import { Data } from '@react-google-maps/api';
+import StripeCheckout from 'react-stripe-checkout';
+import { useDispatch } from 'react-redux';
+import { actPostCheckout } from '../DetailPropertyPage/modules/action';
 
-export default function BookingPage() {
+export default function BookingPage(props) {
+ 
   const history=useHistory();
   const [People, setPeople]=useState('');
   const [Child, setChild]=useState('');
@@ -20,12 +25,13 @@ export default function BookingPage() {
   const [DateCO, setDateCO]=useState('');
   const [NumberError, setNumberError]=useState('');
   const [NumberWarning, setNumberWarning]=useState('');
+  const [totalPrice,setTotalPrice]=useState(0);
   
-
+const dispatch=useDispatch();
 
   const date1 = new Date();
   Date.parse(date1);
-  console.log( )
+
  
 
   const handlePeopleChange=(e)=>{
@@ -34,6 +40,18 @@ export default function BookingPage() {
  
   }
 
+  const {location}=props;
+  const start=new Date(location.state.checkIn);
+  const end=new Date(location.state.checkOut);
+  const guestAmount=location.state. guestAmount;
+  const getNumberOfDays=(checkIn,checkOut)=>{
+    const start=checkIn.getTime();
+    const end=checkOut.getTime();
+    const diff=end-start;
+    const numberOfDays=Math.ceil(diff/ 86400000);
+    
+    return numberOfDays;
+  }
   const sendPeopleDataToParent=(data)=>{
     setPeople(data);
     if(data < 0){
@@ -58,7 +76,11 @@ export default function BookingPage() {
    
   }
 
-  
+  const sendTotalToParent=(totalPrice)=>{
+      setTotalPrice(totalPrice);
+
+
+  }
 
   const sendDateCIDataToParent=(data2)=>{
  
@@ -125,7 +147,15 @@ export default function BookingPage() {
   let date =  (new Date(DateCO) - new Date(DateCI) ) / 1000 / 86400;
 
   date < 0  ? date = 0 : date = date;
-
+  const handleToken = (token) => {
+ 
+    
+    dispatch(actPostCheckout({
+      "token":token.id,
+      "currency":"usd",
+      "amount":totalPrice
+    }))
+  };
 
 
 
@@ -146,7 +176,10 @@ export default function BookingPage() {
             
                     <FormBooking 
                     onChange={handleChildChange ||handlePeopleChange || handleDateCIChange || handleDateCOChange }  sendPeopleToParent={sendPeopleDataToParent}  sendChildToParent={sendChildDataToParent}
-                    sendDateCOToParent={sendDateCODataToParent} sendDateCIToParent={sendDateCIDataToParent} 
+                    sendDateCOToParent={sendDateCODataToParent} sendDateCIToParent={sendDateCIDataToParent} pricePerNight={location.state.price}
+                    startDate={location.state.checkIn}
+                    endDate={location.state.checkOut}
+                    guestAmount={location.state.guestAmount}
                     >
           
                     </FormBooking>
@@ -159,14 +192,28 @@ export default function BookingPage() {
                 </Col>
 
                 <Col sm={5} className='form_pe'>
-                    <Formtoalprice people={People} child={Child} date={date}></Formtoalprice>
+                  
+                    <Formtoalprice sendTotalToParent={sendTotalToParent} pricePerNight={location.state.price} people={People} child={Child} date={getNumberOfDays(start,end)} guestAmount={guestAmount}></Formtoalprice>
                     
                 </Col>
              </Row>
 
              <Row className='payment_t justify-content-md-center'>
                 <Col sm={5} className=''>
-                  <Formpayment></Formpayment>
+                  {/* <Formpayment></Formpayment> */}
+                  <StripeCheckout
+                     stripeKey="pk_test_51MFgtADG7fwzFQTedvRdnq6UjWj3ylpqDTjYQKzwmE7yHp8WpZfvrl67VYYFHXdPMynx6IwSCUJx06BAhzjba9ul00kyH4JStu"
+                     token={handleToken}
+                     amount={totalPrice*100}
+                     currency="USD"
+                     name="Example Inc."
+                     description="Example product"
+                     image="https://example.com/example.png"
+                     locale="auto"
+                     zipCode
+                     billingAddress
+                     shippingAddress
+                  />
                 
                 </Col>
 
