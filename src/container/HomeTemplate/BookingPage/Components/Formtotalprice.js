@@ -9,8 +9,8 @@ import HeaderDtPropertyPage from './Headerpage';
 
 export default function Formtoalprice(props) {
 
-    const {pricePerNight,sendTotalToParent,guestAmount} = props;
-    const {date} = props;
+    const {pricePerNight,sendTotalToParent,guestAmount,date} = props;
+   
     const price=  date * pricePerNight*guestAmount;
     const VAT = pricePerNight/10;
     const total_price = price + VAT;

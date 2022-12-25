@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { actPostCheckout } from '../modules/action';
 import StripeCheckout from 'react-stripe-checkout';
 
-export default function FormBooking({ data }) {
+export default function FormBooking({ data,propertyId }) {
   const stripe=useStripe();
   const history=useHistory();
   const { Content } = data;
@@ -19,12 +19,14 @@ export default function FormBooking({ data }) {
     // passing the client secret obtained from the server
     clientSecret: 'cs_test_a1pn3fsbG6MNaCIxwUDKdm1fBSPpPP9vTAGn0Md3WKe81nxFz5QChzPKqU',
   };
-  
+
+
   const [submitData, setSubmitData] = useState({
-    checkIn: "",
-    checkOut: "",
+    checkInDate: "",
+    checkOutDate: "",
     price: Content.price,
-    guestAmount: null
+    guestAmount: null,
+    propertyId,
   });
   const onSubmit = async(e) => {
     e.preventDefault();
@@ -68,7 +70,7 @@ export default function FormBooking({ data }) {
             <Form.Group controlId="checkin">
               <Form.Label>Check In</Form.Label>
               <Form.Control type="date" name="checkin" placeholder="Check In" onChange={(e) => {
-                setSubmitData({ ...submitData, checkIn: e.target.value });
+                setSubmitData({ ...submitData, checkInDate: e.target.value });
 
               }} />
             </Form.Group>
@@ -78,7 +80,7 @@ export default function FormBooking({ data }) {
             <Form.Group controlId="checkout">
               <Form.Label>Check Out</Form.Label>
               <Form.Control type="date" name="checkout" placeholder="Check Out" onChange={(e) => {
-                setSubmitData({ ...submitData, checkOut: e.target.value });
+                setSubmitData({ ...submitData, checkOutDate: e.target.value });
               }} />
             </Form.Group>
           </Col>

@@ -18,7 +18,7 @@ import { actPostCheckout } from '../DetailPropertyPage/modules/action';
 
 export default function BookingPage(props) {
  
-  const history=useHistory();
+
   const [People, setPeople]=useState('');
   const [Child, setChild]=useState('');
   const [DateCI, setDateCI]=useState('');
@@ -31,7 +31,7 @@ const dispatch=useDispatch();
 
   const date1 = new Date();
   Date.parse(date1);
-
+const history=useHistory();
  
 
   const handlePeopleChange=(e)=>{
@@ -153,8 +153,12 @@ const dispatch=useDispatch();
     dispatch(actPostCheckout({
       "token":token.id,
       "currency":"usd",
-      "amount":totalPrice
-    }))
+      "amount":totalPrice,
+      "guestAmount":location.state.guestAmount,
+      "checkIn":start,
+      "checkOut":end,
+      "propertyId":location.state.propertyId
+    },history))
   };
 
 

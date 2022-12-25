@@ -5,7 +5,7 @@ export default function PictureDtPropertyPage({data}) {
     const renderImg=(data)=>{
         if(data){
             const {Content}=data;
-            console.log(Content);
+           
             return <img src={Content.images} class="img_property img-fluid img-thumbnail" alt="..."></img>
         }
       
