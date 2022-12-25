@@ -9,14 +9,15 @@ import HeaderDtPropertyPage from './Headerpage';
 
 export default function Formtoalprice(props) {
 
-    const price_per_night = 100;
-    let day = props.date;
-    const price =  day * price_per_night;
-    const VAT = price/10;
+    const {pricePerNight,sendTotalToParent,guestAmount,date} = props;
+   
+    const price=  date * pricePerNight*guestAmount;
+    const VAT = pricePerNight/10;
     const total_price = price + VAT;
+    sendTotalToParent(total_price);
     
-    if(day < 0){
-        day = 0;
+    if(date < 0){
+        date = 0;
     }
   
 
@@ -36,7 +37,7 @@ export default function Formtoalprice(props) {
         </Row>
         <div className="price_tt">
         <Row className=''>
-        <Col className='col'> Your booking is protected by ... </Col>
+        <Col className='col'> Your booking is protected by InSecLab </Col>
         </Row>
         </div>
         <div className="price_body">
@@ -49,7 +50,7 @@ export default function Formtoalprice(props) {
         <Col className='col d-flex justify-content-end'>{props.child < 0  ? 1 : props.child}  </Col>
         </Row>
         <Row className='price'>
-        <Col className='col'>${price_per_night} x {day} nights </Col>
+        <Col className='col'>${pricePerNight}x{date} nights x{guestAmount} people </Col>
         <Col className='col d-flex justify-content-end'>${price} </Col>
         </Row>
     
@@ -62,13 +63,5 @@ export default function Formtoalprice(props) {
         <Col className='col'>Total (USD) </Col>
         <Col className='col d-flex justify-content-end'>${total_price} </Col>
         </Row>
-            
-          
-
-</div>
-          
-      
-
-  
-    );
-  }
+</div>);
+ }
