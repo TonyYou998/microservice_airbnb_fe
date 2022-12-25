@@ -9,14 +9,14 @@ import "slick-carousel/slick/slick.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect} from "react";
 import { actHomePropertyApi } from "../../modules/action";
-import { ClipLoader } from "react-spinners";
+// import { ClipLoader } from "react-spinners";
 
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
+// const override: CSSProperties = {
+//   display: "block",
+//   margin: "0 auto",
+//   borderColor: "red",
+// };
 
 export default function Property() {
 
@@ -49,14 +49,14 @@ export default function Property() {
         return (<PropertyItem key={index} info={item} />);
       });
     }
-    return <ClipLoader
-      color={override.color}
-      loading={override.loading}
-      cssOverride={override}
-      size={150}
-      aria-label="Loading Spinner"
-      data-testid="loader"
-    />
+    // return <ClipLoader
+    //   color={override.color}
+    //   loading={override.loading}
+    //   cssOverride={override}
+    //   size={150}
+    //   aria-label="Loading Spinner"
+    //   data-testid="loader"
+    // />
 
 
   }
