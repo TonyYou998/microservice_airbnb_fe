@@ -49,9 +49,5 @@ export default function FormBooking() {
   
     </Form>
 </div>
-          
-      
-
-  
     );
   }
