@@ -4,7 +4,21 @@ let initState={
     data:null,
     err:null,
 }
+let checkoutInit={
+    loading:null,
+    data:null,
+    err:null,
+}
+const checkoutReducer=(state=checkoutInit,action)=>{
+    switch(action.type){
+        case ActionType.POST_CHECKOUT_SUCCESS:
+            state.loading=false;
+            state.data=action.payload;
+            state.err=false;
+            return{...state};
 
+    }
+}
  const detailPropertyReducer=(state=initState,action)=>{
     switch(action.type){
         case ActionType.GET_DETAIL_PROPERTY_REQUEST:
@@ -27,4 +41,4 @@ let initState={
             
     }
 }
-export  default detailPropertyReducer;
+export   {detailPropertyReducer,checkoutReducer};

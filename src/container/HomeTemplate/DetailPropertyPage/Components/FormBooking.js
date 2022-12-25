@@ -4,29 +4,32 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Redirect, useHistory } from 'react-router-dom';
 import { CardElement, Elements, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 import { useDispatch } from 'react-redux';
 import { actPostCheckout } from '../modules/action';
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 
-export default function FormBooking({ data }) {
-  const stripe=useStripe();
-  const history=useHistory();
+
+export default function FormBooking({ data, propertyId }) {
+  const stripe = useStripe();
+  const history = useHistory();
   const { Content } = data;
-  const dispatch=useDispatch();
-  const elements=useElements();
+  const dispatch = useDispatch();
+  const elements = useElements();
   const options = {
     // passing the client secret obtained from the server
     clientSecret: 'cs_test_a1pn3fsbG6MNaCIxwUDKdm1fBSPpPP9vTAGn0Md3WKe81nxFz5QChzPKqU',
   };
-  
+
+
   const [submitData, setSubmitData] = useState({
-    checkIn: "",
-    checkOut: "",
+    checkInDate: "",
+    checkOutDate: "",
     price: Content.price,
-    guestAmount: null
+    guestAmount: null,
+    propertyId,
   });
-  const onSubmit = async(e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     // console.log(Content.price);
     // setSubmitData({...submitData,price:Content.price});
@@ -44,21 +47,21 @@ export default function FormBooking({ data }) {
     //     "token": paymentMethod.id,
     //   }));
     // }
-    history.push({
-      pathname:'/book',
-      state:submitData,
-    });
 
+    history.push({
+      pathname: '/book',
+      state: submitData,
+    });
   }
 
- 
+
 
 
   return (
 
     <div className='formbooking'>
-    
-    <Form onSubmit={onSubmit}>
+
+      <Form onSubmit={onSubmit}>
         <Row className='price'>
           <Col> <p>  <strong className='price_number'>${Content.price}</strong>/Night </p> </Col>
 
@@ -68,7 +71,7 @@ export default function FormBooking({ data }) {
             <Form.Group controlId="checkin">
               <Form.Label>Check In</Form.Label>
               <Form.Control type="date" name="checkin" placeholder="Check In" onChange={(e) => {
-                setSubmitData({ ...submitData, checkIn: e.target.value });
+                setSubmitData({ ...submitData, checkInDate: e.target.value });
 
               }} />
             </Form.Group>
@@ -78,7 +81,7 @@ export default function FormBooking({ data }) {
             <Form.Group controlId="checkout">
               <Form.Label>Check Out</Form.Label>
               <Form.Control type="date" name="checkout" placeholder="Check Out" onChange={(e) => {
-                setSubmitData({ ...submitData, checkOut: e.target.value });
+                setSubmitData({ ...submitData, checkOutDate: e.target.value });
               }} />
             </Form.Group>
           </Col>
@@ -101,38 +104,11 @@ export default function FormBooking({ data }) {
           <Col className='d-flex justify-content-end'>{Content.price}$</Col>
         </Row> */}
         <Row className='r_bttnsm'>
-              {/* <CardElement/> */}
-           <Button className='btnsm' variant="outline-danger" type="submit">
-              Submit
-            </Button>
-          {/* <StripeCheckout
-             stripeKey="pk_test_51MFgtADG7fwzFQTedvRdnq6UjWj3ylpqDTjYQKzwmE7yHp8WpZfvrl67VYYFHXdPMynx6IwSCUJx06BAhzjba9ul00kyH4JStu"
-             token={handleToken}
-             amount={999}
-             currency="USD"
-             name="Example Inc."
-             description="Example product"
-             image="https://example.com/example.png"
-             locale="auto"
-             zipCode
-             billingAddress
-             shippingAddress
-          /> */}
-
+          <Button className='btnsm' variant="outline-danger" type="submit">
+            Submit
+          </Button>
         </Row>
 
       </Form>
-      
-
-
-     
-      
-    
-      
-    </div>
-
-
-
-
-  );
+    </div>);
 }

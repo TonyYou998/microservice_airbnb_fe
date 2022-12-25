@@ -1,7 +1,9 @@
 import { mainApi } from "api";
 import { BOOKING_SERVICE_END_POINT, USER_SERVICE_END_POINT } from "api/utils/apiConstant";
-import axios from "axios";
+
+import { Redirect, useHistory } from "react-router-dom";
 import * as ActionType from "./constants";
+
 const actGetDetailPropertyRequest=()=>{
     return{
         type:ActionType.GET_DETAIL_PROPERTY_REQUEST,
@@ -36,12 +38,13 @@ export const actGetDetailPropertyApi=(id)=>{
     }
    
 }
-export const actPostCheckout=(data)=>{
+export const actPostCheckout=(data,history)=>{
+    const token=document.cookie.split("=");
    return (dispatch)=>{
-        mainApi.post(BOOKING_SERVICE_END_POINT+"/checkout",data)
+        mainApi.post(BOOKING_SERVICE_END_POINT+"/checkout",data,{headers:{Authorization:token[1]}})
             .then((result)=>{
-                console.log("success");
-
+                dispatch(actPostCheckoutSuccess);
+                history.replace("/");
             })
             .catch((err)=>{
                 console.log(err.message);
@@ -49,4 +52,10 @@ export const actPostCheckout=(data)=>{
             })
 
    } 
+}
+const actPostCheckoutSuccess=data=>{
+    return{
+        payload:data,
+        type:ActionType.POST_CHECKOUT_SUCCESS
+    }
 }

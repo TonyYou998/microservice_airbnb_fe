@@ -18,7 +18,7 @@ import { actPostCheckout } from '../DetailPropertyPage/modules/action';
 
 export default function BookingPage(props) {
  
-  const history=useHistory();
+
   const [People, setPeople]=useState('');
   const [Child, setChild]=useState('');
   const [DateCI, setDateCI]=useState('');
@@ -31,7 +31,7 @@ const dispatch=useDispatch();
 
   const date1 = new Date();
   Date.parse(date1);
-
+const history=useHistory();
  
 
   const handlePeopleChange=(e)=>{
@@ -41,9 +41,10 @@ const dispatch=useDispatch();
   }
 
   const {location}=props;
-  const start=new Date(location.state.checkIn);
-  const end=new Date(location.state.checkOut);
-  const guestAmount=location.state. guestAmount;
+  console.log(location);
+  const start=new Date(location.state.checkInDate);
+  const end=new Date(location.state.checkOutDate);
+  const guestAmount=location.state.guestAmount;
   const getNumberOfDays=(checkIn,checkOut)=>{
     const start=checkIn.getTime();
     const end=checkOut.getTime();
@@ -153,8 +154,12 @@ const dispatch=useDispatch();
     dispatch(actPostCheckout({
       "token":token.id,
       "currency":"usd",
-      "amount":totalPrice
-    }))
+      "amount":totalPrice,
+      "guestAmount":location.state.guestAmount,
+      "checkInDate":start,
+      "checkOutDate":end,
+      "propertyId":location.state.propertyId
+    },history))
   };
 
 
@@ -177,8 +182,8 @@ const dispatch=useDispatch();
                     <FormBooking 
                     onChange={handleChildChange ||handlePeopleChange || handleDateCIChange || handleDateCOChange }  sendPeopleToParent={sendPeopleDataToParent}  sendChildToParent={sendChildDataToParent}
                     sendDateCOToParent={sendDateCODataToParent} sendDateCIToParent={sendDateCIDataToParent} pricePerNight={location.state.price}
-                    startDate={location.state.checkIn}
-                    endDate={location.state.checkOut}
+                    startDate={location.state.checkInDate}
+                    endDate={location.state.checkOutDate}
                     guestAmount={location.state.guestAmount}
                     >
           
