@@ -6,7 +6,7 @@ export const actGetCategoryApi=()=>{
     const token=document.cookie.split("=");
     return (dispatch)=>{
         dispatch(actGetCategoryRequest);
-        mainApi.get(HOST_SERVICE_END_POINT+"/get-property-type",{headers:{Authorization:token[1]}})
+        mainApi.get(HOST_SERVICE_END_POINT+"get-property-type",{headers:{Authorization:token[1]}})
         .then((result)=>{
             dispatch(actGetCategorySuccess(result.data));
             

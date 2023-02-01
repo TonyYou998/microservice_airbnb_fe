@@ -55,7 +55,6 @@ export default function HomePageHost() {
 
         <div className="row ">
 
-          {/* <TableItem></TableItem> */}
          <TableItem/>
 
 
