@@ -1,9 +1,17 @@
-
+body{
+    line-height: 1.43;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
 
 .container{
     padding-top: 60px;
 }
-
+.strong_text{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+}
 .core{
 
     padding: 0 100px 0 100px;
