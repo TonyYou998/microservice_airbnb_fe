@@ -10,7 +10,7 @@ export default function ConfirmPage() {
 
   return (
 <>
-      <HeaderPage></HeaderPage>
+      {/* <HeaderPage></HeaderPage> */}
       <div className="container">
       <div className="main_info_map">
       <Row>

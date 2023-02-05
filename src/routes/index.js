@@ -66,7 +66,7 @@ const routesUser=[
 const routeHost=[
     {
         exact:false,
-        path:"/become-a-host",
+        path:"/host-welcome",
         Component:BecomeAHostPage
     },{
         exact:false,
@@ -120,7 +120,7 @@ const routeHost=[
     },
     {
         exact:false,
-        path:"/homes",
+        path:"/become-a-host",
         Component:ConfirmPage
     }
 

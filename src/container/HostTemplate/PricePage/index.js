@@ -35,7 +35,7 @@ export default function DescriptionPage() {
     form_data.append("model", JSON.stringify(model));
     form_data.append("file",data.img);
     // dispatch(actAddPrice(price));
-    console.log("run submit");
+
     dispatch(actAddPropertyApi(form_data));
 
   }

@@ -1,5 +1,6 @@
 import { mainApi } from "api";
 import { HOST_SERVICE_END_POINT } from "api/utils/apiConstant";
+
 import * as ActionType from "./constants";
 export const actAddCategory=(categoryId)=>{
     
@@ -73,7 +74,7 @@ export const actAddPropertyApi=(form_data)=>{
                 .catch((err)=>{
                     const {message}=err;
                     dispatch(actAddPropertyFailed(message));
-                    console.log(message);
+                  
                 })
 
     }
@@ -132,5 +133,18 @@ export const actGetHostPropertyApi=()=>{
             dispatch(actGetHostPropertyFailed(err.message));
 
          })
+    }
+}
+export const actChangeRole=(history,token)=>{
+    
+    return (dispatch)=>{
+        
+        mainApi.post(HOST_SERVICE_END_POINT+"become-a-host",null,{headers:{Authorization:token}})
+        .then((result)=>{
+            history.push("/classifycation");
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
     }
 }

@@ -31,7 +31,7 @@ export default function LoginPage() {
 
   const sendUsernameDataToParent=(data)=>{
     setUsername(data);
-    console.log(data);
+   
   }
 
   const sendPasswordDataToParent=(data)=>{
@@ -43,23 +43,6 @@ export default function LoginPage() {
   const handleUsernameSubmit=(e)=>{
     let isUsername=false;
     setUsernameError("");
-    
-    // const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
-
-    // if(email!=='' ){
-     
-    //   if(!regEx.test(email)){
-        
-    //     setEmailError('Email invalid');
-        
-    //   }
-    //   else
-    //     isEmail=true;
-
-    // }
-    // else{
-    //   setEmailError('Email Required');
-    // }
 
     if (username==''){
       setUsernameError('Email Requiered');
@@ -90,7 +73,6 @@ export default function LoginPage() {
 
   const handleFormSubmit = async(e)=>{
     e.preventDefault();
-    // setSuccessMsg("");
 
     const usernameValid= handleUsernameSubmit();
     const passwordValid= handlePasswordSubmit();
@@ -116,7 +98,7 @@ export default function LoginPage() {
         }
       })
       .catch(error=>{
-        console.log(error.response.data);
+        
         setPasswordError('Some Errors has occured')
       })
     }
