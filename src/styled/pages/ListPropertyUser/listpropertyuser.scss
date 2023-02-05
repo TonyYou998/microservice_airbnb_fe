@@ -1,0 +1,90 @@
+body{
+    line-height: 1.43;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.container{
+    padding-top: 60px;
+}
+.strong_text{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: normal;
+}
+.core{
+
+    padding: 0 100px 0 100px;
+    
+}
+.list{
+    margin-top: 30px;
+}
+.table_list{
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color: rgb(255, 255, 255);
+    // background-color: white;
+    // justify-content: center;
+    padding: 20px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    
+    
+    // align-items: center;
+    // margin-left: 400px;
+    // margin-top: 100px;
+    // width: 900px;
+}
+.table_list_user{
+    padding: 0 100px 0 100px;
+    .image_room{
+        .card-text{
+        .img{
+            border-radius: 50%;
+           
+        }
+    }
+    }
+    margin-top: 30px;
+    background-color: rgb(255, 255, 255);
+    // background-color: white;
+    // justify-content: center;
+    padding: 20px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 0.5px solid rgb(110, 110, 110);
+    position: sticky;
+    top: 20;
+    
+    // align-items: center;
+    // margin-left: 400px;
+    // margin-top: 100px;
+    // width: 900px;
+}
+.info_room{
+    padding: 0 40px 0 20px;
+    .price{
+        justify-content: right;
+        align-items: right;
+    }
+    // margin-left: 10px;
+    max-width: 400px;
+}
+
+.image_room{
+    text-align: center;
+    img{
+        border-radius: 10px;
+    }
+
+}
+
+.text-core{
+    font-size: 35px;
+    font-weight: 500px;
+}
+.list{
+    .tab{
+        margin-left: 5px;
+    }
+}
