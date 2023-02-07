@@ -3,6 +3,8 @@ import {hostReducer,propertyReducer,hostPropertyReducer} from "../../container/H
 import categoryReducer from "container/HostTemplate/ClassifycactionPage/modules/categoryReducer";
 import homePropertyReducer from "container/HomeTemplate/HomePage/modules/homePropertyReducer";
 import {detailPropertyReducer,checkoutReducer} from "container/HomeTemplate/DetailPropertyPage/modules/reducer";
+import bookingUserReducer from "container/HomeTemplate/MyPropertyList/modules/reducer";
+
 const rootReducer=combineReducers({
     hostReducer,
     propertyReducer,
@@ -10,5 +12,6 @@ const rootReducer=combineReducers({
     hostPropertyReducer,
     homePropertyReducer,
     detailPropertyReducer,
+    bookingUserReducer,
 });
 export default rootReducer;

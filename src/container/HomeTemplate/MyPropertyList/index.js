@@ -6,7 +6,7 @@ import InfoUser from "./component/infouser"
 
 export default function MyPropertyList() {
     return (
-    <div className="container">
+    <div className="container list__property__container">
       <TextHeader></TextHeader>
 
       <div className="core">
@@ -17,20 +17,10 @@ export default function MyPropertyList() {
 
  </Row>
       <Row >
-        {/* <Col className="col-4">
-    <InfoUser></InfoUser>
-     
-      
-    
-        </Col> */}
- 
         <Col > 
         <Item></Item>
-
         </Col>
-     
       </Row>
-   
       </div>
     </div>
     )

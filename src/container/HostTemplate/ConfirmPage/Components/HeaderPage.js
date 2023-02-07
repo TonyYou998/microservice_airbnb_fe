@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { actChangeRole } from 'container/HostTemplate/modules/actions';
+import getCookie from 'api/utils/helper';
 
 
 export default function HeaderPage() {
@@ -21,16 +22,7 @@ export default function HeaderPage() {
      setPhone(e.target.value);
 
    }
-   function getCookie(name) {
-      var cookies = document.cookie.split(";");
-      for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
-        if (cookie.indexOf(name + "=") == 0) {
-          return cookie.substring(name.length + 1, cookie.length);
-        }
-      }
-      return null;
-    }
+
   
 
    isOpen?document.body.style.overflow = 'hidden':document.body.style.overflow ="auto"
@@ -50,6 +42,7 @@ export default function HeaderPage() {
                   
                      <Button size="lg" variant="danger" onClick={()=>{
                          const token=getCookie("token");
+                        
                        
                          if(token!==null){
                         

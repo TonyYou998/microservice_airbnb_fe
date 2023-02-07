@@ -159,7 +159,7 @@ const history=useHistory();
       "checkInDate":start,
       "checkOutDate":end,
       "propertyId":location.state.propertyId
-    },history))
+    },history));
   };
 
 

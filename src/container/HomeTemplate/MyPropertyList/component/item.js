@@ -3,7 +3,28 @@
 import { Tab } from '@headlessui/react'
 import ItemChild from './ItemChild'
 import { Fragment } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { actGetUserBookingApi } from '../modules/action';
+import getCookie from 'api/utils/helper';
+import { useEffect } from 'react';
 export default function Item() {
+  const dispatch=useDispatch();
+  let payload=useSelector(state=>state.bookingUserReducer);
+  const renderItemChild=(payload)=>{
+      const data=payload.data;
+      if(data){
+        const {Content}=data;
+          return Content.map((item,index)=>{
+            return(<ItemChild key={index} info={item}/>)
+          })
+      }
+  }
+
+  useEffect(()=>{
+    const token=getCookie("token");
+    dispatch(actGetUserBookingApi(token));
+  },[])
+ 
   return (
    <div className=' list' data-toggle="buttons">
     <Tab.Group>
@@ -54,9 +75,7 @@ export default function Item() {
       <Tab.Panels>
         <Tab.Panel>    
         {/* Coming Soon */}
-             <ItemChild></ItemChild>
-             <ItemChild></ItemChild>
-             Content 1
+             {renderItemChild(payload)}
         </Tab.Panel>
 
 
