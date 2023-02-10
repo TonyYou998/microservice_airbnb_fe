@@ -1,0 +1,43 @@
+
+body{
+    line-height: 1.43;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+.list_item{
+    margin-top: 50px;
+    .scroll{
+        overflow: scroll;
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        overflow-y: scroll; /* Add vertical scrollbar */
+        height: 500px;
+    }
+}
+.core_host{
+    padding-left: 50px;
+}
+.table_list_host{
+
+    .image_room{
+        .card-text{
+        .img{
+            border-radius: 50%;
+           
+        }
+    }
+    }
+margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    // background-color: white;
+    // justify-content: center;
+    padding: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 0.5px solid rgb(220, 220, 220);
+    position: sticky;
+    top: 20;
+    
+    // align-items: center;
+    // margin-left: 400px;
+    // margin-top: 100px;
+    // width: 900px;
+}

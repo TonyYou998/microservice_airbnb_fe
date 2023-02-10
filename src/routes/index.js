@@ -19,7 +19,8 @@ import BookingPage from "container/HomeTemplate/BookingPage";
 import AddPropertyImg from "container/HostTemplate/AddPropertyImg";
 import ConfirmPage from "container/HostTemplate/ConfirmPage";
 import MyPropertyList from "container/HomeTemplate/MyPropertyList";
-
+import BookingListPage from "container/HostTemplate/BookingListPage";
+import DetailPropertyListPage from "container/HostTemplate/DetailPropertyListPage";
 
 
 const routesUser=[
@@ -128,7 +129,19 @@ const routeHost=[
         exact:false,
         path:"/homes",
         Component:ConfirmPage
+    },
+    {
+        exact:false,
+        path:"/listing",
+        Component:BookingListPage
+    },
+    ,
+    {
+        exact:false,
+        path:"/id",
+        Component:DetailPropertyListPage
     }
+
    
 
     
