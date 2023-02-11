@@ -1,5 +1,6 @@
 import TextHeader from "./components/Textheader"
 import Listitem from "./components/listitem"
+import HostFooter from "../HostFooter"
 
 export default function BookingListPage() {
     return ( 
@@ -11,6 +12,7 @@ export default function BookingListPage() {
         </div>
   
         </div>
+        <HostFooter></HostFooter>
         </>
      )
 }

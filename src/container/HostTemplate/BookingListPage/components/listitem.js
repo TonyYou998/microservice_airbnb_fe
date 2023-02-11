@@ -12,13 +12,13 @@ export default function listitem() {
       <Row>
         <Col sm={3}>
           <Nav variant="tabs" className="flex-column">
-            <Nav.Item>
+            <Nav.Item  className="nav_item">
               <Nav.Link eventKey="first">Phòng Đã Tạo</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
+            </Nav.Item >
+            <Nav.Item  className="nav_item">
               <Nav.Link eventKey="second">Phòng Đã Cho Thuê</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
+            <Nav.Item  className="nav_item">
               <Nav.Link eventKey="thỉrd">Phòng Chưa Cho Thuê</Nav.Link>
             </Nav.Item>
           </Nav>
@@ -37,10 +37,10 @@ export default function listitem() {
            
      
             </Tab.Pane>
-            <Tab.Pane eventKey="second">
+            <Tab.Pane className='scroll' eventKey="second">
             <Item></Item>
             </Tab.Pane>
-            <Tab.Pane eventKey="thỉrd">
+            <Tab.Pane className='scroll' eventKey="thỉrd">
             <Item></Item>
             </Tab.Pane>
           </Tab.Content>

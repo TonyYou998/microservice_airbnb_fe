@@ -1,6 +1,13 @@
 
 body{
     line-height: 1.43;
+    a{
+        text-decoration: none;
+        color:black
+    }
+    a:hover{
+        color:black
+    }
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 .list_item{
@@ -13,8 +20,18 @@ body{
     }
 }
 .core_host{
+    margin-bottom: 200px;
     padding-left: 50px;
 }
+.table_list_host:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(192, 190, 190, 0.594);
+    transform: scale3d(1.001, 1.001, 1);
+}
+.nav_item:hover{
+    box-shadow: 0 2px 4px 0 rgba(83, 82, 82, 0.301), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
 .table_list_host{
 
     .image_room{

@@ -1,5 +1,7 @@
 import TextHeader from "./components/Textheader"
 import Listitem from "./components/listitem"
+import HostFooter from "../HostFooter"
+
 
 export default function DeailPropertyListPage() {
     return ( 
@@ -9,7 +11,9 @@ export default function DeailPropertyListPage() {
         <div className="core_host ">
         <Listitem></Listitem>
         </div>
+      
         </div>
+        <HostFooter></HostFooter>
         </>
      )
 }
