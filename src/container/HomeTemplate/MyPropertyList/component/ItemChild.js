@@ -14,9 +14,9 @@ console.log(info);
         <img width={240} height={130} src={info.images}></img> 
         </Col>
         <Col className="info_room ">
-        <p class="card-text"> <i className="strong_text"> Tên :  </i> xxx </p>
-        <p class="card-text"> <i className="strong_text"> Địa Chỉ :  </i>  xxx </p>
-        <p class="card-text"> <i className="strong_text"> Mô Tả :  </i> xxx. </p>
+        <p class="card-text"> <i className="strong_text"> Property :  </i> {info.propertyName} </p>
+        <p class="card-text"> <i className="strong_text"> Address :  </i>  {info.address} </p>
+        <p class="card-text"> <i className="strong_text"> Status :  </i> {info.guestStatus} </p>
 
         </Col>
         <Col className="info_room ">
