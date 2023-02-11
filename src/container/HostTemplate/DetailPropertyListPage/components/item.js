@@ -2,7 +2,10 @@ import { Col, Row } from "react-bootstrap"
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-export default function ItemChild() {
+import { convertData } from "api/utils/helper";
+export default function ItemChild(props) {
+  const {info}=props;
+  console.log(info);
     return (
      <>
     <Card className="table_list_host" style={{ width: '40rem' }}>
@@ -14,16 +17,17 @@ export default function ItemChild() {
       <Card.Body>
       
         <Card.Text>
-            Người Đặt : Phan Thành Đạt 
+            Checkin Date: {convertData(info.checkInDate)}
         </Card.Text>
         <Card.Text>
-            Ngày Đặt : 22/12/2001
+            Checkout Date : {convertData(info.checkOutDate)}
+        </Card.Text>
+        
+        <Card.Text>
+          Status: {info.guestStatus} 
         </Card.Text>
         <Card.Text>
-            Ngày Trả : 22/12/2001
-        </Card.Text>
-        <Card.Text>
-          Trạng Thái : Đã Đặt
+          Number of guest: {info.guestAmount}
         </Card.Text>
 
       </Card.Body>

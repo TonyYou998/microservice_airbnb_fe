@@ -33,9 +33,12 @@ export default function HeaderPage() {
             <div className='container'>
                <Row className='header_confirm'>
                   <Col>
-                        <h4 style={{fontStyle:"italic",fontWeight:"400",color:"black"}}>Rental
+                  <NavLink to={"/"}>
+                  <h4 style={{fontStyle:"italic",fontWeight:"400",color:"black"}}>Rental
                            <span style={{color:"#0000ff"}}>.com</span>
                         </h4>
+                  </NavLink>
+                      
                   </Col>
                    <Col className='justify-content-md-end text-end'>
                    <span className='header_confirm_text'> <strong>Ready to lease it?</strong></span>
@@ -51,7 +54,7 @@ export default function HeaderPage() {
                          else{
                            history.push("/login");
                          }
-                     }}>Airbnb Setup</Button>  
+                     }}>Rental Setup</Button>  
                    
                     
                   </Col>

@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import {hostReducer,propertyReducer,hostPropertyReducer} from "../../container/HostTemplate/modules/hostReducers";
+import {hostReducer,propertyReducer,hostPropertyReducer,hostBookingReducer} from "../../container/HostTemplate/modules/hostReducers";
 import categoryReducer from "container/HostTemplate/ClassifycactionPage/modules/categoryReducer";
 import homePropertyReducer from "container/HomeTemplate/HomePage/modules/homePropertyReducer";
 import {detailPropertyReducer,checkoutReducer} from "container/HomeTemplate/DetailPropertyPage/modules/reducer";
@@ -13,5 +13,6 @@ const rootReducer=combineReducers({
     homePropertyReducer,
     detailPropertyReducer,
     bookingUserReducer,
+    hostBookingReducer
 });
 export default rootReducer;

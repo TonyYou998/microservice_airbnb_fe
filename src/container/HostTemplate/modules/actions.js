@@ -1,5 +1,5 @@
 import { mainApi } from "api";
-import { HOST_SERVICE_END_POINT } from "api/utils/apiConstant";
+import { BOOKING_SERVICE_END_POINT, HOST_SERVICE_END_POINT } from "api/utils/apiConstant";
 
 import * as ActionType from "./constants";
 export const actAddCategory=(categoryId)=>{
@@ -147,4 +147,43 @@ export const actChangeRole=(history,token)=>{
             console.log(err);
         });
     }
+}
+export const actGetHostBookingApi=(propertyId)=>{
+    const token=document.cookie.split("=");
+  
+    return (dispatch)=>{
+        
+         dispatch(actGetHostPropertyRequest);
+         mainApi.get(BOOKING_SERVICE_END_POINT+`get-booking-by-property-id?propertyId=${propertyId}`,{headers:{Authorization:token[1]}})
+         .then((result)=>{
+            console.log(result.data);
+            dispatch(actGetHostBookingSuccess(result.data));
+         })
+         .catch((err)=>{
+            console.log(err);
+            dispatch(actGetHostBookingFailed(err.message));
+
+         })
+    }
+}
+const actGetHostBookingSuccess=(data)=>{
+    return{
+        type:ActionType.GET_HOST_BOOKING_SUCCESS,
+        payload:data
+    }
+}
+const actGetHostBookingFailed=(err)=>{
+    return{
+        type:ActionType.GET_HOST_BOOKING_FAILED,
+        payload:err.message,
+    }
+
+}
+
+const actGetHostBOOKINGRequest=()=>{
+    return{
+        type:ActionType.GET_HOST_BOOKING_REQUEST,
+
+    }
+
 }

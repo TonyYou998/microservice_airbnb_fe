@@ -34,7 +34,7 @@ export default function LocationPage() {
   }
   const [libraries] = useState(['places'])
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+    googleMapsApiKey: AIzaSyBuRxJV_ZQ4VoGQbzJgVgd0hrgWbRwX90A,
     libraries,
   });
   const renderMarker=(marker)=>{

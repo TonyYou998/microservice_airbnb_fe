@@ -138,7 +138,7 @@ const routeHost=[
     ,
     {
         exact:false,
-        path:"/id",
+        path:"/host-booking/:id",
         Component:DetailPropertyListPage
     }
 

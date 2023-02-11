@@ -16,7 +16,7 @@ export default function TableItem() {
     if(data){
         console.log(data);
         const {Content} = data;
-        console.log(Content);
+ 
         return Content.map((item,index)=>{
           return (<TableElement key={item.id} data={item}/>)
         })

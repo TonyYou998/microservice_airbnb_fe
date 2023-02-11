@@ -20,6 +20,13 @@ const hostPropertyState={
     err:null,
     loading:null,
 
+    
+}
+const hostBookingState={
+    data:null,
+    err:null,
+    loading:null,
+
 }
  const hostReducer=(state=model,action)=>{
     
@@ -106,5 +113,29 @@ const hostPropertyReducer=(state=hostPropertyState,action)=>{
             return state;
     }
 
+   
 }
-export  {hostReducer,propertyReducer,hostPropertyReducer};
+const hostBookingReducer=(state=hostBookingState,action)=>{
+    switch(action.type){
+        case ActionType.GET_HOST_BOOKING_REQUEST:
+            state.loading=true;
+            state.data=null;
+            state.err=null;
+            return{...state}
+        case ActionType.GET_HOST_BOOKING_SUCCESS:
+           
+            state.loading=false;
+            state.data=action.payload;
+            state.err=false;
+            return{...state}
+        case ActionType.GET_HOST_BOOKING_FAILED:
+            state.loading=false;
+            state.err=action.payload;
+            state.data=null;
+            return{...state};
+        default:
+            return state;
+    }
+
+}
+export  {hostReducer,propertyReducer,hostPropertyReducer,hostBookingReducer};

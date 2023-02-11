@@ -1,11 +1,39 @@
+import { actGetHostBookingApi } from 'container/HostTemplate/modules/actions';
+import { useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import Item from './item';
 
 
-export default function listitem() {
+export default function ListItem() {
+  const {id}=useParams();
+  
+  const dispatch=useDispatch();
+
+  const content=useSelector(state=>{
+    return  state.hostBookingReducer;
+  
+  });
+  useEffect(()=>{
+    dispatch(actGetHostBookingApi(id));
+  },[])
+  const renderItem=(content)=>{
+    const {data}=content;
+    if(data){
+     
+        const {Content} = data;
+        
+        return Content.map((item,index)=>{
+          return (<Item key={index} info={item}/>)
+        })
+      
+    }
+  
+  }
   return (
     <div className='list_item'>
     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -13,13 +41,11 @@ export default function listitem() {
         <Col sm={3}>
           <Nav variant="tabs" className="flex-column">
             <Nav.Item className="nav_item">
-              <Nav.Link eventKey="first">Đã Thuê</Nav.Link>
+              <Nav.Link eventKey="first">Coming soon</Nav.Link>
             </Nav.Item>
+          
             <Nav.Item className="nav_item">
-              <Nav.Link eventKey="second">Đang Thuê</Nav.Link>
-            </Nav.Item>
-            <Nav.Item className="nav_item">
-              <Nav.Link eventKey="thỉrd">Đã Hủy</Nav.Link>
+              <Nav.Link eventKey="thỉrd">Cancle</Nav.Link>
             </Nav.Item>
           </Nav>
         </Col>
@@ -28,23 +54,17 @@ export default function listitem() {
             
           <Tab.Content>
             <Tab.Pane className='scroll' eventKey="first">
-           
-                    <Item></Item>
-                    
-                    <Item></Item>
-                    
-                    <Item></Item>
+                  {renderItem(content)}
+                  
                  
               
            
            
      
             </Tab.Pane>
-            <Tab.Pane className='scroll' eventKey="second">
-            <Item></Item>
-            </Tab.Pane>
+        
             <Tab.Pane className='scroll' eventKey="thỉrd">
-            <Item></Item>
+            {/* <Item></Item> */}
             </Tab.Pane>
           </Tab.Content>
         </Col>

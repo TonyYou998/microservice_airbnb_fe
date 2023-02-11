@@ -13,3 +13,6 @@ export const GET_HOST_PROPERTY_REQUEST="hostPropertyReducer/GET_HOST_PROPERTY_RE
 export const GET_HOST_PROPERTY_SUCCESS="hostPropertyReducer/GET_HOST_PROPERTY_SUCCESS";
 export const GET_HOST_PROPERTY_FAILED="hostPropertyReducer/GET_HOST_PROPERTY_FAILED";
 export const ADD_IMG="hostReducer/ADD_IMG";
+export const GET_HOST_BOOKING_REQUEST="hostBookingReducer/GET_HOST_BOOKING_REQUEST";
+export const GET_HOST_BOOKING_SUCCESS="hostBookingReducer/GET_HOST_BOOKING_SUCCESS";
+export const GET_HOST_BOOKING_FAILED="hostBookingReducer/GET_HOST_BOOKING_FAILED";
