@@ -8,7 +8,8 @@ console.log(info);
 
     return (
      <>
-      <div className="table_list">
+     <a href="" >
+      <div className="card table_list">
      <Row>
         <Col className="image_room">
         <img width={240} height={130} src={info.images}></img> 
@@ -26,6 +27,7 @@ console.log(info);
         </Col>
      </Row>
      </div>
+     </a>
      </>
     );
   }
